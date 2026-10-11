@@ -61,12 +61,12 @@ Os dados ainda não confirmados estão marcados entre colchetes. A lista complet
 
 O projeto respeita o limite de quatro slots:
 
-1. Hero: `public/images/consultorio-apoio.png`, imagem provisória gerada para a apresentação.
-2. Retrato: `public/images/retrato-profissional-exemplo.png`, exemplo gerado e identificado na seção Sobre.
-3. Apoio: `public/images/sessao-acolhimento-exemplo.png`, exemplo gerado para a galeria editorial.
-4. Opcional: `public/images/detalhe-consultorio-exemplo.png`, exemplo gerado para a galeria editorial.
+1. Hero: `public/images/consultorio-apoio-paleta.png`, imagem provisória gerada para a apresentação.
+2. Retrato: `public/images/retrato-profissional-paleta.png`, exemplo gerado e identificado na seção Sobre.
+3. Apoio: `public/images/sessao-acolhimento-paleta.png`, exemplo gerado para a galeria editorial.
+4. Opcional: `public/images/detalhe-consultorio-paleta.png`, exemplo gerado para a galeria editorial.
 
-As três novas imagens seguem a paleta da referência fornecida, mas não representam a profissional nem um consultório real. Todas estão identificadas na interface. Para substituí-las, coloque os arquivos aprovados em `public/images`, atualize `src/data/media.ts` e preserve os textos alternativos.
+As quatro imagens seguem a paleta aprovada — `#F5F1EB`, `#A8B2A1`, `#A66D56`, `#292C27` e `#FFFFFF` — mas não representam a profissional nem um consultório real. Todas estão identificadas na interface. Para substituí-las, coloque os arquivos aprovados em `public/images`, atualize `src/data/media.ts` e preserve os textos alternativos.
 
 ## Formulário e WhatsApp
 
@@ -87,7 +87,7 @@ Essa URL alimenta metadados, `sitemap.xml`, `robots.txt` e dados estruturados. N
 - A seção "Como funciona" transforma rolagem vertical em um trilho horizontal com snap em telas amplas.
 - Listas usam um cursor deslizante e troca de conteúdo com glide e blur.
 - Os canais sociais recebem glow e um feixe de luz nas interações de ponteiro e teclado.
-- Entre 48% e 82% da página, o fundo transita de forma progressiva do marfim para o camelo, acompanhando o scroll com amortecimento.
+- Entre 48% e 82% da página, o fundo transita de forma progressiva do off-white para o verde-sálvia, acompanhando o scroll com amortecimento.
 - O hero tem distorção WebGL sutil e fallback estático com `next/image`.
 - `prefers-reduced-motion` remove rolagem suave, WebGL animado e timelines dependentes de movimento.
 - Navegação, acordeão e formulário são operáveis por teclado, com foco visível.

@@ -29,8 +29,8 @@ const fragmentShader = /* glsl */ `
     float distanceToPointer = distance(vUv, uPointer * 0.16 + 0.5);
     float haze = smoothstep(0.72, 0.06, distanceToPointer);
     float band = sin((vUv.x + vUv.y) * 5.0 + uTime * 0.08) * 0.5 + 0.5;
-    vec3 deep = vec3(0.23, 0.17, 0.13);
-    vec3 soft = vec3(0.64, 0.72, 0.75);
+    vec3 deep = vec3(0.16, 0.17, 0.15);
+    vec3 soft = vec3(0.66, 0.70, 0.63);
     vec3 color = mix(deep, soft, haze * 0.72 + band * 0.08);
     gl_FragColor = vec4(color, 0.34);
   }

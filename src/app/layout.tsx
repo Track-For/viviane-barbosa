@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     description: "Atendimento psicológico online e presencial, com escuta, clareza e acolhimento.",
     images: [
       {
-        url: "/images/consultorio-apoio.png",
+        url: "/images/consultorio-apoio-paleta.png",
         alt: "Ambiente de atendimento psicológico",
       },
     ],
@@ -58,10 +58,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f3eee6" },
-    { media: "(prefers-color-scheme: dark)", color: "#1d1915" },
-  ],
+  themeColor: "#f5f1eb",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -11,8 +11,8 @@
 
 - Direção escolhida: editorial calma, contemporânea e institucional, com assimetria controlada e bastante espaço negativo.
 - Tipografia: Manrope para leitura e DM Mono apenas em microtextos funcionais.
-- A proporção solicitada 70/30/10 foi tratada como peso visual aproximado, não como três áreas geométricas exclusivas: marfim quente domina as superfícies, areia/camelo estrutura os blocos e CTAs, e azul-pó aparece apenas em pontos de respiro e nas imagens. O carvão suave mantém a leitura.
-- A paleta se adapta ao esquema claro ou escuro do sistema, preservando contraste e o mesmo papel semântico das cores.
+- A proporção aprovada é 70/20/10: off-white `#F5F1EB` domina as superfícies, verde-sálvia `#A8B2A1` estrutura blocos de apoio e terracota `#A66D56` marca detalhes e estados. Grafite `#292C27` e branco `#FFFFFF` cumprem funções de contraste, cartões, glass e formulários.
+- A identidade permanece clara independentemente da preferência de cor do sistema para preservar a proporção e os valores exatos aprovados.
 - Não foi criado cursor personalizado. A decisão preserva previsibilidade, acessibilidade e o tom profissional da psicologia.
 
 ## Movimento

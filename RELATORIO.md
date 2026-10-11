@@ -22,7 +22,7 @@ Foi construída uma primeira versão completa do site institucional de Viviane B
 
 ## Sistema visual e motion
 
-- Paleta profissional derivada da referência: marfim, areia/camelo, azul-pó e carvão suave
+- Paleta aprovada em 70/20/10: off-white `#F5F1EB`, verde-sálvia `#A8B2A1` e terracota `#A66D56`, com grafite `#292C27` e branco `#FFFFFF` como apoio
 - Layout editorial assimétrico com tipografia de alta legibilidade
 - Títulos com reveals direcionais alternados por linha
 - Imagem principal com faixa vertical e imagem secundária com cortina descendente

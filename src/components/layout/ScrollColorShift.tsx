@@ -3,26 +3,15 @@
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 
-const lightPalette = {
-  "--page": "#d2b294",
-  "--ink": "#29221d",
-  "--muted": "#68584d",
-  "--surface": "#ead9c8",
-  "--surface-strong": "#bd9879",
-  "--line": "rgb(41 34 29 / 0.16)",
-  "--glass": "rgb(238 224 210 / 0.76)",
-  "--shadow": "rgb(77 55 39 / 0.18)",
-};
-
-const darkPalette = {
-  "--page": "#2c211a",
-  "--ink": "#f3ece3",
-  "--muted": "#c0b1a4",
-  "--surface": "#362820",
-  "--surface-strong": "#4a3629",
-  "--line": "rgb(243 236 227 / 0.14)",
-  "--glass": "rgb(48 35 27 / 0.8)",
-  "--shadow": "rgb(0 0 0 / 0.42)",
+const sagePalette = {
+  "--page": "#a8b2a1",
+  "--ink": "#292c27",
+  "--muted": "rgb(41 44 39 / 0.78)",
+  "--surface": "#f5f1eb",
+  "--surface-strong": "#ffffff",
+  "--line": "rgb(41 44 39 / 0.18)",
+  "--glass": "rgb(245 241 235 / 0.82)",
+  "--shadow": "rgb(41 44 39 / 0.18)",
 };
 
 export function ScrollColorShift() {
@@ -33,12 +22,10 @@ export function ScrollColorShift() {
       const root = document.documentElement;
       const styles = getComputedStyle(root);
       const original = Object.fromEntries(
-        Object.keys(lightPalette).map((property) => [property, styles.getPropertyValue(property).trim()]),
+        Object.keys(sagePalette).map((property) => [property, styles.getPropertyValue(property).trim()]),
       );
-      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const destination = dark ? darkPalette : lightPalette;
 
-      const apply = (palette: Record<string, string>, tone: "base" | "warm") => {
+      const apply = (palette: Record<string, string>, tone: "base" | "sage") => {
         root.dataset.scrollTone = tone;
         gsap.set(root, palette);
       };
@@ -49,7 +36,7 @@ export function ScrollColorShift() {
           start: () => ScrollTrigger.maxScroll(window) * 0.65,
           end: "max",
           invalidateOnRefresh: true,
-          onEnter: () => apply(destination, "warm"),
+          onEnter: () => apply(sagePalette, "sage"),
           onLeaveBack: () => apply(original, "base"),
         });
 
@@ -61,7 +48,7 @@ export function ScrollColorShift() {
       }
 
       const transition = gsap.to(root, {
-        ...destination,
+        ...sagePalette,
         ease: "none",
         overwrite: "auto",
         scrollTrigger: {
@@ -71,7 +58,7 @@ export function ScrollColorShift() {
           scrub: 1.6,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
-            root.dataset.scrollTone = self.progress >= 0.5 ? "warm" : "base";
+            root.dataset.scrollTone = self.progress >= 0.5 ? "sage" : "base";
           },
         },
       });
