@@ -62,11 +62,11 @@ Os dados ainda não confirmados estão marcados entre colchetes. A lista complet
 O projeto respeita o limite de quatro slots:
 
 1. Hero: `public/images/consultorio-apoio.png`, imagem provisória gerada para a apresentação.
-2. Retrato: placeholder `[FOTO DA PROFISSIONAL]` na seção Sobre.
-3. Apoio: reservado como `[IMAGEM 02]`.
-4. Opcional: reservado como `[IMAGEM 03]`.
+2. Retrato: `public/images/retrato-profissional-exemplo.png`, exemplo gerado e identificado na seção Sobre.
+3. Apoio: `public/images/sessao-acolhimento-exemplo.png`, exemplo gerado para a galeria editorial.
+4. Opcional: `public/images/detalhe-consultorio-exemplo.png`, exemplo gerado para a galeria editorial.
 
-Para trocar o hero, coloque o arquivo em `public/images`, atualize `src/data/media.ts` e mantenha uma imagem otimizada como fallback caso seja usado vídeo.
+As três novas imagens seguem a paleta da referência fornecida, mas não representam a profissional nem um consultório real. Todas estão identificadas na interface. Para substituí-las, coloque os arquivos aprovados em `public/images`, atualize `src/data/media.ts` e preserve os textos alternativos.
 
 ## Formulário e WhatsApp
 
@@ -87,7 +87,7 @@ Essa URL alimenta metadados, `sitemap.xml`, `robots.txt` e dados estruturados. N
 - A seção "Como funciona" transforma rolagem vertical em um trilho horizontal com snap em telas amplas.
 - Listas usam um cursor deslizante e troca de conteúdo com glide e blur.
 - Os canais sociais recebem glow e um feixe de luz nas interações de ponteiro e teclado.
-- Aos 65% da página, o fundo transita do verde profundo para uma variação quente da mesma identidade.
+- Entre 48% e 82% da página, o fundo transita de forma progressiva do marfim para o camelo, acompanhando o scroll com amortecimento.
 - O hero tem distorção WebGL sutil e fallback estático com `next/image`.
 - `prefers-reduced-motion` remove rolagem suave, WebGL animado e timelines dependentes de movimento.
 - Navegação, acordeão e formulário são operáveis por teclado, com foco visível.

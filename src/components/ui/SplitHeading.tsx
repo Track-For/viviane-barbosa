@@ -5,7 +5,15 @@ import { useRef } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 
-export function SplitHeading({ children, className = "" }: { children: string; className?: string }) {
+export function SplitHeading({
+  children,
+  className = "",
+  id,
+}: {
+  children: string;
+  className?: string;
+  id?: string;
+}) {
   const ref = useRef<HTMLHeadingElement>(null);
   const reduced = useReducedMotion();
 
@@ -43,7 +51,7 @@ export function SplitHeading({ children, className = "" }: { children: string; c
   );
 
   return (
-    <h2 ref={ref} className={className}>
+    <h2 ref={ref} id={id} className={className}>
       {children}
     </h2>
   );

@@ -11,7 +11,7 @@
 
 - Direção escolhida: editorial calma, contemporânea e institucional, com assimetria controlada e bastante espaço negativo.
 - Tipografia: Manrope para leitura e DM Mono apenas em microtextos funcionais.
-- A proporção solicitada 70/30/10 foi tratada como peso visual aproximado, não como três áreas exclusivas: 70 de base mineral neutra, 30 de verde profundo e eucalipto na estrutura, 10 de terracota nos CTAs, foco e detalhes. O acento pode se sobrepor às superfícies, por isso a indicação não representa uma soma geométrica rígida.
+- A proporção solicitada 70/30/10 foi tratada como peso visual aproximado, não como três áreas geométricas exclusivas: marfim quente domina as superfícies, areia/camelo estrutura os blocos e CTAs, e azul-pó aparece apenas em pontos de respiro e nas imagens. O carvão suave mantém a leitura.
 - A paleta se adapta ao esquema claro ou escuro do sistema, preservando contraste e o mesmo papel semântico das cores.
 - Não foi criado cursor personalizado. A decisão preserva previsibilidade, acessibilidade e o tom profissional da psicologia.
 
@@ -25,7 +25,7 @@
 - O pinning conduz três cartões na horizontal, com snap por etapa para produzir a cadência curta solicitada sem imitar a interface de uma rede social.
 - O padrão do menu de referência foi traduzido para listas editoriais: indicador que desliza entre linhas e conteúdo que troca com deslocamento e blur. A estrutura de menu aninhado não foi copiada por não corresponder ao conteúdo clínico.
 - Os canais de contato no rodapé usam glow, feixe e elevação com a paleta do projeto, em vez das cores comerciais de cada rede.
-- Aos 65% do scroll, as variáveis de superfície transitam do verde profundo para marrom mineral quente. A mudança é reversível ao subir a página.
+- A mudança cromática deixou de ser um gatilho pontual: as variáveis de superfície interpolam continuamente entre 48% e 82% do scroll, com `scrub` amortecido de 1,6 s e retorno progressivo ao subir.
 - Preloader, progresso de página e transições foram mantidos discretos para não competir com o conteúdo.
 
 ## WebGL e mídia
@@ -33,7 +33,7 @@
 - O plano fluido e a distorção da imagem foram adaptados dos padrões conceituais da biblioteca local `trackfor-motion-library`, com velocidade e intensidade reduzidas.
 - A imagem principal sempre existe em `next/image`; o canvas é uma camada progressiva. Falha de WebGL não remove o conteúdo.
 - O DPR do canvas é limitado e o contexto solicita baixo consumo de energia.
-- A imagem de consultório foi gerada apenas para a primeira apresentação. Ela é provisória e está marcada para substituição.
+- As quatro imagens foram geradas para a apresentação e são provisórias. Retrato, ambiente e detalhe aparecem explicitamente identificados como conceituais e devem ser substituídos por assets autorizados.
 - Não foram adicionadas mídias decorativas além do limite definido na missão.
 
 ## Arquitetura e segurança

@@ -28,8 +28,8 @@ Substituir todos os placeholders:
 ## Mídia e marca
 
 - Trocar a imagem provisória do hero por uma foto ou vídeo aprovado e manter fallback otimizado.
-- Inserir o retrato profissional com autorização de uso.
-- Decidir se os slots `[IMAGEM 02]` e `[IMAGEM 03]` realmente agregam valor antes de adicioná-los.
+- Substituir o retrato conceitual por um retrato profissional com autorização de uso.
+- Substituir `[IMAGEM 02]` e `[IMAGEM 03]` por fotografias reais do ambiente, ou aprovar formalmente a permanência das imagens conceituais.
 - Confirmar se a assinatura deve usar apenas "Viviane Barbosa" ou o nome profissional completo.
 
 ## Conteúdo, jurídico e operação

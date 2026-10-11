@@ -1,4 +1,5 @@
-import { MediaPlaceholder } from "@/components/ui/MediaPlaceholder";
+import Image from "next/image";
+
 import { ImageReveal } from "@/components/ui/ImageReveal";
 import { Reveal } from "@/components/ui/Reveal";
 import { SplitHeading } from "@/components/ui/SplitHeading";
@@ -16,9 +17,23 @@ export function About() {
         </div>
 
         <div className="about-portrait">
-          <ImageReveal mode="curtain">
-            <MediaPlaceholder label={media.portrait.label} alt={media.portrait.alt} />
-          </ImageReveal>
+          <figure className="about-portrait__figure">
+            <ImageReveal mode="curtain">
+              <div className="about-portrait__image">
+                <Image
+                  src={media.portrait.src}
+                  alt={media.portrait.alt}
+                  width={media.portrait.width}
+                  height={media.portrait.height}
+                  sizes="(max-width: 900px) 100vw, 42vw"
+                />
+              </div>
+            </ImageReveal>
+            <figcaption className="media-caption">
+              <span>Retrato conceitual gerado por IA</span>
+              <small>Substituir por {media.portrait.replacement} aprovada.</small>
+            </figcaption>
+          </figure>
         </div>
 
         <Reveal className="about-copy" delay={0.08}>
