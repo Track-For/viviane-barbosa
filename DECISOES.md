@@ -1,0 +1,54 @@
+# Decisões de projeto
+
+## Conteúdo e ética
+
+- Nenhuma especialidade, formação, certificação, tempo de experiência, depoimento ou promessa de resultado foi inventada.
+- Dados não fornecidos permanecem em placeholders explícitos e centralizados.
+- A mensagem evita linguagem diagnóstica e promessas de cura. O primeiro contato pede apenas dados operacionais.
+- A página de privacidade é um rascunho identificado e precisa de revisão jurídica antes da publicação.
+
+## Direção visual
+
+- Direção escolhida: editorial calma, contemporânea e institucional, com assimetria controlada e bastante espaço negativo.
+- Tipografia: Manrope para leitura e DM Mono apenas em microtextos funcionais.
+- A proporção solicitada 70/30/10 foi tratada como peso visual aproximado, não como três áreas exclusivas: 70 de base mineral neutra, 30 de verde profundo e eucalipto na estrutura, 10 de terracota nos CTAs, foco e detalhes. O acento pode se sobrepor às superfícies, por isso a indicação não representa uma soma geométrica rígida.
+- A paleta se adapta ao esquema claro ou escuro do sistema, preservando contraste e o mesmo papel semântico das cores.
+- Não foi criado cursor personalizado. A decisão preserva previsibilidade, acessibilidade e o tom profissional da psicologia.
+
+## Movimento
+
+- Títulos de seção são divididos por linha com SplitText. Linhas ímpares entram da direita; linhas pares sobem de baixo para cima.
+- O hero revela a imagem por uma faixa vertical. O retrato usa uma cortina descendente.
+- O movimento usa `transform`, `opacity` e `clip-path`, com disparos únicos e durações moderadas.
+- Lenis é sincronizado ao ticker do GSAP e ao ScrollTrigger. Links internos passam pela mesma instância de rolagem.
+- A narrativa "Como funciona" usa pinning apenas em telas amplas. Em telas menores e com movimento reduzido, vira uma sequência linear.
+- Preloader, progresso de página e transições foram mantidos discretos para não competir com o conteúdo.
+
+## WebGL e mídia
+
+- O plano fluido e a distorção da imagem foram adaptados dos padrões conceituais da biblioteca local `trackfor-motion-library`, com velocidade e intensidade reduzidas.
+- A imagem principal sempre existe em `next/image`; o canvas é uma camada progressiva. Falha de WebGL não remove o conteúdo.
+- O DPR do canvas é limitado e o contexto solicita baixo consumo de energia.
+- A imagem de consultório foi gerada apenas para a primeira apresentação. Ela é provisória e está marcada para substituição.
+- Não foram adicionadas mídias decorativas além do limite definido na missão.
+
+## Arquitetura e segurança
+
+- Next.js foi fixado em `15.5.27` para cumprir a stack solicitada. A versão inicialmente criada pelo ambiente era 16 e foi rebaixada antes da implementação.
+- O pacote Next 15 instalado não inclui o diretório local `node_modules/next/dist/docs`. As APIs usadas foram verificadas contra a documentação oficial da linha 15 e a compilação de produção.
+- Um override fixa PostCSS em `8.5.29`, mantendo Next 15 e eliminando vulnerabilidades nas dependências de produção.
+- O formulário não persiste dados nem declara envio concluído. Com o WhatsApp ausente, informa exatamente o que falta.
+- Sitemap, robots, Open Graph e JSON-LD usam `NEXT_PUBLIC_SITE_URL`, com `https://example.com` apenas como fallback explícito de desenvolvimento.
+- Nenhum GTM, GA4, pixel, Hotjar ou script de rastreamento foi incluído.
+
+## Referência da biblioteca local
+
+Foram adaptados, sem cópia visual direta:
+
+- sincronização Lenis + GSAP;
+- revela editorial por linhas e máscaras;
+- imagem com shader e fallback estático;
+- narrativa fixada por ScrollTrigger;
+- barra de progresso e tratamento de movimento reduzido.
+
+Efeitos mais chamativos da biblioteca, como cursor customizado, trilha de imagens e grandes seções horizontais, foram descartados por não servirem à clareza do atendimento.
