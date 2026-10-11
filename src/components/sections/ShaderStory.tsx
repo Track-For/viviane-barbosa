@@ -60,7 +60,7 @@ export function ShaderStory() {
         timeline
           .fromTo(
             ".shader-story__orb",
-            { scale: 0.62, rotate: -11, autoAlpha: 0.38 },
+            { scale: 0.76, rotate: -7, autoAlpha: 0.26 },
             { scale: 1, rotate: 0, autoAlpha: 1, duration: 0.44, ease: "none" },
             0,
           )
@@ -84,12 +84,12 @@ export function ShaderStory() {
           )
           .to(
             ".shader-story__orb",
-            { scale: 1.12, rotate: 7, xPercent: 4, duration: 0.35, ease: "none" },
+            { scale: 1.045, rotate: 3, xPercent: 2, duration: 0.35, ease: "none" },
             0.65,
           )
           .to(
             ".shader-story__heading",
-            { yPercent: -7, autoAlpha: 0.34, duration: 0.35, ease: "none" },
+            { yPercent: -5, autoAlpha: 0.72, duration: 0.35, ease: "none" },
             0.65,
           );
       });
@@ -131,6 +131,9 @@ export function ShaderStory() {
       <div ref={stage} className="shader-story__stage">
         <div className="shader-story__orb">
           <GlassSdfOrb />
+          <p className="shader-story__orb-caption" aria-hidden="true">
+            acolher <span /> compreender <span /> transformar
+          </p>
         </div>
 
         <div className="site-container shader-story__layout">

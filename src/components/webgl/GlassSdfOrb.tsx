@@ -37,14 +37,16 @@ const fragmentShader = /* glsl */ `
     float pointerEnergy = length(uPointer) * 0.6;
     warped.xz *= rotate2d(uTime * 0.12 + uScroll * 0.08);
     warped.xy *= rotate2d(-uTime * 0.07 + uPointer.x * 0.18);
+    warped *= vec3(0.96, 1.04, 1.0);
 
+    float breath = sin(uTime * 0.46 + uScroll * 0.12) * 0.012 * uMotion;
     float displacement =
       sin(warped.x * 5.4 + uTime * 0.72) *
       sin(warped.y * 6.2 - uTime * 0.48) *
       sin(warped.z * 4.8 + uScroll * 0.34) *
-      (0.055 + pointerEnergy * 0.035) * uMotion;
-    float outer = length(warped) - 0.76 + displacement;
-    float inner = length(warped) - 0.64 + displacement * 0.82;
+      (0.038 + pointerEnergy * 0.025) * uMotion;
+    float outer = length(warped) - (0.75 + breath) + displacement;
+    float inner = length(warped) - (0.685 + breath) + displacement * 0.9;
 
     return max(outer, -inner);
   }
@@ -117,10 +119,10 @@ const fragmentShader = /* glsl */ `
     color += cream * specular * 1.4;
     color = mix(color, graphite, (1.0 - diffuse) * 0.12);
 
-    float edge = smoothstep(0.02, 0.74, fresnel);
+    float edge = smoothstep(0.015, 0.72, fresnel);
     float grain = hash21(gl_FragCoord.xy + fract(uTime) * 71.0) - 0.5;
-    color += grain * 0.014 * uMotion;
-    float alpha = clamp(0.24 + edge * 0.72 + diffuse * 0.14, 0.18, 0.94);
+    color += grain * 0.01 * uMotion;
+    float alpha = clamp(0.035 + edge * 0.58 + specular * 0.18, 0.035, 0.74);
 
     gl_FragColor = vec4(color, alpha);
   }

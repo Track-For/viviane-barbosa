@@ -830,7 +830,7 @@ canvas {
   overflow: hidden;
   border-block: 1px solid rgb(255 255 255 / 0.1);
   background:
-    radial-gradient(circle at 50% 50%, rgb(168 178 161 / 0.2), transparent 34%),
+    radial-gradient(circle at 68% 45%, rgb(168 178 161 / 0.16), transparent 31%),
     linear-gradient(142deg, #20231f 0%, #292c27 52%, #342b27 100%);
   color: var(--page);
 }
@@ -854,15 +854,13 @@ canvas {
 }
 
 .shader-story::after {
-  top: 12%;
-  right: -12rem;
-  width: 28rem;
+  top: 19%;
+  right: 4%;
+  width: min(27vw, 23rem);
   aspect-ratio: 1;
-  border: 1px solid rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.045);
   border-radius: 50%;
-  box-shadow:
-    0 0 0 5rem rgb(255 255 255 / 0.018),
-    0 0 0 11rem rgb(255 255 255 / 0.012);
+  box-shadow: 0 0 0 5rem rgb(255 255 255 / 0.01);
 }
 
 .shader-story__stage {
@@ -1032,12 +1030,56 @@ canvas {
 .shader-story__orb {
   position: absolute;
   z-index: 1;
-  top: 50%;
-  left: 52%;
-  width: min(64vw, 58rem);
+  top: 47%;
+  left: 60%;
+  width: min(46vw, 42rem);
   aspect-ratio: 1;
   pointer-events: none;
   translate: -50% -50%;
+}
+
+.shader-story__orb::before,
+.shader-story__orb::after {
+  position: absolute;
+  border: 1px solid rgb(245 241 235 / 0.1);
+  border-radius: 48% 52% 43% 57% / 55% 46% 54% 45%;
+  content: "";
+}
+
+.shader-story__orb::before {
+  inset: 8%;
+  transform: rotate(17deg);
+}
+
+.shader-story__orb::after {
+  inset: 3% 15%;
+  border-color: rgb(166 109 86 / 0.09);
+  transform: rotate(-28deg);
+}
+
+.shader-story__orb-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 5%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  color: rgb(245 241 235 / 0.5);
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.shader-story__orb-caption span {
+  width: 0.18rem;
+  height: 0.18rem;
+  border-radius: 50%;
+  background: var(--accent-strong);
 }
 
 .sdf-orb,
@@ -1049,17 +1091,17 @@ canvas {
 .sdf-orb__fallback {
   position: absolute;
   inset: 16%;
-  border: 1px solid rgb(255 255 255 / 0.17);
+  border: 1px solid rgb(255 255 255 / 0.12);
   border-radius: 44% 56% 61% 39% / 48% 38% 62% 52%;
   background:
-    radial-gradient(circle at 34% 27%, rgb(255 255 255 / 0.34), transparent 18%),
-    radial-gradient(circle at 60% 70%, rgb(166 109 86 / 0.36), transparent 42%),
-    rgb(168 178 161 / 0.2);
+    radial-gradient(circle at 34% 27%, rgb(255 255 255 / 0.18), transparent 12%),
+    radial-gradient(circle at 50% 50%, transparent 51%, rgb(168 178 161 / 0.08) 64%, rgb(245 241 235 / 0.1) 72%, transparent 76%);
   box-shadow:
-    inset 1.5rem 1rem 3rem rgb(255 255 255 / 0.12),
-    inset -1rem -1.5rem 3rem rgb(41 44 39 / 0.28),
-    0 3rem 8rem rgb(0 0 0 / 0.32);
+    inset 1rem 0.75rem 2rem rgb(255 255 255 / 0.06),
+    inset -0.75rem -1rem 2.5rem rgb(41 44 39 / 0.1),
+    0 2rem 6rem rgb(0 0 0 / 0.16);
   filter: blur(0.2px);
+  opacity: 0.58;
   transform: rotate(-8deg);
 }
 
@@ -2437,10 +2479,10 @@ canvas {
   }
 
   .shader-story__orb {
-    top: 38%;
-    left: 54%;
-    width: min(145vw, 48rem);
-    opacity: 0.74;
+    top: 36%;
+    left: 64%;
+    width: min(86vw, 38rem);
+    opacity: 0.7;
   }
 
   .flow-field {
@@ -2707,8 +2749,15 @@ canvas {
 
   .shader-story__orb {
     top: 33%;
-    left: 60%;
-    width: 165vw;
+    left: 66%;
+    width: min(106vw, 32rem);
+    opacity: 0.62;
+  }
+
+  .shader-story__orb-caption {
+    bottom: 1%;
+    gap: 0.4rem;
+    font-size: 0.45rem;
   }
 
   .media-placeholder {
