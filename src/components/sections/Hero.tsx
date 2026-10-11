@@ -9,10 +9,6 @@ import { media } from "@/data/media";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 
-const FlowFieldBackdrop = dynamic(() => import("@/components/webgl/FlowFieldBackdrop"), {
-  ssr: false,
-});
-
 const DisplacementImage = dynamic(() => import("@/components/webgl/DisplacementImage"), {
   ssr: false,
 });
@@ -62,7 +58,6 @@ export function Hero() {
 
   return (
     <section ref={root} id="inicio" className="hero-section">
-      <FlowFieldBackdrop />
       <div className="site-container hero-grid">
         <div className="hero-copy">
           <p data-hero-eyebrow className="hero-eyebrow">

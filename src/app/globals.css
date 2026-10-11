@@ -24,7 +24,7 @@
   --color-sage: var(--sage);
   --color-surface: var(--surface);
   --color-surface-strong: var(--surface-strong);
-  --font-sans: var(--font-manrope);
+  --font-sans: var(--font-outfit);
   --font-mono: var(--font-dm-mono);
 }
 
@@ -42,7 +42,7 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--ink);
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
@@ -55,7 +55,7 @@ button,
 input,
 textarea,
 select {
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-outfit), sans-serif;
 }
 
 a {
@@ -465,6 +465,21 @@ canvas {
   mix-blend-mode: soft-light;
 }
 
+.cinematic-halo {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 44rem;
+  max-width: 72vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255 255 255 / 0.16), rgb(168 178 161 / 0.045) 38%, transparent 72%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  translate: -50% -50%;
+}
+
 .hero-section {
   position: relative;
   isolation: isolate;
@@ -473,6 +488,9 @@ canvas {
   align-items: center;
   overflow: hidden;
   padding-block: 6rem 2.75rem;
+  background:
+    linear-gradient(115deg, rgb(245 241 235 / 0.76), transparent 48%),
+    radial-gradient(ellipse at 84% 22%, rgb(166 109 86 / 0.1), transparent 32%);
 }
 
 .hero-section::before,
@@ -548,6 +566,10 @@ canvas {
   line-height: 1.02;
   text-shadow: 0 1.2rem 3.5rem rgb(41 44 39 / 0.1);
   text-wrap: balance;
+}
+
+.cinematic-word {
+  display: inline-block;
 }
 
 .hero-intro {
@@ -723,6 +745,72 @@ canvas {
   font-size: 0.72rem;
 }
 
+.cinematic-marquee {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border-block: 1px solid rgb(255 255 255 / 0.11);
+  background:
+    radial-gradient(circle at 8% 50%, rgb(166 109 86 / 0.22), transparent 24%),
+    linear-gradient(100deg, #292c27, color-mix(in srgb, #292c27, #a8b2a1 12%));
+  color: var(--page);
+  box-shadow: 0 1.5rem 4rem rgb(41 44 39 / 0.12);
+}
+
+.cinematic-marquee::before,
+.cinematic-marquee::after {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: min(9vw, 8rem);
+  content: "";
+  pointer-events: none;
+}
+
+.cinematic-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #292c27, transparent);
+}
+
+.cinematic-marquee::after {
+  right: 0;
+  background: linear-gradient(-90deg, color-mix(in srgb, #292c27, #a8b2a1 12%), transparent);
+}
+
+.cinematic-marquee__track {
+  display: flex;
+  width: max-content;
+  padding-block: clamp(1.15rem, 2vw, 1.75rem);
+}
+
+.cinematic-marquee__group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.cinematic-marquee__group > span {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(1.35rem, 3vw, 3rem);
+  padding-right: clamp(1.35rem, 3vw, 3rem);
+  font-size: clamp(1.05rem, 2.15vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cinematic-marquee__group i {
+  width: 0.38rem;
+  height: 0.38rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--accent-strong);
+  box-shadow: 0 0 1.15rem rgb(166 109 86 / 0.72);
+}
+
 .about-section {
   overflow: hidden;
 }
@@ -775,6 +863,7 @@ canvas {
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  transform-origin: center;
 }
 
 .media-caption {
@@ -1223,6 +1312,7 @@ canvas {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform-origin: center;
 }
 
 .editorial-gallery__frame--room img {
@@ -1396,6 +1486,7 @@ canvas {
     radial-gradient(circle at 90% 12%, color-mix(in srgb, var(--accent), transparent 78%), transparent 34%),
     var(--surface);
   box-shadow: 0 1.5rem 4rem color-mix(in srgb, var(--shadow), transparent 22%);
+  transform-style: preserve-3d;
 }
 
 .process-panel::after {
@@ -2063,6 +2154,10 @@ canvas {
     width: 38rem;
   }
 
+  .cinematic-marquee__track {
+    padding-block: 1.1rem;
+  }
+
   .clarity-strip__grid {
     grid-template-columns: 1fr;
   }
@@ -2373,8 +2468,18 @@ canvas {
 
   .displacement-image__canvas,
   .flow-field,
+  .cinematic-halo,
   .scroll-progress {
     display: none;
+  }
+
+  .cinematic-marquee__track {
+    transform: translateX(-8%);
+  }
+
+  .cinematic-word {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .process-section,

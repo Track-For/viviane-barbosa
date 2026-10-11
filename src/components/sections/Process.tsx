@@ -23,7 +23,9 @@ export function Process() {
       }
 
       const distance = () => Math.max(0, track.current!.scrollWidth - viewport.current!.clientWidth);
+      const panels = gsap.utils.toArray<HTMLElement>("[data-process-panel]", track.current);
       gsap.set(progress.current, { scaleX: 0, transformOrigin: "left center" });
+      gsap.set(panels, { transformPerspective: 1200, transformOrigin: "center" });
 
       const timeline = gsap.timeline({
         scrollTrigger: {
@@ -46,6 +48,41 @@ export function Process() {
       timeline
         .to(track.current, { x: () => -distance(), duration: 1, ease: "none" }, 0)
         .to(progress.current, { scaleX: 1, duration: 1, ease: "none" }, 0);
+
+      panels.forEach((panel, index) => {
+        const entrance = Math.min(0.82, index / Math.max(panels.length - 1, 1));
+
+        timeline.fromTo(
+          panel,
+          {
+            scale: index === 0 ? 0.98 : 0.9,
+            rotationY: index === 0 ? 0 : 5,
+            autoAlpha: index === 0 ? 1 : 0.58,
+          },
+          {
+            scale: 1,
+            rotationY: 0,
+            autoAlpha: 1,
+            duration: 0.18,
+            ease: "power2.out",
+          },
+          entrance,
+        );
+
+        if (index < panels.length - 1) {
+          timeline.to(
+            panel,
+            {
+              scale: 0.92,
+              rotationY: -3,
+              autoAlpha: 0.68,
+              duration: 0.2,
+              ease: "power2.inOut",
+            },
+            Math.min(0.8, entrance + 0.24),
+          );
+        }
+      });
     },
     { scope: root, dependencies: [isDesktop, reduced] },
   );

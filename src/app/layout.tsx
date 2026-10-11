@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, DM_Mono } from "next/font/google";
+import { DM_Mono, Outfit } from "next/font/google";
 import type { ReactNode } from "react";
 import { ViewTransitions } from "next-view-transitions";
 
 import { Grain } from "@/components/layout/Grain";
+import { CinematicMotion } from "@/components/layout/CinematicMotion";
 import { Header } from "@/components/layout/Header";
 import { Preloader } from "@/components/layout/Preloader";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
@@ -14,9 +15,9 @@ import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
-const manrope = Manrope({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -71,12 +72,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <ViewTransitions>
-      <html lang="pt-BR" className={`${manrope.variable} ${dmMono.variable}`}>
+      <html lang="pt-BR" className={`${outfit.variable} ${dmMono.variable}`}>
         <body>
           <SmoothScroll>
             <Preloader />
             <ScrollProgress />
             <ScrollColorShift />
+            <CinematicMotion />
             <Header />
             {children}
             <Footer />

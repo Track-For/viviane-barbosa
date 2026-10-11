@@ -2,6 +2,7 @@ import { About } from "@/components/sections/About";
 import { Approach } from "@/components/sections/Approach";
 import { AttendanceModes } from "@/components/sections/AttendanceModes";
 import { ClarityStrip } from "@/components/sections/ClarityStrip";
+import { CinematicMarquee } from "@/components/sections/CinematicMarquee";
 import { Contact } from "@/components/sections/Contact";
 import { EditorialGallery } from "@/components/sections/EditorialGallery";
 import { Faq } from "@/components/sections/Faq";
@@ -28,6 +29,7 @@ export default function HomePage() {
       <main className="overflow-x-clip">
         <Hero />
         <ClarityStrip />
+        <CinematicMarquee />
         <About />
         <FocusAreas />
         <AttendanceModes />
