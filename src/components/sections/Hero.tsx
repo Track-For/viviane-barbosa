@@ -1,0 +1,100 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import { useRef } from "react";
+
+import { ButtonLink } from "@/components/ui/Button";
+import { media } from "@/data/media";
+import { profile } from "@/data/profile";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { gsap, SplitText, useGSAP } from "@/lib/gsap";
+
+const FlowFieldBackdrop = dynamic(() => import("@/components/webgl/FlowFieldBackdrop"), {
+  ssr: false,
+});
+
+const DisplacementImage = dynamic(() => import("@/components/webgl/DisplacementImage"), {
+  ssr: false,
+});
+
+export function Hero() {
+  const root = useRef<HTMLElement>(null);
+  const heading = useRef<HTMLHeadingElement>(null);
+  const reduced = useReducedMotion();
+
+  useGSAP(
+    () => {
+      if (!root.current || !heading.current || reduced) {
+        return;
+      }
+
+      const split = SplitText.create(heading.current, {
+        type: "lines,words",
+        mask: "lines",
+        linesClass: "split-line",
+        autoSplit: true,
+        onSplit(self) {
+          return gsap.from(self.lines, {
+            yPercent: 110,
+            autoAlpha: 0,
+            stagger: 0.1,
+            duration: 0.9,
+            delay: 0.72,
+            ease: "calm",
+          });
+        },
+      });
+      const timeline = gsap.timeline({
+        defaults: { ease: "calm" },
+        delay: 0.55,
+      });
+
+      timeline
+        .from("[data-hero-eyebrow]", { y: 18, autoAlpha: 0, duration: 0.55 })
+        .from("[data-hero-copy]", { y: 22, autoAlpha: 0, duration: 0.65 }, "-=0.12")
+        .from("[data-hero-actions]", { y: 18, autoAlpha: 0, duration: 0.55 }, "-=0.42")
+        .from(
+          "[data-hero-visual]",
+          { clipPath: "inset(0 0 100% 0)", scale: 0.98, duration: 1.15 },
+          "-=0.82",
+        );
+
+      return () => split.revert();
+    },
+    { scope: root, dependencies: [reduced] },
+  );
+
+  return (
+    <section ref={root} id="inicio" className="hero-section">
+      <FlowFieldBackdrop />
+      <div className="site-container hero-grid">
+        <div className="hero-copy">
+          <p data-hero-eyebrow className="hero-eyebrow">
+            Psicologia online e presencial
+          </p>
+          <h1 ref={heading}>Um espaço seguro para o que você sente.</h1>
+          <p data-hero-copy className="hero-intro">
+            Atendimento para {profile.audience}, online e presencial em {profile.city}, com escuta e clareza.
+          </p>
+          <div data-hero-actions className="hero-actions">
+            <ButtonLink href="#contato" showArrow>
+              Agendar conversa
+            </ButtonLink>
+            <ButtonLink href="#atendimento" variant="secondary">
+              Conheça o atendimento
+            </ButtonLink>
+          </div>
+        </div>
+
+        <figure data-hero-visual className="hero-visual">
+          <div className="hero-visual__frame">
+            <DisplacementImage src={media.hero.src} alt={media.hero.alt} />
+          </div>
+          <figcaption>
+            Imagem provisória. Substituir por {media.hero.replacement}.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  );
+}

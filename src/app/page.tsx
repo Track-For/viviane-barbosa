@@ -1,7 +1,13 @@
+import { About } from "@/components/sections/About";
+import { ClarityStrip } from "@/components/sections/ClarityStrip";
+import { Hero } from "@/components/sections/Hero";
+
 export default function HomePage() {
   return (
-    <main className="grid min-h-[100dvh] place-items-center p-6">
-      <p>Fundação do site Viviane Barbosa.</p>
+    <main className="overflow-x-clip">
+      <Hero />
+      <ClarityStrip />
+      <About />
     </main>
   );
 }
