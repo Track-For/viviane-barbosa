@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Mono, Outfit } from "next/font/google";
+import { DM_Mono, Geist } from "next/font/google";
 import type { ReactNode } from "react";
 import { ViewTransitions } from "next-view-transitions";
 
@@ -15,9 +15,9 @@ import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
-const outfit = Outfit({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-geist",
   display: "swap",
 });
 
@@ -72,7 +72,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <ViewTransitions>
-      <html lang="pt-BR" className={`${outfit.variable} ${dmMono.variable}`}>
+      <html lang="pt-BR" className={`${geist.variable} ${dmMono.variable}`}>
         <body>
           <SmoothScroll>
             <Preloader />

@@ -58,6 +58,21 @@ export function Hero() {
 
   return (
     <section ref={root} id="inicio" className="hero-section">
+      <figure data-hero-visual className="hero-visual">
+        <ImageReveal mode="vertical" trigger="load" delay={0.18} className="hero-visual__reveal">
+          <div className="hero-visual__frame">
+            <DisplacementImage
+              src={media.hero.src}
+              alt={media.hero.alt}
+              blurDataURL={media.hero.blurDataURL}
+            />
+          </div>
+        </ImageReveal>
+        <figcaption>
+          Imagem provisória. Substituir por {media.hero.replacement}.
+        </figcaption>
+      </figure>
+
       <div className="site-container hero-grid">
         <div className="hero-copy">
           <p data-hero-eyebrow className="hero-eyebrow">
@@ -77,21 +92,6 @@ export function Hero() {
             </ButtonLink>
           </div>
         </div>
-
-        <figure data-hero-visual className="hero-visual">
-          <ImageReveal mode="vertical" trigger="load" delay={0.18} className="hero-visual__reveal">
-            <div className="hero-visual__frame">
-              <DisplacementImage
-                src={media.hero.src}
-                alt={media.hero.alt}
-                blurDataURL={media.hero.blurDataURL}
-              />
-            </div>
-          </ImageReveal>
-          <figcaption>
-            Imagem provisória. Substituir por {media.hero.replacement}.
-          </figcaption>
-        </figure>
       </div>
     </section>
   );

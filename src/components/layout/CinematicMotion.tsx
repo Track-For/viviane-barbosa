@@ -40,9 +40,9 @@ export function CinematicMotion() {
         .to(
           ".hero-visual__reveal",
           {
-            yPercent: 10,
-            scale: 0.94,
-            rotate: 0.8,
+            yPercent: 6,
+            scale: 1.12,
+            rotate: 0.35,
             ease: "none",
           },
           0,
@@ -50,33 +50,31 @@ export function CinematicMotion() {
         .to(
           ".hero-copy",
           {
-            yPercent: -7,
-            autoAlpha: 0.72,
+            yPercent: -11,
+            autoAlpha: 0.28,
             ease: "none",
           },
           0,
         );
 
       gsap.utils.toArray<HTMLElement>(parallaxMediaSelector).forEach((element, index) => {
-        gsap.fromTo(
-          element,
-          {
-            yPercent: -4,
-            scale: 1.11,
+        const mediaTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: element.closest("figure") ?? element,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.85 + index * 0.12,
+            invalidateOnRefresh: true,
           },
-          {
-            yPercent: 4,
-            scale: 1.025,
-            ease: "none",
-            scrollTrigger: {
-              trigger: element.closest("figure") ?? element,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 0.85 + index * 0.12,
-              invalidateOnRefresh: true,
-            },
-          },
-        );
+        });
+
+        mediaTimeline
+          .fromTo(
+            element,
+            { yPercent: -3, scale: 0.86, opacity: 0.34 },
+            { yPercent: 0, scale: 1, opacity: 1, duration: 0.5, ease: "none" },
+          )
+          .to(element, { yPercent: 5, scale: 1.055, opacity: 0.4, duration: 0.5, ease: "none" });
       });
 
       const galleryTimeline = gsap.timeline({

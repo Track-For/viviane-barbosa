@@ -10,6 +10,7 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { FocusAreas } from "@/components/sections/FocusAreas";
 import { Hero } from "@/components/sections/Hero";
 import { Process } from "@/components/sections/Process";
+import { ShaderStory } from "@/components/sections/ShaderStory";
 import { profile } from "@/data/profile";
 import { getSiteUrl } from "@/lib/site";
 
@@ -32,6 +33,7 @@ export default function HomePage() {
         <CinematicMarquee />
         <About />
         <FocusAreas />
+        <ShaderStory />
         <AttendanceModes />
         <EditorialGallery />
         <Approach />
