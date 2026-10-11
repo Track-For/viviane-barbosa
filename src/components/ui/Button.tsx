@@ -32,7 +32,11 @@ export function ButtonLink({
   return (
     <a ref={ref} className={cn("button-base", variants[variant], className)} {...props}>
       <span>{children}</span>
-      {showArrow ? <ArrowUpRight aria-hidden="true" size={17} strokeWidth={1.6} /> : null}
+      {showArrow ? (
+        <span className="button-arrow" aria-hidden="true">
+          <ArrowUpRight size={15} strokeWidth={1.7} />
+        </span>
+      ) : null}
     </a>
   );
 }

@@ -24,6 +24,8 @@ Foi construída uma primeira versão completa do site institucional de Viviane B
 
 - Paleta aprovada em 70/20/10: off-white `#F5F1EB`, verde-sálvia `#A8B2A1` e terracota `#A66D56`, com grafite `#292C27` e branco `#FFFFFF` como apoio
 - Layout editorial assimétrico com tipografia de alta legibilidade
+- Header flutuante em Liquid Glass com desfoque, refração cromática sutil, borda luminosa e reflexo direcional
+- Profundidade cinematográfica no hero, nas imagens editoriais e no CTA final por meio de luz, vinheta, moldura dupla e sombras em camadas
 - Títulos com reveals direcionais alternados por linha
 - Imagem principal com faixa vertical e imagem secundária com cortina descendente
 - Botões sociais com glow, feixe de luz e estados equivalentes para foco por teclado
@@ -70,6 +72,8 @@ Na compilação final da etapa visual, a página inicial resultou em 49,3 kB de 
 ## Observações de QA
 
 - O hero mantém leitura clara e CTAs visíveis em desktop e móvel.
+- O Liquid Glass preserva contraste no desktop e se mantém compacto com menu morfável no layout móvel.
+- As novas molduras e sombras não alteram as dimensões compactas dos cartões do processo.
 - A imagem continua visível quando o canvas falha ou o usuário reduz movimento.
 - O formulário não envia para um endereço fictício.
 - Os placeholders permanecem visíveis para impedir publicação acidental de informações inventadas.

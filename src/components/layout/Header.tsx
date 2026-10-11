@@ -1,6 +1,5 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
 import { Link } from "next-view-transitions";
 import { useEffect, useState } from "react";
 
@@ -60,7 +59,10 @@ export function Header() {
           aria-controls="mobile-navigation"
           onClick={() => setOpen((current) => !current)}
         >
-          {open ? <X aria-hidden="true" size={20} /> : <Menu aria-hidden="true" size={20} />}
+          <span className={`menu-glyph${open ? " is-open" : ""}`} aria-hidden="true">
+            <span />
+            <span />
+          </span>
         </button>
       </div>
 

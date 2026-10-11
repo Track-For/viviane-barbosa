@@ -13,6 +13,8 @@
 - Tipografia: Manrope para leitura e DM Mono apenas em microtextos funcionais.
 - A proporção aprovada é 70/20/10: off-white `#F5F1EB` domina as superfícies, verde-sálvia `#A8B2A1` estrutura blocos de apoio e terracota `#A66D56` marca detalhes e estados. Grafite `#292C27` e branco `#FFFFFF` cumprem funções de contraste, cartões, glass e formulários.
 - A identidade permanece clara independentemente da preferência de cor do sistema para preservar a proporção e os valores exatos aprovados.
+- O acabamento cinematográfico usa luz radial, vinhetas, molduras duplas e profundidade em sombras sem introduzir novas cores nem reduzir a legibilidade clínica.
+- O header é a única superfície principal com Liquid Glass real: ilha flutuante, desfoque de fundo, saturação, brilho interno e reflexo direcional. Cartões no fluxo mantêm translucidez sem `backdrop-filter` para reduzir custo de composição durante a rolagem.
 - Não foi criado cursor personalizado. A decisão preserva previsibilidade, acessibilidade e o tom profissional da psicologia.
 
 ## Movimento
@@ -25,6 +27,7 @@
 - O pinning conduz três cartões na horizontal, com snap por etapa para produzir a cadência curta solicitada sem imitar a interface de uma rede social.
 - O padrão do menu de referência foi traduzido para listas editoriais: indicador que desliza entre linhas e conteúdo que troca com deslocamento e blur. A estrutura de menu aninhado não foi copiada por não corresponder ao conteúdo clínico.
 - Os canais de contato no rodapé usam glow, feixe e elevação com a paleta do projeto, em vez das cores comerciais de cada rede.
+- O reflexo do header e o ícone do menu usam apenas `transform` e `opacity`; o hambúrguer se converte em fechar sem trocar abruptamente de ícone.
 - A mudança cromática deixou de ser um gatilho pontual: as variáveis de superfície interpolam continuamente entre 48% e 82% do scroll, com `scrub` amortecido de 1,6 s e retorno progressivo ao subir.
 - Preloader, progresso de página e transições foram mantidos discretos para não competir com o conteúdo.
 
