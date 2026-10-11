@@ -1,4 +1,5 @@
 import { MediaPlaceholder } from "@/components/ui/MediaPlaceholder";
+import { ImageReveal } from "@/components/ui/ImageReveal";
 import { Reveal } from "@/components/ui/Reveal";
 import { SplitHeading } from "@/components/ui/SplitHeading";
 import { media } from "@/data/media";
@@ -14,9 +15,11 @@ export function About() {
           </SplitHeading>
         </div>
 
-        <Reveal className="about-portrait">
-          <MediaPlaceholder label={media.portrait.label} alt={media.portrait.alt} />
-        </Reveal>
+        <div className="about-portrait">
+          <ImageReveal mode="curtain">
+            <MediaPlaceholder label={media.portrait.label} alt={media.portrait.alt} />
+          </ImageReveal>
+        </div>
 
         <Reveal className="about-copy" delay={0.08}>
           <p className="about-copy__lead">

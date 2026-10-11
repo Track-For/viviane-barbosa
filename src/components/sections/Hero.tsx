@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useRef } from "react";
 
 import { ButtonLink } from "@/components/ui/Button";
+import { ImageReveal } from "@/components/ui/ImageReveal";
 import { media } from "@/data/media";
 import { profile } from "@/data/profile";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -35,10 +36,11 @@ export function Hero() {
         autoSplit: true,
         onSplit(self) {
           return gsap.from(self.lines, {
-            yPercent: 110,
+            xPercent: (index) => (index % 2 === 0 ? 18 : 0),
+            yPercent: (index) => (index % 2 === 0 ? 0 : 110),
             autoAlpha: 0,
-            stagger: 0.1,
-            duration: 0.9,
+            stagger: 0.12,
+            duration: 0.95,
             delay: 0.72,
             ease: "calm",
           });
@@ -52,12 +54,7 @@ export function Hero() {
       timeline
         .from("[data-hero-eyebrow]", { y: 18, autoAlpha: 0, duration: 0.55 })
         .from("[data-hero-copy]", { y: 22, autoAlpha: 0, duration: 0.65 }, "-=0.12")
-        .from("[data-hero-actions]", { y: 18, autoAlpha: 0, duration: 0.55 }, "-=0.42")
-        .from(
-          "[data-hero-visual]",
-          { clipPath: "inset(0 0 100% 0)", scale: 0.98, duration: 1.15 },
-          "-=0.82",
-        );
+        .from("[data-hero-actions]", { y: 18, autoAlpha: 0, duration: 0.55 }, "-=0.42");
 
       return () => split.revert();
     },
@@ -88,7 +85,9 @@ export function Hero() {
 
         <figure data-hero-visual className="hero-visual">
           <div className="hero-visual__frame">
-            <DisplacementImage src={media.hero.src} alt={media.hero.alt} />
+            <ImageReveal mode="vertical" trigger="load" delay={0.72}>
+              <DisplacementImage src={media.hero.src} alt={media.hero.alt} />
+            </ImageReveal>
           </div>
           <figcaption>
             Imagem provisória. Substituir por {media.hero.replacement}.

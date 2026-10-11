@@ -1,16 +1,17 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import { Link } from "next-view-transitions";
 import { useEffect, useState } from "react";
 
 import { ButtonLink } from "@/components/ui/Button";
 import { profile } from "@/data/profile";
 
 const navigation = [
-  { label: "Sobre", href: "#sobre" },
-  { label: "Atendimento", href: "#atendimento" },
-  { label: "Como funciona", href: "#como-funciona" },
-  { label: "Dúvidas", href: "#duvidas" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Atendimento", href: "/#atendimento" },
+  { label: "Como funciona", href: "/#como-funciona" },
+  { label: "Dúvidas", href: "/#duvidas" },
 ] as const;
 
 export function Header() {
@@ -34,20 +35,20 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="site-header__inner glass-panel">
-        <a className="wordmark" href="#inicio" aria-label="Ir ao início">
+        <Link className="wordmark" href="/#inicio" aria-label="Ir ao início">
           <span>{profile.displayName}</span>
           <small>{profile.profession}</small>
-        </a>
+        </Link>
 
         <nav className="desktop-nav" aria-label="Navegação principal">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href}>
+            <Link key={item.href} href={item.href}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <ButtonLink href="#contato" className="header-cta" showArrow>
+        <ButtonLink href="/#contato" className="header-cta" showArrow>
           Agendar conversa
         </ButtonLink>
 
@@ -66,13 +67,13 @@ export function Header() {
       {open ? (
         <nav id="mobile-navigation" className="mobile-nav glass-panel" aria-label="Navegação móvel">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a href="#contato" onClick={() => setOpen(false)}>
+          <Link href="/#contato" onClick={() => setOpen(false)}>
             Agendar conversa
-          </a>
+          </Link>
         </nav>
       ) : null}
     </header>

@@ -22,10 +22,11 @@ export function SplitHeading({ children, className = "" }: { children: string; c
         autoSplit: true,
         onSplit(self) {
           return gsap.from(self.lines, {
-            yPercent: 108,
+            xPercent: (index) => (index % 2 === 0 ? 18 : 0),
+            yPercent: (index) => (index % 2 === 0 ? 0 : 108),
             autoAlpha: 0,
-            duration: 0.9,
-            stagger: 0.1,
+            duration: 0.95,
+            stagger: 0.12,
             ease: "calm",
             scrollTrigger: {
               trigger: ref.current,
