@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Viviane Barbosa",
   },
   description:
-    "Psicoterapia e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
+    "Psicoterapia online e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
   applicationName: "Viviane Barbosa Psicologia",
   keywords: [
     "psicóloga",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     title: "Viviane Barbosa | Psicóloga",
     description:
-      "Psicoterapia e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
+      "Psicoterapia online e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
     images: [
       {
         url: "/images/consultorio-apoio-paleta.png",

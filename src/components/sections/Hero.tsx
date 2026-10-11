@@ -66,7 +66,7 @@ export function Hero() {
       <div className="site-container hero-grid">
         <div className="hero-copy">
           <p data-hero-eyebrow className="hero-eyebrow">
-            Psicologia online e presencial
+            Psicologia 100% online
           </p>
           <h1 ref={heading}>Um espaço seguro para o que você sente</h1>
           <p data-hero-copy className="hero-intro">

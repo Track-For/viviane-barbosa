@@ -1048,65 +1048,40 @@ canvas {
   box-shadow: 0 2rem 5rem var(--shadow);
 }
 
-.mode-selector {
-  position: relative;
+.online-mode-summary {
   display: grid;
-  align-content: start;
-  padding: 1rem;
+  min-height: 31rem;
+  grid-template-rows: auto 1fr auto;
+  gap: 2rem;
+  padding: clamp(2rem, 4vw, 3.5rem);
   border-right: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 14% 18%, color-mix(in srgb, var(--sage), transparent 42%), transparent 42%),
+    color-mix(in srgb, var(--surface-strong), transparent 26%);
 }
 
-.mode-selector::before {
-  position: absolute;
-  z-index: 0;
-  top: 1rem;
-  right: 1rem;
-  left: 1rem;
-  height: 4.6rem;
-  border-left: 2px solid var(--accent);
-  border-radius: 0.85rem;
-  background: var(--surface-strong);
-  content: "";
-  pointer-events: none;
-  transform: translateY(calc(var(--mode-index, 0) * 4.6rem));
-  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.mode-selector:has(button:nth-of-type(1):hover)::before,
-.mode-selector:has(button:nth-of-type(1):focus-visible)::before {
-  transform: translateY(0);
-}
-
-.mode-selector:has(button:nth-of-type(2):hover)::before,
-.mode-selector:has(button:nth-of-type(2):focus-visible)::before {
-  transform: translateY(4.6rem);
-}
-
-.mode-selector button {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 1rem;
-  min-height: 4.6rem;
-  border: 0;
-  border-radius: 0.85rem;
-  padding: 1rem 1.15rem;
-  background: transparent;
+.online-mode-summary span {
   color: var(--muted);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-align: left;
-  cursor: pointer;
-  transition:
-    background-color 240ms ease,
-    color 240ms ease;
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.mode-selector button.is-active {
-  background: transparent;
-  color: var(--ink);
+.online-mode-summary strong {
+  align-self: center;
+  max-width: 7ch;
+  font-size: clamp(2.2rem, 3.2vw, 3.35rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.online-mode-summary p {
+  max-width: 28ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 .mode-detail {
@@ -1670,49 +1645,6 @@ canvas {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent), transparent 72%);
 }
 
-.radio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.55rem;
-}
-
-.radio-grid label {
-  position: relative;
-  cursor: pointer;
-}
-
-.radio-grid input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-
-.radio-grid span {
-  display: grid;
-  min-height: 3rem;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 0.75rem;
-  color: var(--muted);
-  font-size: 0.7rem;
-  transition:
-    background-color 220ms ease,
-    border-color 220ms ease,
-    color 220ms ease;
-}
-
-.radio-grid input:checked + span {
-  border-color: var(--accent-strong);
-  background: var(--surface-strong);
-  color: var(--ink);
-}
-
-.radio-grid input:focus-visible + span {
-  outline: 2px solid var(--accent-strong);
-  outline-offset: 3px;
-}
-
 .consent-field label {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -2208,26 +2140,10 @@ canvas {
     grid-template-columns: 1fr;
   }
 
-  .mode-selector {
-    grid-template-columns: repeat(2, 1fr);
+  .online-mode-summary {
+    min-height: 16rem;
     border-right: 0;
     border-bottom: 1px solid var(--line);
-  }
-
-  .mode-selector::before {
-    right: auto;
-    width: calc((100% - 2rem) / 2);
-    transform: translateX(calc(var(--mode-index, 0) * 100%));
-  }
-
-  .mode-selector:has(button:nth-of-type(1):hover)::before,
-  .mode-selector:has(button:nth-of-type(1):focus-visible)::before {
-    transform: translateX(0);
-  }
-
-  .mode-selector:has(button:nth-of-type(2):hover)::before,
-  .mode-selector:has(button:nth-of-type(2):focus-visible)::before {
-    transform: translateX(100%);
   }
 
   .mode-detail {
@@ -2386,24 +2302,9 @@ canvas {
     gap: 0.3rem;
   }
 
-  .mode-selector {
-    grid-template-columns: 1fr;
-  }
-
-  .mode-selector::before {
-    right: 1rem;
-    width: auto;
-    transform: translateY(calc(var(--mode-index, 0) * 4.6rem));
-  }
-
-  .mode-selector:has(button:nth-of-type(1):hover)::before,
-  .mode-selector:has(button:nth-of-type(1):focus-visible)::before {
-    transform: translateY(0);
-  }
-
-  .mode-selector:has(button:nth-of-type(2):hover)::before,
-  .mode-selector:has(button:nth-of-type(2):focus-visible)::before {
-    transform: translateY(4.6rem);
+  .online-mode-summary {
+    min-height: 14rem;
+    padding: 1.5rem 1.35rem;
   }
 
   .mode-detail {
@@ -2417,10 +2318,6 @@ canvas {
 
   .approach-card .glass-panel {
     min-height: auto;
-  }
-
-  .radio-grid {
-    grid-template-columns: 1fr;
   }
 
   .final-cta h2 {

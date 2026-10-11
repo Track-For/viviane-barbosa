@@ -1,8 +1,8 @@
 export const faqItems = [
   {
-    question: "O atendimento é online ou presencial?",
+    question: "Como funciona o atendimento online?",
     answer:
-      "As duas modalidades estão disponíveis. O atendimento presencial acontece em [CIDADE], e o online é realizado por videochamada.",
+      "As sessões são realizadas por videochamada. Antes do primeiro encontro, você recebe as orientações para participar em um ambiente reservado.",
   },
   {
     question: "Para quem é o atendimento?",
@@ -17,7 +17,7 @@ export const faqItems = [
   {
     question: "Como saber valores e horários?",
     answer:
-      "Essas informações são compartilhadas no primeiro contato, considerando a modalidade e a disponibilidade de agenda.",
+      "Essas informações são compartilhadas no primeiro contato, considerando a disponibilidade de agenda.",
   },
   {
     question: "Como faço para agendar?",

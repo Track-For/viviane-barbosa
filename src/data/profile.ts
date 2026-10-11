@@ -3,8 +3,6 @@ export const profile = {
   fullName: "[NOME COMPLETO]",
   profession: "Psicóloga",
   crp: "[CRP]",
-  city: "[CIDADE]",
-  address: "[ENDEREÇO DO CONSULTÓRIO]",
   audience: "[PÚBLICO ATENDIDO]",
   approach: "[ABORDAGEM]",
   hours: "[HORÁRIOS]",

@@ -3,7 +3,7 @@ export const media = {
     src: "/images/consultorio-apoio-paleta.webp",
     blurDataURL:
       "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADwBACdASoYAB4APwFysFIrJqSiqAqpYCAJZQC/ODXxq+EyK9VgLPWwqalw/mWa4mAA/uqYNf33UgCkfSfXhvKJXRvokdWq7+Lupt3zX81Bjs4dsG5Tw53XGDAIQPTyUgupQez044smzXyo0DSJ4IHwzqjvfyPpOQ1ONsSssOP8cec03jofK1NPOQFgeKB2qCuoEEhmM0OFvBcA7kMeySmkadPg8oODrnhavVluT5sv4UCgbW/vlWUbwiEAIAAA",
-    alt: "Poltrona em um consultório claro e reservado",
+    alt: "Poltrona em um ambiente claro e reservado",
     replacement: "[VÍDEO 01] ou imagem principal aprovada",
   },
   portrait: {
@@ -21,7 +21,7 @@ export const media = {
       "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwAwCdASoYABAAPwForE6rJaQiMAgBYCAJYgCdABulm/2E9xeMVow0AP6Z40nNrrjISGD69js9GvyfUp3rUCYgVn7OMk14ZT6fGfXsI/Zt+NSbnd96zBUsYR57o6RHEPJsGv7RxRhNRr4h8BG3yBzMkVSSMrOJTQlL2qGwC0p4Aad4AAA=",
     width: 1536,
     height: 1024,
-    alt: "Consultório conceitual com duas poltronas claras voltadas uma para a outra",
+    alt: "Ambiente conceitual claro com duas poltronas",
     replacement: "[IMAGEM 02]",
   },
   optional: {

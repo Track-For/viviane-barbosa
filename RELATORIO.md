@@ -8,10 +8,10 @@ Foi construída uma primeira versão completa do site institucional de Viviane B
 
 - Header fixo com navegação desktop e móvel
 - Hero com proposta direta, dois CTAs e imagem WebGL com fallback
-- Faixa de clareza com modalidade, localização e público
+- Faixa de clareza com atendimento online, privacidade e público
 - Sobre com retrato conceitual identificado
 - Áreas de foco baseadas na bio oficial e Mentoria de Comunicação apresentada como serviço distinto
-- Modalidades online e presencial
+- Atendimento exclusivamente online
 - Galeria editorial com duas imagens conceituais de ambiente e detalhe
 - Abordagem e princípios de atendimento
 - Processo em três etapas com narrativa responsiva

@@ -1,6 +1,6 @@
 # Viviane Barbosa Psicologia
 
-Site institucional de primeira apresentação para atendimento psicológico online e presencial. A experiência foi desenhada para comunicar acolhimento, clareza e profissionalismo, com conversão direta para conversa no WhatsApp quando o número real for configurado.
+Site institucional de primeira apresentação para atendimento psicológico exclusivamente online. A experiência foi desenhada para comunicar acolhimento, clareza e profissionalismo, com conversão direta para conversa no WhatsApp quando o número real for configurado.
 
 ## Stack
 
@@ -47,7 +47,7 @@ npm audit --omit=dev
 | --- | --- |
 | Nome, CRP, cidade, bio, formação e links | `src/data/profile.ts` |
 | Áreas de foco | `src/data/focusAreas.ts` |
-| Modalidades | `src/data/attendance.ts` |
+| Atendimento online | `src/data/attendance.ts` |
 | Etapas do atendimento | `src/data/process.ts` |
 | Perguntas frequentes | `src/data/faq.ts` |
 | Slots e descrições de mídia | `src/data/media.ts` |
@@ -66,11 +66,11 @@ O projeto respeita o limite de quatro slots:
 3. Apoio: `public/images/sessao-acolhimento-paleta.png`, exemplo gerado para a galeria editorial.
 4. Opcional: `public/images/detalhe-consultorio-paleta.png`, exemplo gerado para a galeria editorial.
 
-As quatro imagens seguem a paleta aprovada — `#F5F1EB`, `#A8B2A1`, `#A66D56`, `#292C27` e `#FFFFFF` — mas não representam a profissional nem um consultório real. Todas estão identificadas na interface. Para substituí-las, coloque os arquivos aprovados em `public/images`, atualize `src/data/media.ts` e preserve os textos alternativos.
+As quatro imagens seguem a paleta aprovada — `#F5F1EB`, `#A8B2A1`, `#A66D56`, `#292C27` e `#FFFFFF` — mas não representam a profissional nem um ambiente real. Todas estão identificadas na interface. Para substituí-las, coloque os arquivos aprovados em `public/images`, atualize `src/data/media.ts` e preserve os textos alternativos.
 
 ## Formulário e WhatsApp
 
-O formulário valida nome, contato, modalidade, mensagem e consentimento no navegador. Ele não mantém banco de dados e só abre uma mensagem pré-preenchida no WhatsApp quando `[WHATSAPP]` for substituído por um número real com código do país e DDD. Enquanto isso, exibe um aviso verdadeiro em vez de simular envio.
+O formulário valida nome, contato, mensagem e consentimento no navegador. Ele não mantém banco de dados e só abre uma mensagem pré-preenchida no WhatsApp quando `[WHATSAPP]` for substituído por um número real com código do país e DDD. Enquanto isso, exibe um aviso verdadeiro em vez de simular envio.
 
 ## Variáveis de ambiente
 

@@ -1,4 +1,4 @@
-import { Laptop, MapPin, MessageCircleMore } from "lucide-react";
+import { Laptop, MessageCircleMore, ShieldCheck } from "lucide-react";
 
 import { profile } from "@/data/profile";
 
@@ -10,13 +10,13 @@ const items = [
   },
   {
     icon: Laptop,
-    title: "Sessões online",
+    title: "Sessões 100% online",
     detail: "Por videochamada, onde você estiver",
   },
   {
-    icon: MapPin,
-    title: "Sessões presenciais",
-    detail: `Em ${profile.city}`,
+    icon: ShieldCheck,
+    title: "Ambiente reservado",
+    detail: "Privacidade para conversar com tranquilidade",
   },
 ] as const;
 

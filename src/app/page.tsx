@@ -19,7 +19,7 @@ export default function HomePage() {
     name: profile.displayName,
     url: getSiteUrl(),
     description:
-      "Psicoterapia e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
+      "Psicoterapia online e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
     serviceType: ["Psicoterapia", "Mentoria de Comunicação"],
   };
 

@@ -21,8 +21,8 @@ export default function PrivacyPage() {
         <section>
           <h2>Dados informados por você</h2>
           <p>
-            O formulário solicita nome, meio de contato, preferência de modalidade e uma mensagem opcional. Não é
-            necessário informar detalhes clínicos ou dados sensíveis para pedir um retorno.
+            O formulário solicita nome, meio de contato e uma mensagem opcional. Não é necessário informar detalhes
+            clínicos ou dados sensíveis para pedir um retorno.
           </p>
         </section>
 

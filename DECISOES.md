@@ -4,6 +4,7 @@
 
 - Nenhuma especialidade, formação, certificação, tempo de experiência, depoimento ou promessa de resultado foi inventada. As áreas de foco e a Mentoria de Comunicação foram derivadas apenas da bio oficial fornecida.
 - Dados não fornecidos permanecem em placeholders explícitos e centralizados.
+- Os atendimentos de Viviane são exclusivamente online; referências a modalidade presencial, consultório, endereço e escolha de formato foram removidas.
 - A mensagem evita linguagem diagnóstica e promessas de cura. O primeiro contato pede apenas dados operacionais.
 - A página de privacidade é um rascunho identificado e precisa de revisão jurídica antes da publicação.
 

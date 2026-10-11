@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Clock3, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Clock3, Laptop, Mail, MessageCircle } from "lucide-react";
 import { Link } from "next-view-transitions";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -15,7 +15,6 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Digite seu nome."),
   contact: z.string().trim().min(6, "Informe um WhatsApp ou e-mail válido."),
-  mode: z.enum(["online", "presencial", "a-definir"]),
   message: z.string().trim().max(600, "Use no máximo 600 caracteres."),
   consent: z.boolean().refine(Boolean, "Confirme que leu o aviso de privacidade."),
 });
@@ -33,7 +32,6 @@ export function Contact() {
     defaultValues: {
       name: "",
       contact: "",
-      mode: "a-definir",
       message: "",
       consent: false,
     },
@@ -42,7 +40,7 @@ export function Contact() {
   const submit = async (data: ContactFormData) => {
     const message = [
       `Olá, meu nome é ${data.name}.`,
-      `Tenho interesse em atendimento ${data.mode === "a-definir" ? "e gostaria de entender as modalidades" : data.mode}.`,
+      "Tenho interesse em atendimento psicológico online.",
       `Meu contato: ${data.contact}.`,
       data.message ? `Mensagem: ${data.message}` : "",
     ]
@@ -66,8 +64,7 @@ export function Contact() {
           <SectionLabel>Primeiro contato</SectionLabel>
           <h2>Uma conversa simples pode abrir o caminho.</h2>
           <p>
-            Envie seus dados de contato e sua preferência de modalidade. Nenhuma informação clínica precisa ser
-            compartilhada aqui.
+            Envie seus dados de contato e uma mensagem breve. Nenhuma informação clínica precisa ser compartilhada aqui.
           </p>
 
           <ul className="contact-details">
@@ -80,8 +77,8 @@ export function Contact() {
               <span>{profileLinks.email}</span>
             </li>
             <li>
-              <MapPin aria-hidden="true" size={19} strokeWidth={1.5} />
-              <span>{profile.city}</span>
+              <Laptop aria-hidden="true" size={19} strokeWidth={1.5} />
+              <span>Atendimento 100% online</span>
             </li>
             <li>
               <Clock3 aria-hidden="true" size={19} strokeWidth={1.5} />
@@ -102,24 +99,6 @@ export function Contact() {
             <input id="contact" type="text" autoComplete="email" {...register("contact")} />
             {errors.contact ? <p className="field-error">{errors.contact.message}</p> : null}
           </div>
-
-          <fieldset className="field-group">
-            <legend>Modalidade de preferência</legend>
-            <div className="radio-grid">
-              <label>
-                <input type="radio" value="online" {...register("mode")} />
-                <span>Online</span>
-              </label>
-              <label>
-                <input type="radio" value="presencial" {...register("mode")} />
-                <span>Presencial</span>
-              </label>
-              <label>
-                <input type="radio" value="a-definir" {...register("mode")} />
-                <span>A definir</span>
-              </label>
-            </div>
-          </fieldset>
 
           <div className="field-group">
             <label htmlFor="message">Mensagem breve (opcional)</label>

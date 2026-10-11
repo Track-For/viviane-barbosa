@@ -6,8 +6,6 @@ Substituir todos os placeholders:
 
 - `[NOME COMPLETO]`
 - `[CRP]`
-- `[CIDADE]`
-- `[ENDEREÇO DO CONSULTÓRIO]`
 - `[WHATSAPP]`
 - `[E-MAIL]`
 - `[INSTAGRAM]`
@@ -25,13 +23,13 @@ Substituir todos os placeholders:
 
 - Trocar a imagem provisória do hero por uma foto ou vídeo aprovado e manter fallback otimizado.
 - Substituir o retrato conceitual por um retrato profissional com autorização de uso.
-- Substituir `[IMAGEM 02]` e `[IMAGEM 03]` por fotografias reais do ambiente, ou aprovar formalmente a permanência das imagens conceituais.
+- Substituir `[IMAGEM 02]` e `[IMAGEM 03]` por imagens aprovadas para a comunicação do atendimento online, ou aprovar formalmente a permanência das imagens conceituais.
 - Confirmar se a assinatura deve usar apenas "Viviane Barbosa" ou o nome profissional completo.
 
 ## Conteúdo, jurídico e operação
 
 - Revisar abordagem, público atendido e perguntas frequentes com a profissional.
-- Confirmar atendimento online, endereço, horários, política de cancelamento e fluxo de agendamento.
+- Confirmar horários, política de cancelamento e fluxo de agendamento online.
 - Validar o texto do aviso de privacidade com responsável jurídico e adequar prazos e base legal à operação real.
 - Definir quem recebe e responde as mensagens do WhatsApp.
 - Substituir `NEXT_PUBLIC_SITE_URL=https://example.com` pelo domínio final.
