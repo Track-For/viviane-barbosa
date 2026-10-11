@@ -12,6 +12,7 @@
 - Direção escolhida: editorial calma, contemporânea e institucional, com assimetria controlada e bastante espaço negativo.
 - Tipografia: Manrope para leitura e DM Mono apenas em microtextos funcionais.
 - A escala tipográfica foi reduzida, sobretudo em títulos e chamadas, para refletir a preferência da profissional por letras menores sem comprometer a leitura dos textos corridos.
+- O ritmo vertical entre seções foi compactado para evitar grandes áreas vazias, preservando respiro editorial e leitura clara em desktop e mobile.
 - A proporção aprovada é 70/20/10: off-white `#F5F1EB` domina as superfícies, verde-sálvia `#A8B2A1` estrutura blocos de apoio e terracota `#A66D56` marca detalhes e estados. Grafite `#292C27` e branco `#FFFFFF` cumprem funções de contraste, cartões, glass e formulários.
 - A identidade permanece clara independentemente da preferência de cor do sistema para preservar a proporção e os valores exatos aprovados.
 - O acabamento cinematográfico usa luz radial, vinhetas, molduras duplas e profundidade em sombras sem introduzir novas cores nem reduzir a legibilidade clínica.

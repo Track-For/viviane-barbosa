@@ -94,7 +94,7 @@ canvas {
 
 .section {
   position: relative;
-  padding-block: clamp(6.5rem, 12vw, 10.5rem);
+  padding-block: clamp(3.75rem, 6vw, 5.75rem);
 }
 
 .section-title {
@@ -1763,7 +1763,7 @@ canvas {
 }
 
 .final-cta {
-  padding-block: clamp(6rem, 12vw, 10rem);
+  padding-block: clamp(3.75rem, 6vw, 6rem);
 }
 
 .final-cta__inner {
@@ -2253,7 +2253,7 @@ canvas {
   .process-shell {
     grid-template-rows: auto;
     gap: 3rem;
-    padding-block: 6.5rem;
+    padding-block: 4.5rem;
   }
 
   .process-heading {
@@ -2322,7 +2322,7 @@ canvas {
   }
 
   .section {
-    padding-block: 6.25rem;
+    padding-block: 3.75rem;
   }
 
   .section-title {

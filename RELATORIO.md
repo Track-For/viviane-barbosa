@@ -25,6 +25,7 @@ Foi construída uma primeira versão completa do site institucional de Viviane B
 - Paleta aprovada em 70/20/10: off-white `#F5F1EB`, verde-sálvia `#A8B2A1` e terracota `#A66D56`, com grafite `#292C27` e branco `#FFFFFF` como apoio
 - Layout editorial assimétrico com tipografia de alta legibilidade
 - Escala tipográfica mais contida nos títulos, chamadas, navegação e botões, conforme preferência da profissional
+- Espaçamento vertical entre seções reduzido, incluindo o processo responsivo e a chamada final
 - Header flutuante em Liquid Glass sutil, com desfoque moderado, borda suave e reflexo direcional de baixa intensidade
 - Profundidade cinematográfica no hero, nas imagens editoriais e no CTA final por meio de luz, vinheta, moldura dupla e sombras em camadas
 - Títulos com reveals direcionais alternados por linha
