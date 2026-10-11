@@ -1,17 +1,26 @@
 export const focusAreas = [
   {
-    title: "[ESPECIALIDADE 01]",
+    kind: "Psicoterapia",
+    title: "Ansiedade",
     description:
-      "Inclua aqui uma descrição breve, clara e aprovada sobre as demandas acolhidas neste foco.",
+      "Um espaço para compreender o que está por trás da ansiedade e como ela atravessa suas escolhas e sua rotina.",
   },
   {
-    title: "[ESPECIALIDADE 02]",
+    kind: "Psicoterapia",
+    title: "Insegurança emocional",
     description:
-      "Explique em linguagem simples como esse tema pode aparecer na rotina de quem busca atendimento.",
+      "Um processo para fortalecer sua segurança emocional e construir uma relação mais cuidadosa consigo.",
   },
   {
-    title: "[ESPECIALIDADE 03]",
+    kind: "Psicoterapia",
+    title: "Confusão e desconexão",
     description:
-      "Apresente este foco sem promessas de resultado e sem termos técnicos desnecessários.",
+      "Um caminho para reconhecer padrões e se aproximar de quem você é, respeitando o seu próprio ritmo.",
+  },
+  {
+    kind: "Mentoria de Comunicação",
+    title: "Clareza para se posicionar",
+    description:
+      "Para mulheres que querem se expressar e se posicionar com mais clareza e segurança.",
   },
 ] as const;

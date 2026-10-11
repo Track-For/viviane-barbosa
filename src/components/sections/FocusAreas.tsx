@@ -94,8 +94,8 @@ export function FocusAreas() {
   return (
     <section id="focos" className="section focus-section">
       <div className="site-container">
-        <SectionLabel>Possibilidades de cuidado</SectionLabel>
-        <SplitHeading className="section-title">O que pode ser trabalhado em terapia.</SplitHeading>
+        <SectionLabel>Psicoterapia e mentoria</SectionLabel>
+        <SplitHeading className="section-title">Caminhos para compreender, fortalecer e se expressar.</SplitHeading>
 
         <div className="focus-layout">
           <div
@@ -125,7 +125,7 @@ export function FocusAreas() {
           </div>
 
           <div ref={detail} id="focus-detail" className="focus-detail glass-panel" role="tabpanel">
-            <p data-focus-content>Conteúdo a validar</p>
+            <p data-focus-content>{selected.kind}</p>
             <h3 data-focus-content>{selected.title}</h3>
             <span data-focus-content>{selected.description}</span>
           </div>

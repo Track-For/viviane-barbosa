@@ -10,7 +10,7 @@ Foi construída uma primeira versão completa do site institucional de Viviane B
 - Hero com proposta direta, dois CTAs e imagem WebGL com fallback
 - Faixa de clareza com modalidade, localização e público
 - Sobre com retrato conceitual identificado
-- Áreas de foco sem inventar especialidades
+- Áreas de foco baseadas na bio oficial e Mentoria de Comunicação apresentada como serviço distinto
 - Modalidades online e presencial
 - Galeria editorial com duas imagens conceituais de ambiente e detalhe
 - Abordagem e princípios de atendimento
@@ -24,10 +24,11 @@ Foi construída uma primeira versão completa do site institucional de Viviane B
 
 - Paleta aprovada em 70/20/10: off-white `#F5F1EB`, verde-sálvia `#A8B2A1` e terracota `#A66D56`, com grafite `#292C27` e branco `#FFFFFF` como apoio
 - Layout editorial assimétrico com tipografia de alta legibilidade
-- Header flutuante em Liquid Glass com desfoque, refração cromática sutil, borda luminosa e reflexo direcional
+- Header flutuante em Liquid Glass sutil, com desfoque moderado, borda suave e reflexo direcional de baixa intensidade
 - Profundidade cinematográfica no hero, nas imagens editoriais e no CTA final por meio de luz, vinheta, moldura dupla e sombras em camadas
 - Títulos com reveals direcionais alternados por linha
 - Imagem principal com faixa vertical e imagem secundária com cortina descendente
+- Reveals sincronizados com o carregamento das imagens para que moldura e mídia apareçam como uma peça única
 - Botões sociais com glow, feixe de luz e estados equivalentes para foco por teclado
 - Listas com cursor deslizante e troca direcional com blur
 - Seção de processo em rolagem horizontal com pinning, scrub e snap

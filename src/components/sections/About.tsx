@@ -12,7 +12,7 @@ export function About() {
       <div className="site-container about-grid">
         <div className="about-heading">
           <SplitHeading className="section-title">
-            A escuta começa quando você se sente à vontade.
+            A escuta começa quando você se sente à vontade
           </SplitHeading>
         </div>
 
@@ -38,9 +38,10 @@ export function About() {
 
         <Reveal className="about-copy" delay={0.08}>
           <p className="about-copy__lead">
-            Psicoterapia é um espaço de conversa cuidadosa, construído com respeito à sua história e ao seu tempo.
+            Psicoterapia é um espaço de conversa cuidadosa, construído com respeito à sua história e ao seu tempo
           </p>
           <p>{profile.bio}</p>
+          <p>{profile.mentoringBio}</p>
           <dl className="profile-facts">
             <div>
               <dt>Profissional</dt>

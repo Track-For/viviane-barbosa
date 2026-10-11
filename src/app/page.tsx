@@ -18,8 +18,9 @@ export default function HomePage() {
     "@type": "ProfessionalService",
     name: profile.displayName,
     url: getSiteUrl(),
-    description: "Atendimento psicológico online e presencial.",
-    serviceType: "Psicoterapia",
+    description:
+      "Psicoterapia e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
+    serviceType: ["Psicoterapia", "Mentoria de Comunicação"],
   };
 
   return (

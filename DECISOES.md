@@ -2,7 +2,7 @@
 
 ## Conteúdo e ética
 
-- Nenhuma especialidade, formação, certificação, tempo de experiência, depoimento ou promessa de resultado foi inventada.
+- Nenhuma especialidade, formação, certificação, tempo de experiência, depoimento ou promessa de resultado foi inventada. As áreas de foco e a Mentoria de Comunicação foram derivadas apenas da bio oficial fornecida.
 - Dados não fornecidos permanecem em placeholders explícitos e centralizados.
 - A mensagem evita linguagem diagnóstica e promessas de cura. O primeiro contato pede apenas dados operacionais.
 - A página de privacidade é um rascunho identificado e precisa de revisão jurídica antes da publicação.
@@ -14,13 +14,14 @@
 - A proporção aprovada é 70/20/10: off-white `#F5F1EB` domina as superfícies, verde-sálvia `#A8B2A1` estrutura blocos de apoio e terracota `#A66D56` marca detalhes e estados. Grafite `#292C27` e branco `#FFFFFF` cumprem funções de contraste, cartões, glass e formulários.
 - A identidade permanece clara independentemente da preferência de cor do sistema para preservar a proporção e os valores exatos aprovados.
 - O acabamento cinematográfico usa luz radial, vinhetas, molduras duplas e profundidade em sombras sem introduzir novas cores nem reduzir a legibilidade clínica.
-- O header é a única superfície principal com Liquid Glass real: ilha flutuante, desfoque de fundo, saturação, brilho interno e reflexo direcional. Cartões no fluxo mantêm translucidez sem `backdrop-filter` para reduzir custo de composição durante a rolagem.
+- O header é a única superfície principal com Liquid Glass real: ilha flutuante de baixa opacidade, desfoque moderado, brilho interno e reflexo direcional discreto. Cartões no fluxo mantêm translucidez sem `backdrop-filter` para reduzir custo de composição durante a rolagem.
 - Não foi criado cursor personalizado. A decisão preserva previsibilidade, acessibilidade e o tom profissional da psicologia.
 
 ## Movimento
 
 - Títulos de seção são divididos por linha com SplitText. Linhas ímpares entram da direita; linhas pares sobem de baixo para cima.
 - O hero revela a imagem por uma faixa vertical. O retrato usa uma cortina descendente.
+- Cada reveal aguarda o carregamento e a decodificação da imagem; moldura e mídia entram juntas para evitar quadros vazios durante a animação.
 - O movimento usa `transform`, `opacity` e `clip-path`, com disparos únicos e durações moderadas.
 - Lenis é sincronizado ao ticker do GSAP e ao ScrollTrigger. Links internos passam pela mesma instância de rolagem.
 - A narrativa "Como funciona" usa pinning apenas em telas amplas. Em telas menores e com movimento reduzido, vira uma sequência linear.

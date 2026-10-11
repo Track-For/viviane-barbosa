@@ -14,11 +14,7 @@ Substituir todos os placeholders:
 - `[LINK DE AGENDAMENTO]`
 - `[PÚBLICO ATENDIDO]`
 - `[ABORDAGEM]`
-- `[ESPECIALIDADE 01]`
-- `[ESPECIALIDADE 02]`
-- `[ESPECIALIDADE 03]`
 - `[HORÁRIOS]`
-- `[MINI BIO]`
 - `[FORMAÇÃO]`
 - `[FOTO DA PROFISSIONAL]`
 - `[VÍDEO 01]`
@@ -34,7 +30,7 @@ Substituir todos os placeholders:
 
 ## Conteúdo, jurídico e operação
 
-- Revisar abordagem, público atendido, áreas de foco e perguntas frequentes com a profissional.
+- Revisar abordagem, público atendido e perguntas frequentes com a profissional.
 - Confirmar atendimento online, endereço, horários, política de cancelamento e fluxo de agendamento.
 - Validar o texto do aviso de privacidade com responsável jurídico e adequar prazos e base legal à operação real.
 - Definir quem recebe e responde as mensagens do WhatsApp.

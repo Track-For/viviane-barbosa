@@ -6,7 +6,6 @@ import { useRef } from "react";
 import { ButtonLink } from "@/components/ui/Button";
 import { ImageReveal } from "@/components/ui/ImageReveal";
 import { media } from "@/data/media";
-import { profile } from "@/data/profile";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 
@@ -69,9 +68,10 @@ export function Hero() {
           <p data-hero-eyebrow className="hero-eyebrow">
             Psicologia online e presencial
           </p>
-          <h1 ref={heading}>Um espaço seguro para o que você sente.</h1>
+          <h1 ref={heading}>Um espaço seguro para o que você sente</h1>
           <p data-hero-copy className="hero-intro">
-            Atendimento para {profile.audience}, online e presencial em {profile.city}, com escuta e clareza.
+            Psicoterapia para compreender padrões, fortalecer sua segurança emocional e construir uma vida mais
+            alinhada com quem você é.
           </p>
           <div data-hero-actions className="hero-actions">
             <ButtonLink href="#contato" showArrow>
@@ -84,11 +84,11 @@ export function Hero() {
         </div>
 
         <figure data-hero-visual className="hero-visual">
-          <div className="hero-visual__frame">
-            <ImageReveal mode="vertical" trigger="load" delay={0.72}>
+          <ImageReveal mode="vertical" trigger="load" delay={0.18} className="hero-visual__reveal">
+            <div className="hero-visual__frame">
               <DisplacementImage src={media.hero.src} alt={media.hero.alt} />
-            </ImageReveal>
-          </div>
+            </div>
+          </ImageReveal>
           <figcaption>
             Imagem provisória. Substituir por {media.hero.replacement}.
           </figcaption>

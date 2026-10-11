@@ -8,7 +8,9 @@ export const profile = {
   audience: "[PÚBLICO ATENDIDO]",
   approach: "[ABORDAGEM]",
   hours: "[HORÁRIOS]",
-  bio: "[MINI BIO]",
+  bio: "A psicoterapia pode ajudar você a compreender o que está por trás de padrões que geram ansiedade, insegurança, confusão ou desconexão de si, fortalecer sua segurança emocional e construir uma vida mais alinhada com quem você é.",
+  mentoringBio:
+    "Também ofereço Mentoria de Comunicação para mulheres que querem se expressar e se posicionar com mais clareza e segurança.",
   education: "[FORMAÇÃO]",
 } as const;
 
