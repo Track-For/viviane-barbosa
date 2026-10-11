@@ -7,6 +7,7 @@ import { Grain } from "@/components/layout/Grain";
 import { Header } from "@/components/layout/Header";
 import { Preloader } from "@/components/layout/Preloader";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { ScrollColorShift } from "@/components/layout/ScrollColorShift";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <SmoothScroll>
             <Preloader />
             <ScrollProgress />
+            <ScrollColorShift />
             <Header />
             {children}
             <Footer />

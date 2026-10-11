@@ -1,5 +1,6 @@
 import { Link } from "next-view-transitions";
 
+import { SocialHighlightCards } from "@/components/ui/SocialHighlightCards";
 import { profile, profileLinks } from "@/data/profile";
 
 export function Footer() {
@@ -14,7 +15,7 @@ export function Footer() {
         </div>
         <div className="footer-contact">
           <span>{profileLinks.email}</span>
-          <span>{profileLinks.instagram}</span>
+          <SocialHighlightCards />
         </div>
         <nav aria-label="Links do rodapé">
           <Link href="/privacidade">Privacidade</Link>

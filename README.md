@@ -84,6 +84,10 @@ Essa URL alimenta metadados, `sitemap.xml`, `robots.txt` e dados estruturados. N
 
 - Reveals por linha alternam entrada lateral e vertical.
 - Imagens usam faixa vertical ou cortina descendente.
+- A seção "Como funciona" transforma rolagem vertical em um trilho horizontal com snap em telas amplas.
+- Listas usam um cursor deslizante e troca de conteúdo com glide e blur.
+- Os canais sociais recebem glow e um feixe de luz nas interações de ponteiro e teclado.
+- Aos 65% da página, o fundo transita do verde profundo para uma variação quente da mesma identidade.
 - O hero tem distorção WebGL sutil e fallback estático com `next/image`.
 - `prefers-reduced-motion` remove rolagem suave, WebGL animado e timelines dependentes de movimento.
 - Navegação, acordeão e formulário são operáveis por teclado, com foco visível.

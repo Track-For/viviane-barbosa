@@ -25,6 +25,10 @@ Foi construída uma primeira versão completa do site institucional de Viviane B
 - Layout editorial assimétrico com tipografia de alta legibilidade
 - Títulos com reveals direcionais alternados por linha
 - Imagem principal com faixa vertical e imagem secundária com cortina descendente
+- Botões sociais com glow, feixe de luz e estados equivalentes para foco por teclado
+- Listas com cursor deslizante e troca direcional com blur
+- Seção de processo em rolagem horizontal com pinning, scrub e snap
+- Mudança cromática global ao atingir 65% da rolagem
 - Rolagem Lenis, ScrollTrigger, SplitText, CustomEase e transições de página
 - Fundo fluido e distorção WebGL sutis, com limites de DPR e fallback estático
 - Modo reduzido de movimento e redução de transparência respeitados
@@ -55,6 +59,10 @@ Em 11 de outubro de 2026:
 | Visual móvel 500 x 980 | Aprovado |
 | Movimento reduzido e fallback estático | Aprovado |
 | Navegação interna com Lenis | Aprovado em build de produção |
+| Trilha horizontal desktop | Aprovado, deslocamento validado em 1.352 px |
+| Fallback vertical móvel | Aprovado em 500 x 980 |
+| Mudança de fundo em 65% | Aprovado, com retorno ao subir |
+| Hover e foco das redes sociais | Aprovado |
 
 Na compilação final da etapa visual, a página inicial resultou em 43,7 kB de código específico e 211 kB de carregamento inicial total. As rotas `/`, `/privacidade`, `/robots.txt` e `/sitemap.xml` foram pré-renderizadas.
 

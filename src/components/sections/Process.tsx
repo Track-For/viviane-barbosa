@@ -10,41 +10,42 @@ import { gsap, useGSAP } from "@/lib/gsap";
 
 export function Process() {
   const root = useRef<HTMLElement>(null);
+  const viewport = useRef<HTMLDivElement>(null);
+  const track = useRef<HTMLDivElement>(null);
+  const progress = useRef<HTMLSpanElement>(null);
   const reduced = useReducedMotion();
   const isDesktop = useIsDesktop();
 
   useGSAP(
     () => {
-      if (!root.current || reduced || !isDesktop) {
+      if (!root.current || !viewport.current || !track.current || !progress.current || reduced || !isDesktop) {
         return;
       }
 
-      const panels = gsap.utils.toArray<HTMLElement>("[data-process-panel]", root.current);
-
-      gsap.set(panels.slice(1), { autoAlpha: 0, y: 40 });
+      const distance = () => Math.max(0, track.current!.scrollWidth - viewport.current!.clientWidth);
+      gsap.set(progress.current, { scaleX: 0, transformOrigin: "left center" });
 
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: root.current,
           start: "top top",
-          end: () => `+=${window.innerHeight * 2.3}`,
+          end: () => `+=${distance()}`,
           pin: true,
-          scrub: 1,
+          scrub: 0.8,
+          anticipatePin: 1,
           invalidateOnRefresh: true,
+          snap: {
+            snapTo: 1 / (processSteps.length - 1),
+            duration: { min: 0.18, max: 0.42 },
+            delay: 0.06,
+            ease: "power1.inOut",
+          },
         },
       });
 
-      panels.forEach((panel, index) => {
-        if (index === 0) {
-          timeline.to({}, { duration: 0.6 });
-          return;
-        }
-
-        timeline
-          .to(panels[index - 1], { autoAlpha: 0, y: -30, duration: 0.35 })
-          .to(panel, { autoAlpha: 1, y: 0, duration: 0.45 }, "<0.05")
-          .to({}, { duration: 0.55 });
-      });
+      timeline
+        .to(track.current, { x: () => -distance(), duration: 1, ease: "none" }, 0)
+        .to(progress.current, { scaleX: 1, duration: 1, ease: "none" }, 0);
     },
     { scope: root, dependencies: [isDesktop, reduced] },
   );
@@ -53,17 +54,31 @@ export function Process() {
     <section ref={root} id="como-funciona" className="process-section">
       <div className="site-container process-shell">
         <div className="process-heading">
-          <SectionLabel>Como funciona</SectionLabel>
-          <h2>Do primeiro contato ao início das sessões.</h2>
+          <div>
+            <SectionLabel>Como funciona</SectionLabel>
+            <h2>Do primeiro contato ao início das sessões.</h2>
+          </div>
+          <p>Role para acompanhar cada etapa.</p>
         </div>
-        <div className="process-panels">
-          {processSteps.map((step) => (
-            <article key={step.title} data-process-panel className="process-panel">
-              <span className="process-panel__line" aria-hidden="true" />
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </article>
-          ))}
+
+        <div ref={viewport} className="process-viewport">
+          <div ref={track} className="process-track">
+            {processSteps.map((step, index) => (
+              <article key={step.title} data-process-panel className="process-panel">
+                <div className="process-panel__meta">
+                  <span>Etapa {String(index + 1).padStart(2, "0")}</span>
+                  <span>{String(processSteps.length).padStart(2, "0")}</span>
+                </div>
+                <span className="process-panel__line" aria-hidden="true" />
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="process-progress" aria-hidden="true">
+          <span ref={progress} />
         </div>
       </div>
     </section>

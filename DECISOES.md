@@ -22,6 +22,10 @@
 - O movimento usa `transform`, `opacity` e `clip-path`, com disparos únicos e durações moderadas.
 - Lenis é sincronizado ao ticker do GSAP e ao ScrollTrigger. Links internos passam pela mesma instância de rolagem.
 - A narrativa "Como funciona" usa pinning apenas em telas amplas. Em telas menores e com movimento reduzido, vira uma sequência linear.
+- O pinning conduz três cartões na horizontal, com snap por etapa para produzir a cadência curta solicitada sem imitar a interface de uma rede social.
+- O padrão do menu de referência foi traduzido para listas editoriais: indicador que desliza entre linhas e conteúdo que troca com deslocamento e blur. A estrutura de menu aninhado não foi copiada por não corresponder ao conteúdo clínico.
+- Os canais de contato no rodapé usam glow, feixe e elevação com a paleta do projeto, em vez das cores comerciais de cada rede.
+- Aos 65% do scroll, as variáveis de superfície transitam do verde profundo para marrom mineral quente. A mudança é reversível ao subir a página.
 - Preloader, progresso de página e transições foram mantidos discretos para não competir com o conteúdo.
 
 ## WebGL e mídia

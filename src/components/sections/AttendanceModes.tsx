@@ -1,7 +1,7 @@
 "use client";
 
 import { Laptop, MapPin, MoveUpRight } from "lucide-react";
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 
 import { ButtonLink } from "@/components/ui/Button";
 import { InfoPill } from "@/components/ui/InfoPill";
@@ -27,7 +27,12 @@ export function AttendanceModes() {
         </div>
 
         <div className="attendance-experience">
-          <div className="mode-selector" role="tablist" aria-label="Modalidades de atendimento">
+          <div
+            className="mode-selector"
+            role="tablist"
+            aria-label="Modalidades de atendimento"
+            style={{ "--mode-index": attendanceModes.findIndex((mode) => mode.id === active) } as CSSProperties}
+          >
             {attendanceModes.map((mode) => (
               <button
                 key={mode.id}
@@ -44,7 +49,7 @@ export function AttendanceModes() {
             ))}
           </div>
 
-          <div id="attendance-detail" className="mode-detail" role="tabpanel">
+          <div key={selected.id} id="attendance-detail" className="mode-detail" role="tabpanel">
             <div className="mode-detail__icon">
               <SelectedIcon aria-hidden="true" size={31} strokeWidth={1.25} />
             </div>
