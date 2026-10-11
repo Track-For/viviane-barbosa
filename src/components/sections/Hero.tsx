@@ -86,7 +86,11 @@ export function Hero() {
         <figure data-hero-visual className="hero-visual">
           <ImageReveal mode="vertical" trigger="load" delay={0.18} className="hero-visual__reveal">
             <div className="hero-visual__frame">
-              <DisplacementImage src={media.hero.src} alt={media.hero.alt} />
+              <DisplacementImage
+                src={media.hero.src}
+                alt={media.hero.alt}
+                blurDataURL={media.hero.blurDataURL}
+              />
             </div>
           </ImageReveal>
           <figcaption>

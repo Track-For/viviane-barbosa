@@ -30,6 +30,8 @@ export function EditorialGallery() {
                   alt={media.support.alt}
                   width={media.support.width}
                   height={media.support.height}
+                  placeholder="blur"
+                  blurDataURL={media.support.blurDataURL}
                   sizes="(max-width: 900px) 100vw, 66vw"
                 />
               </div>
@@ -48,6 +50,8 @@ export function EditorialGallery() {
                   alt={media.optional.alt}
                   width={media.optional.width}
                   height={media.optional.height}
+                  placeholder="blur"
+                  blurDataURL={media.optional.blurDataURL}
                   sizes="(max-width: 900px) 100vw, 38vw"
                 />
               </div>

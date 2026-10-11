@@ -25,6 +25,8 @@ export function About() {
                   alt={media.portrait.alt}
                   width={media.portrait.width}
                   height={media.portrait.height}
+                  placeholder="blur"
+                  blurDataURL={media.portrait.blurDataURL}
                   sizes="(max-width: 900px) 100vw, 42vw"
                 />
               </div>

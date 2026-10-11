@@ -114,12 +114,28 @@ class WebGLBoundary extends Component<{ children: ReactNode }, { failed: boolean
   }
 }
 
-export default function DisplacementImage({ src, alt }: { src: string; alt: string }) {
+export default function DisplacementImage({
+  src,
+  alt,
+  blurDataURL,
+}: {
+  src: string;
+  alt: string;
+  blurDataURL: string;
+}) {
   const reducedMotion = useReducedMotion();
 
   return (
     <div className="displacement-image">
-      <Image src={src} alt={alt} fill priority sizes="(max-width: 900px) 100vw, 48vw" />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority
+        placeholder="blur"
+        blurDataURL={blurDataURL}
+        sizes="(max-width: 900px) 100vw, 48vw"
+      />
       <WebGLBoundary>
         <div className="displacement-image__canvas" aria-hidden="true">
           <Canvas

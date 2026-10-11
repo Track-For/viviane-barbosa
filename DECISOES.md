@@ -11,6 +11,7 @@
 
 - Direção escolhida: editorial calma, contemporânea e institucional, com assimetria controlada e bastante espaço negativo.
 - Tipografia: Manrope para leitura e DM Mono apenas em microtextos funcionais.
+- A escala tipográfica foi reduzida, sobretudo em títulos e chamadas, para refletir a preferência da profissional por letras menores sem comprometer a leitura dos textos corridos.
 - A proporção aprovada é 70/20/10: off-white `#F5F1EB` domina as superfícies, verde-sálvia `#A8B2A1` estrutura blocos de apoio e terracota `#A66D56` marca detalhes e estados. Grafite `#292C27` e branco `#FFFFFF` cumprem funções de contraste, cartões, glass e formulários.
 - A identidade permanece clara independentemente da preferência de cor do sistema para preservar a proporção e os valores exatos aprovados.
 - O acabamento cinematográfico usa luz radial, vinhetas, molduras duplas e profundidade em sombras sem introduzir novas cores nem reduzir a legibilidade clínica.
@@ -21,7 +22,7 @@
 
 - Títulos de seção são divididos por linha com SplitText. Linhas ímpares entram da direita; linhas pares sobem de baixo para cima.
 - O hero revela a imagem por uma faixa vertical. O retrato usa uma cortina descendente.
-- Cada reveal aguarda o carregamento e a decodificação da imagem; moldura e mídia entram juntas para evitar quadros vazios durante a animação.
+- Cada reveal começa com um placeholder borrado embutido e troca para o asset final sem quadro vazio; as imagens de apresentação também usam versões WebP muito menores.
 - O movimento usa `transform`, `opacity` e `clip-path`, com disparos únicos e durações moderadas.
 - Lenis é sincronizado ao ticker do GSAP e ao ScrollTrigger. Links internos passam pela mesma instância de rolagem.
 - A narrativa "Como funciona" usa pinning apenas em telas amplas. Em telas menores e com movimento reduzido, vira uma sequência linear.
@@ -35,7 +36,7 @@
 ## WebGL e mídia
 
 - O plano fluido e a distorção da imagem foram adaptados dos padrões conceituais da biblioteca local `trackfor-motion-library`, com velocidade e intensidade reduzidas.
-- A imagem principal sempre existe em `next/image`; o canvas é uma camada progressiva. Falha de WebGL não remove o conteúdo.
+- A imagem principal sempre existe em `next/image`, com placeholder borrado; o canvas é uma camada progressiva e carrega o mesmo WebP otimizado. Falha de WebGL não remove o conteúdo.
 - O DPR do canvas é limitado e o contexto solicita baixo consumo de energia.
 - As quatro imagens foram geradas para a apresentação e são provisórias. Retrato, ambiente e detalhe aparecem explicitamente identificados como conceituais e devem ser substituídos por assets autorizados.
 - Não foram adicionadas mídias decorativas além do limite definido na missão.
