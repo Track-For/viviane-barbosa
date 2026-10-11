@@ -60,7 +60,7 @@ Em 11 de outubro de 2026:
 | Visual móvel 500 x 980 | Aprovado |
 | Movimento reduzido e fallback estático | Aprovado |
 | Navegação interna com Lenis | Aprovado em build de produção |
-| Trilha horizontal desktop | Aprovado, deslocamento validado em 1.352 px |
+| Trilha horizontal desktop | Aprovado, com cards limitados a 42 rem de largura e 24 rem de altura |
 | Fallback vertical móvel | Aprovado em 500 x 980 |
 | Mudança de fundo progressiva | Aprovado em build, com scrub entre 48% e 82% e retorno ao subir |
 | Hover e foco das redes sociais | Aprovado |
