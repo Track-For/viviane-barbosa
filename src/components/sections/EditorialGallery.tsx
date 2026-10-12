@@ -11,12 +11,12 @@ export function EditorialGallery() {
       <div className="site-container">
         <div className="editorial-gallery__header">
           <SplitHeading id="editorial-gallery-title" className="section-title">
-            Um ambiente que ajuda a conversa a encontrar espaço.
+            Um ambiente que ajuda a conversa a encontrar espaço
           </SplitHeading>
           <Reveal className="editorial-gallery__intro">
             <p>
-              Luz natural, conforto e discrição compõem uma atmosfera visual serena — sem excessos e sem clichês
-              clínicos.
+              Luz natural, conforto e discrição compõem uma atmosfera visual serena, sem excessos e sem clichês
+              clínicos
             </p>
           </Reveal>
         </div>

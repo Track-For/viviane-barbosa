@@ -93,9 +93,9 @@ export function Process() {
         <div className="process-heading">
           <div>
             <SectionLabel>Como funciona</SectionLabel>
-            <h2>Do primeiro contato ao início das sessões.</h2>
+            <h2>Do primeiro contato ao início das sessões</h2>
           </div>
-          <p>Role para acompanhar cada etapa.</p>
+          <p>Role para acompanhar cada etapa</p>
         </div>
 
         <div ref={viewport} className="process-viewport">

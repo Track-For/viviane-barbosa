@@ -62,9 +62,9 @@ export function Contact() {
       <div className="site-container contact-layout">
         <div className="contact-copy">
           <SectionLabel>Primeiro contato</SectionLabel>
-          <h2>Uma conversa simples pode abrir o caminho.</h2>
+          <h2>Uma conversa simples pode abrir o caminho</h2>
           <p>
-            Envie seus dados de contato e uma mensagem breve. Nenhuma informação clínica precisa ser compartilhada aqui.
+            Envie seus dados de contato e uma mensagem breve. Nenhuma informação clínica precisa ser compartilhada aqui
           </p>
 
           <ul className="contact-details">

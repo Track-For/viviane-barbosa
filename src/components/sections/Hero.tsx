@@ -81,7 +81,7 @@ export function Hero() {
           <h1 ref={heading}>Um espaço seguro para o que você sente</h1>
           <p data-hero-copy className="hero-intro">
             Psicoterapia para compreender padrões, fortalecer sua segurança emocional e construir uma vida mais
-            alinhada com quem você é.
+            alinhada com quem você é
           </p>
           <div data-hero-actions className="hero-actions">
             <ButtonLink href="#contato" showArrow>

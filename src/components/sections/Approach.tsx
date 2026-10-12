@@ -14,7 +14,7 @@ export function Approach() {
       <div className="site-container approach-layout">
         <div className="approach-copy">
           <InfoPill>{profile.approach}</InfoPill>
-          <SplitHeading className="section-title">Cuidado com método, presença e transparência.</SplitHeading>
+          <SplitHeading className="section-title">Cuidado com método, presença e transparência</SplitHeading>
           <p>
             A abordagem orienta o trabalho clínico. Sua descrição será incluída aqui após a validação profissional,
             em linguagem simples e sem promessas de resultado.

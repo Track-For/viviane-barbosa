@@ -8,8 +8,8 @@ export function Faq() {
     <section id="duvidas" className="section faq-section">
       <div className="site-container faq-layout">
         <div className="faq-heading">
-          <SplitHeading className="section-title">Antes de começar, é natural ter dúvidas.</SplitHeading>
-          <p>As principais informações para você decidir com mais clareza.</p>
+          <SplitHeading className="section-title">Antes de começar, é natural ter dúvidas</SplitHeading>
+          <p>As principais informações para você decidir com mais clareza</p>
         </div>
         <Reveal className="faq-content">
           <Accordion items={faqItems} />
