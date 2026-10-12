@@ -826,7 +826,7 @@ canvas {
 .shader-story {
   position: relative;
   z-index: 1;
-  min-height: 100dvh;
+  min-height: clamp(32rem, 70dvh, 36rem);
   overflow: hidden;
   border-block: 1px solid rgb(255 255 255 / 0.1);
   background:
@@ -863,7 +863,7 @@ canvas {
 
 .shader-story__stage {
   position: relative;
-  min-height: 100dvh;
+  min-height: clamp(32rem, 70dvh, 36rem);
   overflow: hidden;
 }
 
@@ -871,11 +871,11 @@ canvas {
   position: relative;
   z-index: 2;
   display: grid;
-  min-height: 100dvh;
+  min-height: clamp(32rem, 70dvh, 36rem);
   grid-template-columns: minmax(0, 1.28fr) minmax(19rem, 0.58fr);
   align-items: start;
   gap: clamp(3rem, 8vw, 8rem);
-  padding-block: clamp(5.25rem, 7vw, 6.5rem) 3rem;
+  padding-block: clamp(5.25rem, 7vw, 6.5rem) 1.75rem;
 }
 
 .shader-story__heading {
@@ -2416,7 +2416,7 @@ canvas {
     min-height: auto;
     grid-template-columns: 1fr;
     gap: 4rem;
-    padding-block: 5.5rem 3.5rem;
+    padding-block: 5.5rem 2.5rem;
   }
 
   .shader-story__heading h2 {
@@ -2678,7 +2678,7 @@ canvas {
 
   .shader-story__layout {
     gap: 3rem;
-    padding-block: 5rem 3rem;
+    padding-block: 5rem 2.25rem;
   }
 
   .shader-story__heading h2 {

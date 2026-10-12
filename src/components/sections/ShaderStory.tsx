@@ -49,7 +49,7 @@ export function ShaderStory() {
           scrollTrigger: {
             trigger: root.current,
             start: "top top",
-            end: () => `+=${window.innerHeight * 1.35}`,
+            end: () => `+=${window.innerHeight * 0.85}`,
             pin: stage.current,
             scrub: 0.9,
             anticipatePin: 1,
@@ -89,7 +89,7 @@ export function ShaderStory() {
           )
           .to(
             ".shader-story__heading",
-            { yPercent: -5, autoAlpha: 0.72, duration: 0.35, ease: "none" },
+            { yPercent: -3, autoAlpha: 0.82, duration: 0.35, ease: "none" },
             0.65,
           );
       });
