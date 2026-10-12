@@ -10,7 +10,7 @@ import { media } from "@/data/media";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, useGSAP } from "@/lib/gsap";
 
-const GlassSdfOrb = dynamic(() => import("@/components/webgl/GlassSdfOrb"), {
+const TherapeuticLightField = dynamic(() => import("@/components/webgl/TherapeuticLightField"), {
   ssr: false,
 });
 
@@ -59,9 +59,9 @@ export function ShaderStory() {
 
         timeline
           .fromTo(
-            ".shader-story__orb",
-            { scale: 0.76, rotate: -7, autoAlpha: 0.26 },
-            { scale: 1, rotate: 0, autoAlpha: 1, duration: 0.44, ease: "none" },
+            ".shader-story__atmosphere",
+            { scale: 1.05, autoAlpha: 0.28 },
+            { scale: 1, autoAlpha: 0.88, duration: 0.5, ease: "none" },
             0,
           )
           .fromTo(
@@ -83,8 +83,8 @@ export function ShaderStory() {
             0.4,
           )
           .to(
-            ".shader-story__orb",
-            { scale: 1.045, rotate: 3, xPercent: 2, duration: 0.35, ease: "none" },
+            ".shader-story__atmosphere",
+            { scale: 1.025, autoAlpha: 1, duration: 0.35, ease: "none" },
             0.65,
           )
           .to(
@@ -129,11 +129,8 @@ export function ShaderStory() {
   return (
     <section ref={root} className="shader-story" aria-labelledby="shader-story-title">
       <div ref={stage} className="shader-story__stage">
-        <div className="shader-story__orb">
-          <GlassSdfOrb />
-          <p className="shader-story__orb-caption" aria-hidden="true">
-            acolher <span /> compreender <span /> transformar
-          </p>
+        <div className="shader-story__atmosphere" aria-hidden="true">
+          <TherapeuticLightField />
         </div>
 
         <div className="site-container shader-story__layout">

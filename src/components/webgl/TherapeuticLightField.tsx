@@ -26,109 +26,65 @@ const fragmentShader = /* glsl */ `
   uniform vec2 uResolution;
   varying vec2 vUv;
 
-  mat2 rotate2d(float angle) {
-    float sine = sin(angle);
-    float cosine = cos(angle);
-    return mat2(cosine, -sine, sine, cosine);
-  }
-
-  float glassShell(vec3 point) {
-    vec3 warped = point;
-    float pointerEnergy = length(uPointer) * 0.6;
-    warped.xz *= rotate2d(uTime * 0.12 + uScroll * 0.08);
-    warped.xy *= rotate2d(-uTime * 0.07 + uPointer.x * 0.18);
-    warped *= vec3(0.96, 1.04, 1.0);
-
-    float breath = sin(uTime * 0.46 + uScroll * 0.12) * 0.012 * uMotion;
-    float displacement =
-      sin(warped.x * 5.4 + uTime * 0.72) *
-      sin(warped.y * 6.2 - uTime * 0.48) *
-      sin(warped.z * 4.8 + uScroll * 0.34) *
-      (0.038 + pointerEnergy * 0.025) * uMotion;
-    float outer = length(warped) - (0.75 + breath) + displacement;
-    float inner = length(warped) - (0.685 + breath) + displacement * 0.9;
-
-    return max(outer, -inner);
-  }
-
-  vec3 calculateNormal(vec3 point) {
-    const vec2 epsilon = vec2(0.004, 0.0);
-    return normalize(vec3(
-      glassShell(point + epsilon.xyy) - glassShell(point - epsilon.xyy),
-      glassShell(point + epsilon.yxy) - glassShell(point - epsilon.yxy),
-      glassShell(point + epsilon.yyx) - glassShell(point - epsilon.yyx)
-    ));
-  }
-
-  float rayMarch(vec3 origin, vec3 direction, out vec3 hitPoint) {
-    float distanceTraveled = 0.0;
-
-    for (int step = 0; step < 48; step++) {
-      hitPoint = origin + direction * distanceTraveled;
-      float distanceToSurface = glassShell(hitPoint);
-
-      if (abs(distanceToSurface) < 0.0035) {
-        return distanceTraveled;
-      }
-
-      distanceTraveled += max(abs(distanceToSurface) * 0.72, 0.008);
-
-      if (distanceTraveled > 6.0) {
-        break;
-      }
-    }
-
-    return -1.0;
-  }
-
   float hash21(vec2 point) {
     point = fract(point * vec2(123.34, 345.45));
     point += dot(point, point + 34.345);
     return fract(point.x * point.y);
   }
 
+  float noise(vec2 point) {
+    vec2 cell = floor(point);
+    vec2 local = fract(point);
+    local = local * local * (3.0 - 2.0 * local);
+
+    return mix(
+      mix(hash21(cell), hash21(cell + vec2(1.0, 0.0)), local.x),
+      mix(hash21(cell + vec2(0.0, 1.0)), hash21(cell + vec2(1.0)), local.x),
+      local.y
+    );
+  }
+
+  float fbm(vec2 point) {
+    float value = 0.0;
+    float amplitude = 0.52;
+
+    for (int octave = 0; octave < 4; octave++) {
+      value += noise(point) * amplitude;
+      point = point * 2.03 + vec2(2.1, -1.7);
+      amplitude *= 0.48;
+    }
+
+    return value;
+  }
+
   void main() {
     vec2 centered = vUv * 2.0 - 1.0;
     centered.x *= uResolution.x / max(uResolution.y, 1.0);
-
-    vec3 rayOrigin = vec3(0.0, 0.0, 2.55);
-    rayOrigin.xy += uPointer * 0.055 * uMotion;
-    vec3 rayDirection = normalize(vec3(centered, -1.72));
-    vec3 hitPoint = vec3(0.0);
-    float distanceToHit = rayMarch(rayOrigin, rayDirection, hitPoint);
-
-    if (distanceToHit < 0.0) {
-      gl_FragColor = vec4(0.0);
-      return;
-    }
-
-    vec3 normal = calculateNormal(hitPoint);
-    vec3 viewDirection = normalize(rayOrigin - hitPoint);
-    vec3 lightDirection = normalize(vec3(-0.35 + uPointer.x * 0.2, 0.72, 0.58));
-    float fresnel = pow(1.0 - max(dot(normal, viewDirection), 0.0), 3.2);
-    float diffuse = max(dot(normal, lightDirection), 0.0);
-    float specular = pow(max(dot(reflect(-lightDirection, normal), -viewDirection), 0.0), 42.0);
-    float refractionBand = sin((hitPoint.x + hitPoint.y - hitPoint.z) * 8.0 + uTime * 0.34) * 0.5 + 0.5;
+    float motionTime = uTime * 0.07 * uMotion;
+    vec2 pointerShift = uPointer * vec2(0.1, 0.07) * uMotion;
+    float flow = fbm(centered * 1.15 + pointerShift + vec2(motionTime, -motionTime * 0.7));
+    float secondaryFlow = fbm(centered * 2.1 - pointerShift + vec2(-motionTime * 0.6, motionTime));
+    float clarity = smoothstep(-0.85, 0.8, centered.x + (uScroll - 0.5) * 0.5 + flow * 0.34);
+    float veil = exp(-abs(centered.x * 0.72 + centered.y * 0.28 - 0.12 + flow * 0.38) * 3.2);
+    float caustic = pow(max(sin((centered.y + secondaryFlow * 0.34) * 9.0 - uTime * 0.13) * 0.5 + 0.5, 0.0), 7.0);
 
     vec3 cream = vec3(0.961, 0.945, 0.922);
     vec3 sage = vec3(0.659, 0.698, 0.631);
     vec3 terracotta = vec3(0.651, 0.427, 0.337);
-    vec3 graphite = vec3(0.161, 0.173, 0.153);
-    vec3 color = mix(cream, sage, 0.28 + refractionBand * 0.4);
-    color = mix(color, terracotta, fresnel * 0.42);
-    color += cream * specular * 1.4;
-    color = mix(color, graphite, (1.0 - diffuse) * 0.12);
+    vec3 color = mix(sage, cream, clarity * 0.82);
+    color = mix(color, terracotta, caustic * 0.28 + (1.0 - clarity) * 0.06);
+    color += cream * caustic * 0.22;
 
-    float edge = smoothstep(0.015, 0.72, fresnel);
+    float vignette = 1.0 - smoothstep(0.2, 1.35, length(centered * vec2(0.72, 1.0)));
     float grain = hash21(gl_FragCoord.xy + fract(uTime) * 71.0) - 0.5;
-    color += grain * 0.01 * uMotion;
-    float alpha = clamp(0.035 + edge * 0.58 + specular * 0.18, 0.035, 0.74);
+    color += grain * 0.008 * uMotion;
+    float alpha = (0.025 + veil * 0.16 + caustic * 0.075 + clarity * 0.045) * vignette;
 
     gl_FragColor = vec4(color, alpha);
   }
 `;
 
-function SdfPlane({ reducedMotion }: { reducedMotion: boolean }) {
+function LightPlane({ reducedMotion }: { reducedMotion: boolean }) {
   const material = useRef<THREE.ShaderMaterial>(null);
   const pointer = useRef(new THREE.Vector2());
   const scrollTarget = useRef(0);
@@ -150,7 +106,10 @@ function SdfPlane({ reducedMotion }: { reducedMotion: boolean }) {
     }
 
     const updateScroll = () => {
-      scrollTarget.current = window.scrollY / Math.max(window.innerHeight, 1);
+      const section = document.querySelector<HTMLElement>(".shader-story");
+      const sectionTop = section?.offsetTop ?? window.scrollY;
+      const distance = Math.max(window.innerHeight * 1.35, 1);
+      scrollTarget.current = THREE.MathUtils.clamp((window.scrollY - sectionTop) / distance, 0, 1);
     };
 
     updateScroll();
@@ -201,7 +160,7 @@ class ShaderBoundary extends Component<{ children: ReactNode }, { failed: boolea
   }
 
   componentDidCatch() {
-    // The CSS glass form remains as a visual fallback.
+    // The CSS light field remains as a visual fallback.
   }
 
   render() {
@@ -209,7 +168,7 @@ class ShaderBoundary extends Component<{ children: ReactNode }, { failed: boolea
   }
 }
 
-export default function GlassSdfOrb() {
+export default function TherapeuticLightField() {
   const root = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion();
   const [active, setActive] = useState(false);
@@ -231,10 +190,10 @@ export default function GlassSdfOrb() {
   }, [reducedMotion]);
 
   return (
-    <div ref={root} className="sdf-orb">
-      <span className="sdf-orb__fallback" aria-hidden="true" />
+    <div ref={root} className="therapeutic-light">
+      <span className="therapeutic-light__fallback" aria-hidden="true" />
       <ShaderBoundary>
-        <div className="sdf-orb__canvas" aria-hidden="true">
+        <div className="therapeutic-light__canvas" aria-hidden="true">
           <Canvas
             orthographic
             camera={{ position: [0, 0, 2], zoom: 1 }}
@@ -242,7 +201,7 @@ export default function GlassSdfOrb() {
             frameloop={reducedMotion || !active ? "demand" : "always"}
             gl={{ alpha: true, antialias: false, powerPreference: "low-power" }}
           >
-            <SdfPlane reducedMotion={reducedMotion} />
+            <LightPlane reducedMotion={reducedMotion} />
           </Canvas>
         </div>
       </ShaderBoundary>

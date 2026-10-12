@@ -854,13 +854,11 @@ canvas {
 }
 
 .shader-story::after {
-  top: 19%;
-  right: 4%;
-  width: min(27vw, 23rem);
-  aspect-ratio: 1;
-  border: 1px solid rgb(255 255 255 / 0.045);
-  border-radius: 50%;
-  box-shadow: 0 0 0 5rem rgb(255 255 255 / 0.01);
+  top: 12%;
+  right: 7%;
+  bottom: 12%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgb(245 241 235 / 0.12), transparent);
 }
 
 .shader-story__stage {
@@ -1027,85 +1025,38 @@ canvas {
   transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.shader-story__orb {
+.shader-story__atmosphere {
   position: absolute;
   z-index: 1;
-  top: 47%;
-  left: 60%;
-  width: min(46vw, 42rem);
-  aspect-ratio: 1;
+  inset: 0;
   pointer-events: none;
-  translate: -50% -50%;
+  transform-origin: center;
 }
 
-.shader-story__orb::before,
-.shader-story__orb::after {
+.shader-story__atmosphere::before {
   position: absolute;
-  border: 1px solid rgb(245 241 235 / 0.1);
-  border-radius: 48% 52% 43% 57% / 55% 46% 54% 45%;
+  inset: 0;
+  background: linear-gradient(104deg, rgb(32 35 31 / 0.74) 0%, transparent 48%, rgb(245 241 235 / 0.035) 100%);
   content: "";
+  pointer-events: none;
 }
 
-.shader-story__orb::before {
-  inset: 8%;
-  transform: rotate(17deg);
-}
-
-.shader-story__orb::after {
-  inset: 3% 15%;
-  border-color: rgb(166 109 86 / 0.09);
-  transform: rotate(-28deg);
-}
-
-.shader-story__orb-caption {
-  position: absolute;
-  z-index: 2;
-  bottom: 5%;
-  left: 50%;
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin: 0;
-  color: rgb(245 241 235 / 0.5);
-  font-family: var(--font-dm-mono), monospace;
-  font-size: 0.54rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-
-.shader-story__orb-caption span {
-  width: 0.18rem;
-  height: 0.18rem;
-  border-radius: 50%;
-  background: var(--accent-strong);
-}
-
-.sdf-orb,
-.sdf-orb__canvas {
+.therapeutic-light,
+.therapeutic-light__canvas {
   position: absolute;
   inset: 0;
 }
 
-.sdf-orb__fallback {
+.therapeutic-light__fallback {
   position: absolute;
-  inset: 16%;
-  border: 1px solid rgb(255 255 255 / 0.12);
-  border-radius: 44% 56% 61% 39% / 48% 38% 62% 52%;
+  inset: 0;
   background:
-    radial-gradient(circle at 34% 27%, rgb(255 255 255 / 0.18), transparent 12%),
-    radial-gradient(circle at 50% 50%, transparent 51%, rgb(168 178 161 / 0.08) 64%, rgb(245 241 235 / 0.1) 72%, transparent 76%);
-  box-shadow:
-    inset 1rem 0.75rem 2rem rgb(255 255 255 / 0.06),
-    inset -0.75rem -1rem 2.5rem rgb(41 44 39 / 0.1),
-    0 2rem 6rem rgb(0 0 0 / 0.16);
-  filter: blur(0.2px);
-  opacity: 0.58;
-  transform: rotate(-8deg);
+    radial-gradient(ellipse at 76% 38%, rgb(245 241 235 / 0.12), transparent 27%),
+    radial-gradient(ellipse at 64% 74%, rgb(166 109 86 / 0.09), transparent 31%),
+    linear-gradient(104deg, transparent 42%, rgb(168 178 161 / 0.065) 72%, transparent 100%);
 }
 
-.sdf-orb__canvas {
+.therapeutic-light__canvas {
   z-index: 1;
 }
 
@@ -2478,11 +2429,8 @@ canvas {
     margin-left: auto;
   }
 
-  .shader-story__orb {
-    top: 36%;
-    left: 64%;
-    width: min(86vw, 38rem);
-    opacity: 0.7;
+  .shader-story__atmosphere {
+    opacity: 0.76;
   }
 
   .flow-field {
@@ -2747,17 +2695,8 @@ canvas {
     padding: 1.4rem;
   }
 
-  .shader-story__orb {
-    top: 33%;
-    left: 66%;
-    width: min(106vw, 32rem);
+  .shader-story__atmosphere {
     opacity: 0.62;
-  }
-
-  .shader-story__orb-caption {
-    bottom: 1%;
-    gap: 0.4rem;
-    font-size: 0.45rem;
   }
 
   .media-placeholder {
@@ -2866,7 +2805,7 @@ canvas {
   }
 
   .displacement-image__canvas,
-  .sdf-orb__canvas,
+  .therapeutic-light__canvas,
   .flow-field,
   .cinematic-halo,
   .scroll-progress {
@@ -2879,7 +2818,7 @@ canvas {
     min-height: auto;
   }
 
-  .shader-story__orb,
+  .shader-story__atmosphere,
   .shader-story__heading,
   .shader-story__perspective {
     opacity: 1 !important;
