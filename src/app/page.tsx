@@ -35,12 +35,12 @@ export default function HomePage() {
         <FocusAreas />
         <ShaderStory />
         <AttendanceModes />
+        <FinalCta />
         <EditorialGallery />
         <Approach />
         <Process />
         <Faq />
         <Contact />
-        <FinalCta />
       </main>
       <script
         type="application/ld+json"
