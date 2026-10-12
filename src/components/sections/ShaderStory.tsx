@@ -60,13 +60,13 @@ export function ShaderStory() {
         timeline
           .fromTo(
             ".shader-story__atmosphere",
-            { scale: 1.05, autoAlpha: 0.28 },
+            { scale: 1.035, autoAlpha: 0.4 },
             { scale: 1, autoAlpha: 0.88, duration: 0.5, ease: "none" },
             0,
           )
           .fromTo(
             ".shader-story__heading > *",
-            { yPercent: 38, autoAlpha: 0.16 },
+            { yPercent: 18, autoAlpha: 0.55 },
             { yPercent: 0, autoAlpha: 1, stagger: 0.055, duration: 0.28, ease: "none" },
             0.05,
           )
@@ -78,7 +78,7 @@ export function ShaderStory() {
           )
           .fromTo(
             ".shader-story__perspective",
-            { yPercent: 24, autoAlpha: 0.08 },
+            { yPercent: 12, autoAlpha: 0.42 },
             { yPercent: 0, autoAlpha: 1, duration: 0.3, ease: "none" },
             0.4,
           )

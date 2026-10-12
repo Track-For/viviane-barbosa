@@ -873,13 +873,13 @@ canvas {
   display: grid;
   min-height: 100dvh;
   grid-template-columns: minmax(0, 1.28fr) minmax(19rem, 0.58fr);
-  align-items: end;
+  align-items: start;
   gap: clamp(3rem, 8vw, 8rem);
-  padding-block: clamp(8rem, 12vw, 11rem) 4rem;
+  padding-block: clamp(5.25rem, 7vw, 6.5rem) 3rem;
 }
 
 .shader-story__heading {
-  align-self: center;
+  align-self: start;
 }
 
 .shader-story__heading > p {
@@ -2416,7 +2416,7 @@ canvas {
     min-height: auto;
     grid-template-columns: 1fr;
     gap: 4rem;
-    padding-block: 7rem 4rem;
+    padding-block: 5.5rem 3.5rem;
   }
 
   .shader-story__heading h2 {
@@ -2678,7 +2678,7 @@ canvas {
 
   .shader-story__layout {
     gap: 3rem;
-    padding-block: 6.5rem 3rem;
+    padding-block: 5rem 3rem;
   }
 
   .shader-story__heading h2 {
