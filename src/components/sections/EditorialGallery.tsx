@@ -22,43 +22,60 @@ export function EditorialGallery() {
         </div>
 
         <div className="editorial-gallery__grid">
-          <figure className="editorial-gallery__room">
-            <ImageReveal mode="vertical">
-              <div className="editorial-gallery__frame editorial-gallery__frame--room">
+          <figure className="editorial-gallery__item editorial-gallery__item--left">
+            <ImageReveal mode="curtain" delay={0.08}>
+              <div className="editorial-gallery__frame editorial-gallery__frame--side">
                 <Image
-                  src={media.support.src}
-                  alt={media.support.alt}
-                  width={media.support.width}
-                  height={media.support.height}
+                  src={media.optional.src}
+                  alt={media.optional.alt}
+                  fill
                   placeholder="blur"
-                  blurDataURL={media.support.blurDataURL}
-                  sizes="(max-width: 900px) 100vw, 66vw"
+                  blurDataURL={media.optional.blurDataURL}
+                  sizes="(max-width: 900px) 100vw, 29vw"
                 />
               </div>
             </ImageReveal>
-            <figcaption className="media-caption">
+            <figcaption className="media-caption editorial-gallery__caption">
+              <span>Tempo para elaborar</span>
+              <small>Imagem conceitual gerada por IA — substituir por {media.optional.replacement}.</small>
+            </figcaption>
+          </figure>
+
+          <figure className="editorial-gallery__item editorial-gallery__item--center">
+            <ImageReveal mode="vertical">
+              <div className="editorial-gallery__frame editorial-gallery__frame--center">
+                <Image
+                  src={media.support.src}
+                  alt={media.support.alt}
+                  fill
+                  placeholder="blur"
+                  blurDataURL={media.support.blurDataURL}
+                  sizes="(max-width: 900px) 100vw, 44vw"
+                />
+              </div>
+            </ImageReveal>
+            <figcaption className="media-caption editorial-gallery__caption">
               <span>Presença e conforto</span>
               <small>Imagem conceitual gerada por IA — substituir por {media.support.replacement}.</small>
             </figcaption>
           </figure>
 
-          <figure className="editorial-gallery__detail">
-            <ImageReveal mode="curtain" delay={0.08}>
-              <div className="editorial-gallery__frame editorial-gallery__frame--detail">
+          <figure className="editorial-gallery__item editorial-gallery__item--right">
+            <ImageReveal mode="vertical" delay={0.14}>
+              <div className="editorial-gallery__frame editorial-gallery__frame--side">
                 <Image
-                  src={media.optional.src}
-                  alt={media.optional.alt}
-                  width={media.optional.width}
-                  height={media.optional.height}
+                  src={media.hero.src}
+                  alt={media.hero.alt}
+                  fill
                   placeholder="blur"
-                  blurDataURL={media.optional.blurDataURL}
-                  sizes="(max-width: 900px) 100vw, 38vw"
+                  blurDataURL={media.hero.blurDataURL}
+                  sizes="(max-width: 900px) 100vw, 29vw"
                 />
               </div>
             </ImageReveal>
-            <figcaption className="media-caption">
-              <span>Tempo para elaborar</span>
-              <small>Imagem conceitual gerada por IA — substituir por {media.optional.replacement}.</small>
+            <figcaption className="media-caption editorial-gallery__caption">
+              <span>Um espaço reservado</span>
+              <small>Imagem conceitual gerada por IA — substituir por {media.hero.replacement}.</small>
             </figcaption>
           </figure>
         </div>

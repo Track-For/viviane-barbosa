@@ -3,10 +3,7 @@
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 
-const parallaxMediaSelector = [
-  ".about-portrait__image img",
-  ".editorial-gallery__frame img",
-].join(", ");
+const parallaxMediaSelector = ".about-portrait__image img";
 
 const tiltCardSelector = [
   ".focus-detail",
@@ -77,29 +74,43 @@ export function CinematicMotion() {
           .to(element, { yPercent: 5, scale: 1.055, opacity: 0.4, duration: 0.5, ease: "none" });
       });
 
+      const galleryItems = gsap.utils.toArray<HTMLElement>(".editorial-gallery__item");
+      const setGalleryWillChange = () => gsap.set(galleryItems, { willChange: "transform" });
+      const clearGalleryWillChange = () => gsap.set(galleryItems, { clearProps: "willChange" });
       const galleryTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: ".editorial-gallery__grid",
-          start: "top 88%",
-          end: "bottom 24%",
-          scrub: 1,
+          start: "top 92%",
+          end: "bottom 18%",
+          scrub: 0.72,
           invalidateOnRefresh: true,
+          onEnter: setGalleryWillChange,
+          onEnterBack: setGalleryWillChange,
+          onLeave: clearGalleryWillChange,
+          onLeaveBack: clearGalleryWillChange,
         },
       });
 
       galleryTimeline
         .fromTo(
-          ".editorial-gallery__room",
-          { xPercent: -8, rotate: -1.5 },
-          { xPercent: 0, rotate: 0, ease: "none" },
+          ".editorial-gallery__item--left",
+          { scale: 0.72, yPercent: 16 },
+          { scale: 0.96, yPercent: 0, force3D: true, ease: "none" },
           0,
         )
         .fromTo(
-          ".editorial-gallery__detail",
-          { xPercent: 11, yPercent: 12, rotate: 2.2 },
-          { xPercent: 0, yPercent: 0, rotate: 0, ease: "none" },
+          ".editorial-gallery__item--center",
+          { scale: 0.78, yPercent: 8 },
+          { scale: 1, yPercent: 0, force3D: true, ease: "none" },
+          0,
+        )
+        .fromTo(
+          ".editorial-gallery__item--right",
+          { scale: 0.7, yPercent: 18 },
+          { scale: 0.94, yPercent: 0, force3D: true, ease: "none" },
           0,
         );
+      cleanups.push(clearGalleryWillChange);
 
       [".about-copy__lead", ".final-cta h2"].forEach((selector, index) => {
         const element = document.querySelector<HTMLElement>(selector);
