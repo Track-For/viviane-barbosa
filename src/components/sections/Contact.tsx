@@ -40,7 +40,7 @@ export function Contact() {
   const submit = async (data: ContactFormData) => {
     const message = [
       `Olá, meu nome é ${data.name}.`,
-      "Tenho interesse em atendimento psicológico online.",
+      "Tenho interesse em psicoterapia ou mentoria de comunicação.",
       `Meu contato: ${data.contact}.`,
       data.message ? `Mensagem: ${data.message}` : "",
     ]
@@ -62,9 +62,9 @@ export function Contact() {
       <div className="site-container contact-layout">
         <div className="contact-copy">
           <SectionLabel>Primeiro contato</SectionLabel>
-          <h2>Uma conversa simples pode abrir o caminho</h2>
+          <h2>Conte onde você está e o que procura</h2>
           <p>
-            Envie seus dados de contato e uma mensagem breve. Nenhuma informação clínica precisa ser compartilhada aqui
+            Informe seu país, fuso horário e se busca psicoterapia ou mentoria. Nenhuma informação clínica precisa ser compartilhada aqui
           </p>
 
           <ul className="contact-details">
@@ -78,7 +78,7 @@ export function Contact() {
             </li>
             <li>
               <Laptop aria-hidden="true" size={19} strokeWidth={1.5} />
-              <span>Atendimento 100% online</span>
+              <span>Encontros em português, onde você estiver</span>
             </li>
             <li>
               <Clock3 aria-hidden="true" size={19} strokeWidth={1.5} />

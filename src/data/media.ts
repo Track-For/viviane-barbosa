@@ -1,9 +1,9 @@
 export const media = {
   hero: {
-    src: "/images/consultorio-diva-paleta.webp",
+    src: "/images/consultorio-diva-mar-paleta.webp",
     blurDataURL:
-      "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAACwBQCdASoYAB4APt1irE8opaSiKAqpEBuJZQDCgDScFm2kiqkUFMdLtKAp7W/Grb+c59ZbcyAA/up6opNedgQddHMYqq5k4pNZEy9P6coMg2wwsbCrLGPqNuZQHYK/RqQyIOxtKHp5xCIxUro+d/ZPbVMGsLHJES7V+1uI5URB8mZ/hbKc1iTaOjkAH6/zbX0DBMcM/p8VuATr5LVHKsRVdoBguBFeMRiL+ntBobkAhJiPKYULW+Ydyxvax4wLeSKCpgo4lHhjIAw2IVSgAA==",
-    alt: "Divã de psicoterapia em um ambiente claro, sereno e reservado",
+      "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAwBQCdASoYAB4APt1gq08opSQiKAqpEBuJYwC06CtheTkregot5WmV8ZLwfUbEaj3pYAD+6pg8xkj2zQBQ8oXJzVOMQqxwutV+0o4hyc6074L2N55nERE5Mfa/Gohnx+q+LxYrk7ksAIPHPcUAuVtMYwceV6w3CrQO1/hMysSaUP61WgCrVH7Bhx8aCjHRqlcSih+n7rjyqwrJVSvu/oCc3A8MyZSAPwpuQkxVl70sNr3m5jci+5Ut64/vwmirS+JO/JaYBMwlTRHYx8AAAA=",
+    alt: "Divã de psicoterapia em um ambiente sereno com vista para o mar",
     replacement: "[VÍDEO 01] ou imagem principal aprovada",
   },
   portrait: {
@@ -16,21 +16,21 @@ export const media = {
     replacement: "[FOTO DA PROFISSIONAL]",
   },
   support: {
-    src: "/images/sessao-acolhimento-paleta.webp",
+    src: "/images/sessao-acolhimento-mar-paleta.webp",
     blurDataURL:
-      "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwAwCdASoYABAAPwForE6rJaQiMAgBYCAJYgCdABulm/2E9xeMVow0AP6Z40nNrrjISGD69js9GvyfUp3rUCYgVn7OMk14ZT6fGfXsI/Zt+NSbnd96zBUsYR57o6RHEPJsGv7RxRhNRr4h8BG3yBzMkVSSMrOJTQlL2qGwC0p4Aad4AAA=",
+      "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBACdASoYABIAPt1iqk+opSOiKAqpEBuJQBadAeyGr1IRy97hQdFyWucuAAD+65iubPPzu1edR0CsuAmkUoix2via4lPbp0unzdqvNE88/aX6Au3rO9hp2vOCqBa4Rr2CIJKq+a64qHbTGZhMJVGwBuJq6nDEZg/0sUN84caHN17Ygd7/4Wl+Q3KjyjDp0DO8CR4/rlDz616KmeaPEnfIDmmSgAAA=",
     width: 1536,
     height: 1024,
-    alt: "Ambiente conceitual claro com duas poltronas",
+    alt: "Ambiente acolhedor com duas poltronas e vista suave para o mar",
     replacement: "[IMAGEM 02]",
   },
   optional: {
-    src: "/images/detalhe-consultorio-paleta.webp",
+    src: "/images/detalhe-consultorio-mar-paleta.webp",
     blurDataURL:
-      "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADwBACdASoYABIAPwF2s1OrJySiqAgBYCAJYgC06AisypNRtqYOHiD4uel1ZAGmq4AA/mVaWfY2myx9lYYWmR6YEYo9IHw9PlpLUoDPKE5HKU30wYmo4Os3wtTHE8uyKsMj213xffKcn6S//RWRg+h/GS6/vgsTQig88sWoWJCXzmTvewshyREzpX1dHiPpcfkG9Mf7xCZvf97fpF2pQ8vblV8wPh4pwA16XQ0VShq2E6lZquFmL1DGXxrOO3CiaZiTeAAA",
+      "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAADQBQCdASoYABIAPt1mp1AopaMiqAqpEBuJZACdMw8GAZ6eS8n0ehKqAw8Ru3TFZK1ZBvybEuQAAP61nBPCi3YvEFuhLyJa0AJsUHf8z1SyIoFJ1Lx5aiOlHaDm4IwU1YyVNGegnUtprlY8Sx2jZ/wPlWkMIQgK3btKhgF4d+qFdKiR/nsK4B2turrkAK5mnq6c9/ZyYdnsfYpN8uzGpcvEZAaPhXmy4l6gTEsK8IKPCsPpTdY+fSnFYCeZLda40cbyBzfUbXK4AtSC0FD78MOVmRWwmAMOHn4ADmNoR0AAAA==",
     width: 1448,
     height: 1086,
-    alt: "Caderno aberto, caneta e xícara em uma mesa de madeira clara",
+    alt: "Caderno aberto, caneta e xícara amadeirada sobre pires verde-sálvia",
     replacement: "[IMAGEM 03]",
   },
 } as const;

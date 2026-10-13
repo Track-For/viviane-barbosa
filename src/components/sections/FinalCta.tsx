@@ -4,9 +4,9 @@ export function FinalCta() {
   return (
     <section className="final-cta">
       <div className="site-container final-cta__inner">
-        <h2>Quando fizer sentido, o primeiro passo pode ser simples</h2>
+        <h2>Você não precisa esperar ficar insustentável para pedir apoio</h2>
         <ButtonLink href="#contato" showArrow>
-          Agendar conversa
+          Conversar com Viviane
         </ButtonLink>
       </div>
     </section>

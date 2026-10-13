@@ -1,27 +1,27 @@
 export const faqItems = [
   {
-    question: "Como funciona o atendimento online?",
+    question: "Como funcionam os encontros para quem vive fora do Brasil?",
     answer:
-      "As sessões são realizadas por videochamada. Antes do primeiro encontro, você recebe as orientações para participar em um ambiente reservado",
+      "Os encontros acontecem por videochamada, em português. O fuso horário e a disponibilidade são alinhados no primeiro contato",
   },
   {
-    question: "Para quem é o atendimento?",
+    question: "Para quem é a psicoterapia?",
     answer:
-      "O público atendido será apresentado aqui após a confirmação: [PÚBLICO ATENDIDO]",
+      "Para brasileiras que vivem fora do país e enfrentam solidão, crises de ansiedade, dificuldade de pertencimento ou o desgaste de sustentar uma persona para dar conta de tudo",
   },
   {
-    question: "Qual é a abordagem utilizada?",
+    question: "O que é a crise do guerreiro?",
     answer:
-      "A abordagem profissional será detalhada aqui após validação: [ABORDAGEM]",
+      "É quando a identidade criada para suportar pressão, trabalho e adaptação começa a cobrar um preço alto: exaustão, desconexão de si e risco de burnout",
   },
   {
-    question: "Como saber valores e horários?",
+    question: "A mentoria é diferente da psicoterapia?",
     answer:
-      "Essas informações são compartilhadas no primeiro contato, considerando a disponibilidade de agenda",
+      "Sim. A psicoterapia cuida do sofrimento emocional; a mentoria trabalha comunicação, posicionamento, liderança e vendas para mulheres empreendedoras",
   },
   {
-    question: "Como faço para agendar?",
+    question: "Como saber valores, horários e agendar?",
     answer:
-      "Use o formulário ou o botão de contato. Com [WHATSAPP] e [LINK DE AGENDAMENTO] configurados, o fluxo será direto",
+      "Envie uma mensagem pelo formulário ou WhatsApp. Valores, disponibilidade e o melhor horário para seu fuso são informados no primeiro contato",
   },
 ] as const;

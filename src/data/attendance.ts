@@ -1,7 +1,7 @@
 export const onlineAttendance = {
-  title: "Atendimento online",
-  summary: "Sessões por videochamada, com privacidade e cuidado onde você estiver",
+  title: "Um encontro no seu espaço",
+  summary: "Acolhimento em português, no conforto da sua casa e com atenção ao seu fuso horário",
   detail:
-    "Após o primeiro contato, você recebe as orientações para participar do encontro em um ambiente reservado",
-  meta: "Consulte [HORÁRIOS]",
+    "Você escolhe um lugar tranquilo; antes do primeiro encontro, recebe as orientações e combina o horário que faz sentido para sua rotina",
+  meta: "Horários por fuso",
 } as const;

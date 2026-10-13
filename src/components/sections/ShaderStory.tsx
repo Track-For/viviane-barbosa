@@ -2,9 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { flushSync } from "react-dom";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 import { media } from "@/data/media";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -16,29 +14,26 @@ const TherapeuticLightField = dynamic(() => import("@/components/webgl/Therapeut
 
 const perspectives = [
   {
-    title: "Compreender",
-    text: "Olhar com cuidado para o que está por trás dos padrões que geram ansiedade, insegurança ou desconexão de si.",
+    title: "Solidão longe de casa",
+    text: "Mesmo cercada de pessoas, viver fora pode trazer saudade, desenraizamento e a sensação de que ninguém compreende por inteiro o que você atravessa.",
   },
   {
-    title: "Fortalecer",
-    text: "Construir segurança emocional respeitando sua história, seu contexto e o tempo necessário para elaborar.",
+    title: "Crise do guerreiro",
+    text: "A persona que ajuda você a dar conta de tudo também pode afastá-la de si, alimentar a exaustão e abrir caminho para o burnout.",
   },
   {
-    title: "Expressar",
-    text: "Encontrar mais clareza e segurança para comunicar o que você pensa, sente e precisa.",
+    title: "Liderar pessoas, não só processos",
+    text: "Processos pedem organização. Pessoas pedem presença, escuta e comunicação clara — inclusive na hora de posicionar sua marca e vender.",
   },
 ] as const;
 
 export function ShaderStory() {
   const root = useRef<HTMLElement>(null);
-  const stage = useRef<HTMLDivElement>(null);
-  const perspective = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion();
-  const [active, setActive] = useState(0);
 
   useGSAP(
     () => {
-      if (!root.current || !stage.current || reducedMotion) {
+      if (!root.current || reducedMotion) {
         return;
       }
 
@@ -48,12 +43,9 @@ export function ShaderStory() {
         const timeline = gsap.timeline({
           scrollTrigger: {
             trigger: root.current,
-            start: "top top",
-            end: () => `+=${window.innerHeight * 0.85}`,
-            pin: stage.current,
-            scrub: 0.9,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
+            start: "top 82%",
+            end: "bottom 34%",
+            scrub: 0.75,
           },
         });
 
@@ -78,9 +70,9 @@ export function ShaderStory() {
           )
           .fromTo(
             ".shader-story__perspective",
-            { yPercent: 12, autoAlpha: 0.42 },
-            { yPercent: 0, autoAlpha: 1, duration: 0.3, ease: "none" },
-            0.4,
+            { xPercent: 8, autoAlpha: 0.25 },
+            { xPercent: 0, autoAlpha: 1, stagger: 0.08, duration: 0.38, ease: "none" },
+            0.3,
           )
           .to(
             ".shader-story__atmosphere",
@@ -99,76 +91,39 @@ export function ShaderStory() {
     { scope: root, dependencies: [reducedMotion] },
   );
 
-  const selectPerspective = (next: number) => {
-    if (!perspective.current || next === active) {
-      return;
-    }
-
-    const normalized = (next + perspectives.length) % perspectives.length;
-
-    if (reducedMotion) {
-      setActive(normalized);
-      return;
-    }
-
-    const content = perspective.current.querySelectorAll("[data-perspective-content]");
-    gsap.killTweensOf(content);
-    gsap
-      .timeline({ defaults: { ease: "calm", overwrite: "auto" } })
-      .to(content, { xPercent: -8, autoAlpha: 0, duration: 0.2, stagger: 0.025 })
-      .add(() => flushSync(() => setActive(normalized)))
-      .fromTo(
-        perspective.current.querySelectorAll("[data-perspective-content]"),
-        { xPercent: 9, autoAlpha: 0 },
-        { xPercent: 0, autoAlpha: 1, duration: 0.48, stagger: 0.045 },
-      );
-  };
-
-  const selected = perspectives[active];
-
   return (
     <section ref={root} className="shader-story" aria-labelledby="shader-story-title">
-      <div ref={stage} className="shader-story__stage">
+      <div className="shader-story__stage">
         <div className="shader-story__atmosphere" aria-hidden="true">
           <TherapeuticLightField />
         </div>
 
         <div className="site-container shader-story__layout">
           <div className="shader-story__heading">
-            <p>Cuidado que ganha forma</p>
+            <p>Quando sobreviver vira personagem</p>
             <h2 id="shader-story-title">
-              Entre escuta
+              Quando ser forte
               <span className="shader-story__inline-media" aria-hidden="true">
                 <Image src={media.portrait.src} alt="" fill sizes="8rem" />
               </span>
-              e clareza existe espaço
+              vira um papel, é hora de voltar
               <span className="shader-story__inline-media shader-story__inline-media--wide" aria-hidden="true">
                 <Image src={media.optional.src} alt="" fill sizes="11rem" />
               </span>
-              para você
+              para si
             </h2>
           </div>
 
-          <div ref={perspective} className="shader-story__perspective glass-panel" aria-live="polite">
-            <div className="shader-story__perspective-meta">
-              <span>Perspectivas do trabalho</span>
-              <span>{String(active + 1).padStart(2, "0")} / {String(perspectives.length).padStart(2, "0")}</span>
-            </div>
-            <div>
-              <h3 data-perspective-content>{selected.title}</h3>
-              <p data-perspective-content>{selected.text}</p>
-            </div>
-            <div className="shader-story__controls">
-              <button type="button" onClick={() => selectPerspective(active - 1)} aria-label="Perspectiva anterior">
-                <ArrowLeft aria-hidden="true" size={17} strokeWidth={1.5} />
-              </button>
-              <span aria-hidden="true">
-                <i style={{ transform: `scaleX(${(active + 1) / perspectives.length})` }} />
-              </span>
-              <button type="button" onClick={() => selectPerspective(active + 1)} aria-label="Próxima perspectiva">
-                <ArrowRight aria-hidden="true" size={17} strokeWidth={1.5} />
-              </button>
-            </div>
+          <div className="shader-story__perspectives" aria-label="Situações acolhidas no trabalho">
+            {perspectives.map((item, index) => (
+              <article key={item.title} className="shader-story__perspective glass-panel">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </div>

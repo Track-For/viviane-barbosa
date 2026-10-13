@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 
-const phrases = ["Escuta", "Clareza", "Presença", "Segurança emocional", "Autonomia"] as const;
+const phrases = ["Pertencimento", "Segurança emocional", "Posicionamento", "Liderança", "Comunicação que vende"] as const;
 
 export function CinematicMarquee() {
   const track = useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ export function CinematicMarquee() {
   );
 
   return (
-    <section className="cinematic-marquee" aria-label="Escuta, clareza, presença, segurança emocional e autonomia">
+    <section className="cinematic-marquee" aria-label="Pertencimento, segurança emocional, posicionamento, liderança e comunicação">
       <div ref={track} className="cinematic-marquee__track" aria-hidden="true">
         {[0, 1].map((group) => (
           <div key={group} className="cinematic-marquee__group">

@@ -93,7 +93,7 @@ export function Process() {
         <div className="process-heading">
           <div>
             <SectionLabel>Como funciona</SectionLabel>
-            <h2>Do primeiro contato ao início das sessões</h2>
+            <h2>Três passos para começar, de qualquer lugar</h2>
           </div>
           <p>Role para acompanhar cada etapa</p>
         </div>

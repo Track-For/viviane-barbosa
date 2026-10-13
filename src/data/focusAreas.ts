@@ -1,26 +1,26 @@
 export const focusAreas = [
   {
-    kind: "Psicoterapia",
-    title: "Ansiedade",
+    kind: "Psicoterapia no exterior",
+    title: "Solidão e não pertencimento",
     description:
-      "Um espaço para compreender o que está por trás da ansiedade e como ela atravessa suas escolhas e sua rotina",
+      "Para elaborar a distância, a saudade e a sensação de estar entre dois lugares sem se sentir inteira em nenhum deles",
+  },
+  {
+    kind: "Psicoterapia no exterior",
+    title: "Crises de ansiedade",
+    description:
+      "Um acompanhamento para reconhecer gatilhos, compreender o que o corpo comunica e construir recursos para atravessar momentos de crise",
   },
   {
     kind: "Psicoterapia",
-    title: "Insegurança emocional",
+    title: "Crise do guerreiro",
     description:
-      "Um processo para fortalecer sua segurança emocional e construir uma relação mais cuidadosa consigo",
-  },
-  {
-    kind: "Psicoterapia",
-    title: "Confusão e desconexão",
-    description:
-      "Um caminho para reconhecer padrões e se aproximar de quem você é, respeitando o seu próprio ritmo",
+      "Quando a persona criada para dar conta do trabalho e da vida se torna pesada, distante de quem você é e abre caminho para o burnout",
   },
   {
     kind: "Mentoria de Comunicação",
-    title: "Clareza para se posicionar",
+    title: "Posicionamento que vende",
     description:
-      "Para mulheres que querem se expressar e se posicionar com mais clareza e segurança",
+      "Para empreendedoras que querem comunicar valor, liderar pessoas e vender mais com clareza, estratégia e uma voz que continue sendo sua",
   },
 ] as const;

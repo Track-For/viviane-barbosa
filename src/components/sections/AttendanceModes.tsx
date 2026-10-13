@@ -10,15 +10,15 @@ export function AttendanceModes() {
     <section id="atendimento" className="section attendance-section">
       <div className="site-container attendance-shell">
         <div className="attendance-intro">
-          <SplitHeading className="section-title">Atendimento online, onde você estiver</SplitHeading>
-          <p>Sessões por videochamada com acolhimento, privacidade e orientações claras</p>
+          <SplitHeading className="section-title">Cuidado que atravessa fronteiras</SplitHeading>
+          <p>Encontros em português, com atenção à sua rotina, ao seu contexto e ao seu fuso horário</p>
         </div>
 
         <div className="attendance-experience">
           <div className="online-mode-summary">
             <span>Formato de atendimento</span>
-            <strong>100% online</strong>
-            <p>Você escolhe um local reservado e participa por videochamada</p>
+            <strong>No conforto da sua casa</strong>
+            <p>Sem deslocamentos: você escolhe um lugar tranquilo e chega como está</p>
           </div>
 
           <div className="mode-detail">

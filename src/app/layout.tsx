@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Allura, DM_Mono, Geist } from "next/font/google";
+import { Allura, Cormorant_Garamond, DM_Mono, Geist } from "next/font/google";
 import type { ReactNode } from "react";
 import { ViewTransitions } from "next-view-transitions";
 
@@ -35,6 +35,13 @@ const allura = Allura({
   display: "swap",
 });
 
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: "variable",
+  variable: "--font-editorial",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
@@ -42,25 +49,26 @@ export const metadata: Metadata = {
     template: "%s | Viviane Barbosa",
   },
   description:
-    "Psicoterapia online e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
+    "Psicoterapia em português para brasileiras no exterior e Mentoria de Comunicação para mulheres empreendedoras.",
   applicationName: "Viviane Barbosa Psicologia",
   keywords: [
     "psicóloga",
-    "psicoterapia",
-    "mentoria de comunicação",
-    "segurança emocional",
-    "atendimento psicológico online",
+    "psicoterapia para brasileiras no exterior",
+    "solidão no exterior",
+    "crise de ansiedade",
+    "mentoria de comunicação para empreendedoras",
+    "posicionamento e vendas",
   ],
   openGraph: {
     type: "website",
     locale: "pt_BR",
     title: "Viviane Barbosa | Psicóloga",
     description:
-      "Psicoterapia online e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
+      "Acolhimento para brasileiras no exterior e mentoria para empreendedoras que querem comunicar e liderar com autenticidade.",
     images: [
       {
-        url: "/images/consultorio-diva-paleta.webp",
-        alt: "Divã em um ambiente acolhedor para atendimento psicológico",
+        url: "/images/consultorio-diva-mar-paleta.webp",
+        alt: "Divã em um ambiente acolhedor com vista para o mar",
       },
     ],
   },
@@ -79,7 +87,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <ViewTransitions>
-      <html lang="pt-BR" className={`${geist.variable} ${dmMono.variable} ${allura.variable}`}>
+      <html
+        lang="pt-BR"
+        className={`${geist.variable} ${dmMono.variable} ${allura.variable} ${cormorant.variable}`}
+      >
         <body>
           <SmoothScroll>
             <Preloader />

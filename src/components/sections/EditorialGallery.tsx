@@ -11,12 +11,12 @@ export function EditorialGallery() {
       <div className="site-container">
         <div className="editorial-gallery__header">
           <SplitHeading id="editorial-gallery-title" className="section-title">
-            Um ambiente que ajuda a conversa a encontrar espaço
+            Seu espaço para respirar, elaborar e voltar para si
           </SplitHeading>
           <Reveal className="editorial-gallery__intro">
             <p>
-              Luz natural, conforto e discrição compõem uma atmosfera visual serena, sem excessos e sem clichês
-              clínicos
+              Mesmo do outro lado do mundo, a conversa pode acontecer em um lugar familiar, com calma, privacidade e
+              presença
             </p>
           </Reveal>
         </div>
@@ -37,7 +37,7 @@ export function EditorialGallery() {
             </ImageReveal>
             <figcaption className="media-caption editorial-gallery__caption">
               <span>Tempo para elaborar</span>
-              <small>Imagem conceitual gerada por IA — substituir por {media.optional.replacement}.</small>
+              <small>Uma pausa para organizar o que sente e encontrar novas palavras.</small>
             </figcaption>
           </figure>
 
@@ -56,7 +56,7 @@ export function EditorialGallery() {
             </ImageReveal>
             <figcaption className="media-caption editorial-gallery__caption">
               <span>Presença e conforto</span>
-              <small>Imagem conceitual gerada por IA — substituir por {media.support.replacement}.</small>
+              <small>Acolhimento em português, com atenção ao seu contexto.</small>
             </figcaption>
           </figure>
 
@@ -74,8 +74,8 @@ export function EditorialGallery() {
               </div>
             </ImageReveal>
             <figcaption className="media-caption editorial-gallery__caption">
-              <span>Um espaço reservado</span>
-              <small>Imagem conceitual gerada por IA — substituir por {media.hero.replacement}.</small>
+              <span>Seu espaço, no seu ritmo</span>
+              <small>De onde você estiver, a conversa encontra lugar.</small>
             </figcaption>
           </figure>
         </div>

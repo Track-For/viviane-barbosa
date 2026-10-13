@@ -21,8 +21,8 @@ export default function HomePage() {
     name: profile.displayName,
     url: getSiteUrl(),
     description:
-      "Psicoterapia online e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
-    serviceType: ["Psicoterapia", "Mentoria de Comunicação"],
+      "Psicoterapia em português para brasileiras no exterior e Mentoria de Comunicação para mulheres empreendedoras.",
+    serviceType: ["Psicoterapia para brasileiras no exterior", "Mentoria de Comunicação para empreendedoras"],
   };
 
   return (

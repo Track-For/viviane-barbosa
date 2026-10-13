@@ -76,19 +76,19 @@ export function Hero() {
       <div className="site-container hero-grid">
         <div className="hero-copy">
           <p data-hero-eyebrow className="hero-eyebrow">
-            Psicologia 100% online
+            Psicoterapia e mentoria para brasileiras no exterior
           </p>
-          <h1 ref={heading}>Um espaço seguro para o que você sente</h1>
+          <h1 ref={heading}>Viver longe não precisa significar viver sozinha</h1>
           <p data-hero-copy className="hero-intro">
-            Psicoterapia para compreender padrões, fortalecer sua segurança emocional e construir uma vida mais
-            alinhada com quem você é
+            Acolhimento para lidar com solidão e crises de ansiedade — e mentoria para empreendedoras que querem se
+            posicionar, liderar pessoas e comunicar para vender mais
           </p>
           <div data-hero-actions className="hero-actions">
             <ButtonLink href="#contato" showArrow>
               Agendar conversa
             </ButtonLink>
             <ButtonLink href="#atendimento" variant="secondary">
-              Conheça o atendimento
+              Ver como posso ajudar
             </ButtonLink>
           </div>
         </div>
