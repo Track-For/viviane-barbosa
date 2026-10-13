@@ -2,13 +2,25 @@ import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 
 import { profile, profileLinks } from "@/data/profile";
+import { getConfiguredValue } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Privacidade",
   description: "Aviso de privacidade do site de Viviane Barbosa.",
+  alternates: {
+    canonical: "/privacidade",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function PrivacyPage() {
+  const professionalName = getConfiguredValue(profile.fullName) ?? profile.displayName;
+  const crp = getConfiguredValue(profile.crp);
+  const email = getConfiguredValue(profileLinks.email);
+
   return (
     <main className="legal-page">
       <article className="site-container legal-content">
@@ -37,7 +49,7 @@ export default function PrivacyPage() {
         <section>
           <h2>Envio da mensagem</h2>
           <p>
-            Na versão atual, o site não mantém uma base própria para o formulário. Após a configuração de [WHATSAPP],
+            O site não mantém uma base própria para o formulário. Quando o canal oficial de WhatsApp está disponível,
             a mensagem é preparada no seu dispositivo e aberta no serviço de comunicação escolhido por você.
           </p>
         </section>
@@ -53,7 +65,9 @@ export default function PrivacyPage() {
         <section>
           <h2>Contato</h2>
           <p>
-            Responsável: {profile.fullName}, {profile.crp}. Para dúvidas sobre privacidade, escreva para {profileLinks.email}.
+            Responsável: {professionalName}
+            {crp ? `, ${crp}` : ""}. Para dúvidas sobre privacidade, use os canais indicados no site
+            {email ? ` ou escreva para ${email}` : ""}.
           </p>
         </section>
 

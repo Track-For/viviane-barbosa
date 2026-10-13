@@ -68,9 +68,7 @@ export function Hero() {
             />
           </div>
         </ImageReveal>
-        <figcaption>
-          Imagem provisória. Substituir por {media.hero.replacement}.
-        </figcaption>
+        <figcaption>Um ambiente de acolhimento, presença e escuta</figcaption>
       </figure>
 
       <div className="site-container hero-grid">

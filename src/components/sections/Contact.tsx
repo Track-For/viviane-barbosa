@@ -10,6 +10,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { profile, profileLinks } from "@/data/profile";
+import { getConfiguredValue } from "@/lib/content";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const contactSchema = z.object({
@@ -22,6 +23,9 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 export function Contact() {
+  const whatsapp = getConfiguredValue(profileLinks.whatsapp);
+  const email = getConfiguredValue(profileLinks.email);
+  const hours = getConfiguredValue(profile.hours) ?? "Horários combinados de acordo com seu fuso";
   const [status, setStatus] = useState<"idle" | "placeholder" | "ready">("idle");
   const {
     register,
@@ -68,21 +72,25 @@ export function Contact() {
           </p>
 
           <ul className="contact-details">
-            <li>
-              <MessageCircle aria-hidden="true" size={19} strokeWidth={1.5} />
-              <span>{profileLinks.whatsapp}</span>
-            </li>
-            <li>
-              <Mail aria-hidden="true" size={19} strokeWidth={1.5} />
-              <span>{profileLinks.email}</span>
-            </li>
+            {whatsapp ? (
+              <li>
+                <MessageCircle aria-hidden="true" size={19} strokeWidth={1.5} />
+                <span>{whatsapp}</span>
+              </li>
+            ) : null}
+            {email ? (
+              <li>
+                <Mail aria-hidden="true" size={19} strokeWidth={1.5} />
+                <span>{email}</span>
+              </li>
+            ) : null}
             <li>
               <Laptop aria-hidden="true" size={19} strokeWidth={1.5} />
               <span>Encontros em português, onde você estiver</span>
             </li>
             <li>
               <Clock3 aria-hidden="true" size={19} strokeWidth={1.5} />
-              <span>{profile.hours}</span>
+              <span>{hours}</span>
             </li>
           </ul>
         </div>
@@ -122,7 +130,7 @@ export function Contact() {
 
           <div className="form-status" aria-live="polite">
             {status === "placeholder" ? (
-              <p>Formulário validado. Insira [WHATSAPP] para ativar o envio da mensagem.</p>
+              <p>Este canal está em configuração. Use outro contato disponível para iniciar a conversa.</p>
             ) : null}
             {status === "ready" ? <p>A conversa foi aberta em uma nova janela.</p> : null}
           </div>

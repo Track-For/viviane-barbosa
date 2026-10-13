@@ -8,13 +8,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: siteUrl,
+      lastModified: new Date("2026-10-13T00:00:00-03:00"),
       changeFrequency: "monthly",
       priority: 1,
-    },
-    {
-      url: `${siteUrl}/privacidade`,
-      changeFrequency: "yearly",
-      priority: 0.3,
     },
   ];
 }

@@ -5,8 +5,15 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SplitHeading } from "@/components/ui/SplitHeading";
 import { media } from "@/data/media";
 import { profile } from "@/data/profile";
+import { getConfiguredValue } from "@/lib/content";
 
 export function About() {
+  const facts = [
+    { label: "Profissional", value: getConfiguredValue(profile.fullName) ?? profile.displayName },
+    { label: "Registro", value: getConfiguredValue(profile.crp) },
+    { label: "Formação", value: getConfiguredValue(profile.education) },
+  ].filter((fact): fact is { label: string; value: string } => Boolean(fact.value));
+
   return (
     <section id="sobre" className="section about-section">
       <div className="site-container about-grid">
@@ -32,8 +39,8 @@ export function About() {
               </div>
             </ImageReveal>
             <figcaption className="media-caption">
-              <span>Retrato conceitual gerado por IA</span>
-              <small>Substituir por {media.portrait.replacement} aprovada.</small>
+              <span>Retrato conceitual</span>
+              <small>Imagem de referência para a identidade visual</small>
             </figcaption>
           </figure>
         </div>
@@ -45,18 +52,12 @@ export function About() {
           <p>{profile.bio}</p>
           <p>{profile.mentoringBio}</p>
           <dl className="profile-facts">
-            <div>
-              <dt>Profissional</dt>
-              <dd>{profile.fullName}</dd>
-            </div>
-            <div>
-              <dt>Registro</dt>
-              <dd>{profile.crp}</dd>
-            </div>
-            <div>
-              <dt>Formação</dt>
-              <dd>{profile.education}</dd>
-            </div>
+            {facts.map((fact) => (
+              <div key={fact.label}>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))}
           </dl>
         </Reveal>
       </div>

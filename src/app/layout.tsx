@@ -12,7 +12,7 @@ import { ScrollColorShift } from "@/components/layout/ScrollColorShift";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
-import { getSiteUrl } from "@/lib/site";
+import { getSiteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const geist = Geist({
@@ -45,43 +45,62 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "Viviane Barbosa | Psicóloga",
+    default: siteConfig.title,
     template: "%s | Viviane Barbosa",
   },
-  description:
-    "Psicoterapia em português para brasileiras no exterior e Mentoria de Comunicação para mulheres empreendedoras.",
-  applicationName: "Viviane Barbosa Psicologia",
-  keywords: [
-    "psicóloga",
-    "psicoterapia para brasileiras no exterior",
-    "solidão no exterior",
-    "crise de ansiedade",
-    "mentoria de comunicação para empreendedoras",
-    "posicionamento e vendas",
-  ],
+  description: siteConfig.description,
+  applicationName: siteConfig.alternateName,
+  authors: [{ name: siteConfig.name, url: "/" }],
+  creator: siteConfig.name,
+  publisher: siteConfig.alternateName,
+  category: "Saúde mental e desenvolvimento profissional",
+  keywords: [...siteConfig.keywords],
+  alternates: {
+    canonical: "/",
+    languages: {
+      "pt-BR": "/",
+    },
+  },
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+  },
+  referrer: "origin-when-cross-origin",
   openGraph: {
     type: "website",
-    locale: "pt_BR",
-    title: "Viviane Barbosa | Psicóloga",
-    description:
-      "Acolhimento para brasileiras no exterior e mentoria para empreendedoras que querem comunicar e liderar com autenticidade.",
-    images: [
-      {
-        url: "/images/consultorio-diva-mar-paleta.webp",
-        alt: "Divã em um ambiente acolhedor com vista para o mar",
-      },
-    ],
+    url: "/",
+    locale: siteConfig.locale,
+    siteName: siteConfig.alternateName,
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+    : {}),
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f5f1eb",
+  themeColor: siteConfig.themeColor,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

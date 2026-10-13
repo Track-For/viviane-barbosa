@@ -2,6 +2,7 @@ import { Instagram, Mail, MessageCircle } from "lucide-react";
 import type { CSSProperties, ComponentType } from "react";
 
 import { profileLinks } from "@/data/profile";
+import { getConfiguredValue, getInstagramUrl } from "@/lib/content";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 type SocialLink = {
@@ -11,20 +12,9 @@ type SocialLink = {
   icon: ComponentType<{ "aria-hidden": true; size: number; strokeWidth: number }>;
 };
 
-function configured(value: string) {
-  return Boolean(value && !value.startsWith("["));
-}
-
-function instagramUrl(value: string) {
-  if (!configured(value)) {
-    return null;
-  }
-
-  return value.startsWith("http") ? value : `https://instagram.com/${value.replace(/^@/, "")}`;
-}
-
 function emailUrl(value: string) {
-  return configured(value) ? `mailto:${value}` : null;
+  const configured = getConfiguredValue(value);
+  return configured ? `mailto:${configured}` : null;
 }
 
 export function SocialHighlightCards() {
@@ -37,7 +27,7 @@ export function SocialHighlightCards() {
     },
     {
       label: "Acompanhar no Instagram",
-      href: instagramUrl(profileLinks.instagram),
+      href: getInstagramUrl(profileLinks.instagram),
       highlight: "color-mix(in srgb, var(--accent), var(--surface-strong) 28%)",
       icon: Instagram,
     },

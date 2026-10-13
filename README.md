@@ -76,9 +76,20 @@ O formulário valida nome, contato, mensagem e consentimento no navegador. Ele n
 
 ```dotenv
 NEXT_PUBLIC_SITE_URL=https://seudominio.com.br
+GOOGLE_SITE_VERIFICATION=
 ```
 
-Essa URL alimenta metadados, `sitemap.xml`, `robots.txt` e dados estruturados. Não há scripts de rastreamento. Analytics ou pixels devem ser incluídos apenas em uma etapa futura, com consentimento e revisão de privacidade.
+Essa URL alimenta URLs canônicas, cards sociais, `sitemap.xml`, `robots.txt`, `llms.txt` e dados estruturados. O código de verificação é opcional e pode ser obtido no Google Search Console. Não há scripts de rastreamento. Analytics ou pixels devem ser incluídos apenas em uma etapa futura, com consentimento e revisão de privacidade.
+
+## SEO e GEO
+
+- Metadados canônicos, Open Graph, Twitter Card e imagem social de `1200 × 630`.
+- Grafo JSON-LD com `WebSite`, `WebPage`, `Person`, `Organization`, dois serviços e `FAQPage`.
+- `robots.txt` permite rastreamento geral e explicita acesso ao `OAI-SearchBot`.
+- `sitemap.xml`, `manifest.webmanifest` e `llms.txt` são gerados pelo App Router.
+- Dados profissionais ainda não configurados não são publicados como placeholders no HTML ou no JSON-LD.
+
+Antes de publicar, informe a URL definitiva, nome completo, CRP, formação, canais de contato e perfis sociais. Depois, valide a home no Rich Results Test e envie o sitemap no Google Search Console.
 
 ## Motion e acessibilidade
 

@@ -11,19 +11,11 @@ import { FocusAreas } from "@/components/sections/FocusAreas";
 import { Hero } from "@/components/sections/Hero";
 import { Process } from "@/components/sections/Process";
 import { ShaderStory } from "@/components/sections/ShaderStory";
-import { profile } from "@/data/profile";
-import { getSiteUrl } from "@/lib/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { getHomeStructuredData } from "@/lib/structured-data";
 
 export default function HomePage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: profile.displayName,
-    url: getSiteUrl(),
-    description:
-      "Psicoterapia em português para brasileiras no exterior e Mentoria de Comunicação para mulheres empreendedoras.",
-    serviceType: ["Psicoterapia para brasileiras no exterior", "Mentoria de Comunicação para empreendedoras"],
-  };
+  const structuredData = getHomeStructuredData();
 
   return (
     <>
@@ -42,10 +34,7 @@ export default function HomePage() {
         <Faq />
         <Contact />
       </main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <JsonLd id="viviane-barbosa-structured-data" data={structuredData} />
     </>
   );
 }
