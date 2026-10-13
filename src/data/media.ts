@@ -1,9 +1,9 @@
 export const media = {
   hero: {
-    src: "/images/consultorio-apoio-paleta.webp",
+    src: "/images/consultorio-diva-paleta.webp",
     blurDataURL:
-      "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADwBACdASoYAB4APwFysFIrJqSiqAqpYCAJZQC/ODXxq+EyK9VgLPWwqalw/mWa4mAA/uqYNf33UgCkfSfXhvKJXRvokdWq7+Lupt3zX81Bjs4dsG5Tw53XGDAIQPTyUgupQez044smzXyo0DSJ4IHwzqjvfyPpOQ1ONsSssOP8cec03jofK1NPOQFgeKB2qCuoEEhmM0OFvBcA7kMeySmkadPg8oODrnhavVluT5sv4UCgbW/vlWUbwiEAIAAA",
-    alt: "Poltrona em um ambiente claro e reservado",
+      "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAACwBQCdASoYAB4APt1irE8opaSiKAqpEBuJZQDCgDScFm2kiqkUFMdLtKAp7W/Grb+c59ZbcyAA/up6opNedgQddHMYqq5k4pNZEy9P6coMg2wwsbCrLGPqNuZQHYK/RqQyIOxtKHp5xCIxUro+d/ZPbVMGsLHJES7V+1uI5URB8mZ/hbKc1iTaOjkAH6/zbX0DBMcM/p8VuATr5LVHKsRVdoBguBFeMRiL+ntBobkAhJiPKYULW+Ydyxvax4wLeSKCpgo4lHhjIAw2IVSgAA==",
+    alt: "Divã de psicoterapia em um ambiente claro, sereno e reservado",
     replacement: "[VÍDEO 01] ou imagem principal aprovada",
   },
   portrait: {

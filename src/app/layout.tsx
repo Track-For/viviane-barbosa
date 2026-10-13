@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Mono, Geist } from "next/font/google";
+import { Allura, DM_Mono, Geist } from "next/font/google";
 import type { ReactNode } from "react";
 import { ViewTransitions } from "next-view-transitions";
 
@@ -28,6 +28,13 @@ const dmMono = DM_Mono({
   display: "swap",
 });
 
+const allura = Allura({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-signature",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
@@ -52,8 +59,8 @@ export const metadata: Metadata = {
       "Psicoterapia online e Mentoria de Comunicação para compreender padrões, fortalecer a segurança emocional e se posicionar com clareza.",
     images: [
       {
-        url: "/images/consultorio-apoio-paleta.png",
-        alt: "Ambiente de atendimento psicológico",
+        url: "/images/consultorio-diva-paleta.webp",
+        alt: "Divã em um ambiente acolhedor para atendimento psicológico",
       },
     ],
   },
@@ -72,7 +79,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <ViewTransitions>
-      <html lang="pt-BR" className={`${geist.variable} ${dmMono.variable}`}>
+      <html lang="pt-BR" className={`${geist.variable} ${dmMono.variable} ${allura.variable}`}>
         <body>
           <SmoothScroll>
             <Preloader />
