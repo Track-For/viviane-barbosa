@@ -37,7 +37,7 @@ export function EditorialGallery() {
             </ImageReveal>
             <figcaption className="media-caption editorial-gallery__caption">
               <span>Tempo para elaborar</span>
-              <small>Uma pausa para organizar o que sente e encontrar novas palavras.</small>
+              <small>Uma pausa para organizar o que sente e encontrar novas palavras</small>
             </figcaption>
           </figure>
 
@@ -56,7 +56,7 @@ export function EditorialGallery() {
             </ImageReveal>
             <figcaption className="media-caption editorial-gallery__caption">
               <span>Presença e conforto</span>
-              <small>Acolhimento em português, com atenção ao seu contexto.</small>
+              <small>Acolhimento em português, com atenção ao seu contexto</small>
             </figcaption>
           </figure>
 
@@ -75,7 +75,7 @@ export function EditorialGallery() {
             </ImageReveal>
             <figcaption className="media-caption editorial-gallery__caption">
               <span>Seu espaço, no seu ritmo</span>
-              <small>De onde você estiver, a conversa encontra lugar.</small>
+              <small>De onde você estiver, a conversa encontra lugar</small>
             </figcaption>
           </figure>
         </div>

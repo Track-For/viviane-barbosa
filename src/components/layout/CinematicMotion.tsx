@@ -1,9 +1,9 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
-
-const parallaxMediaSelector = ".about-portrait__image img";
 
 const tiltCardSelector = [
   ".focus-detail",
@@ -13,9 +13,10 @@ const tiltCardSelector = [
 
 export function CinematicMotion() {
   const reducedMotion = useReducedMotion();
+  const pathname = usePathname();
 
   useGSAP(() => {
-    if (reducedMotion) {
+    if (reducedMotion || pathname !== "/") {
       return;
     }
 
@@ -23,57 +24,6 @@ export function CinematicMotion() {
 
     media.add("(min-width: 901px)", () => {
       const cleanups: Array<() => void> = [];
-      const heroTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".hero-section",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1.1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      heroTimeline
-        .to(
-          ".hero-visual__reveal",
-          {
-            yPercent: 6,
-            scale: 1.12,
-            rotate: 0.35,
-            ease: "none",
-          },
-          0,
-        )
-        .to(
-          ".hero-copy",
-          {
-            yPercent: -11,
-            autoAlpha: 0.28,
-            ease: "none",
-          },
-          0,
-        );
-
-      gsap.utils.toArray<HTMLElement>(parallaxMediaSelector).forEach((element, index) => {
-        const mediaTimeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: element.closest("figure") ?? element,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 0.85 + index * 0.12,
-            invalidateOnRefresh: true,
-          },
-        });
-
-        mediaTimeline
-          .fromTo(
-            element,
-            { yPercent: -3, scale: 0.86, opacity: 0.34 },
-            { yPercent: 0, scale: 1, opacity: 1, duration: 0.5, ease: "none" },
-          )
-          .to(element, { yPercent: 5, scale: 1.055, opacity: 0.4, duration: 0.5, ease: "none" });
-      });
-
       const galleryItems = gsap.utils.toArray<HTMLElement>(".editorial-gallery__item");
       const setGalleryWillChange = () => gsap.set(galleryItems, { willChange: "transform" });
       const clearGalleryWillChange = () => gsap.set(galleryItems, { clearProps: "willChange" });
@@ -202,7 +152,7 @@ export function CinematicMotion() {
     });
 
     return () => media.revert();
-  }, { dependencies: [reducedMotion] });
+  }, { dependencies: [reducedMotion, pathname], revertOnUpdate: true });
 
   return <div className="cinematic-halo" aria-hidden="true" />;
 }

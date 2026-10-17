@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useRef } from "react";
 
 import { ButtonLink } from "@/components/ui/Button";
@@ -61,11 +62,18 @@ export function Hero() {
       <figure data-hero-visual className="hero-visual">
         <ImageReveal mode="vertical" trigger="load" delay={0.18} className="hero-visual__reveal">
           <div className="hero-visual__frame">
-            <DisplacementImage
-              src={media.hero.src}
-              alt={media.hero.alt}
-              blurDataURL={media.hero.blurDataURL}
-            />
+            <div className="displacement-image">
+              <Image
+                src={media.hero.src}
+                alt={media.hero.alt}
+                fill
+                priority
+                placeholder="blur"
+                blurDataURL={media.hero.blurDataURL}
+                sizes="(max-width: 900px) 100vw, 48vw"
+              />
+              <DisplacementImage src={media.hero.src} />
+            </div>
           </div>
         </ImageReveal>
         <figcaption>Um ambiente de acolhimento, presença e escuta</figcaption>
@@ -78,7 +86,7 @@ export function Hero() {
           </p>
           <h1 ref={heading}>Viver longe não precisa significar viver sozinha</h1>
           <p data-hero-copy className="hero-intro">
-            Acolhimento para lidar com solidão e crises de ansiedade — e mentoria para empreendedoras que querem se
+            Acolhimento para lidar com solidão e crises de ansiedade, e mentoria para empreendedoras que querem se
             posicionar, liderar pessoas e comunicar para vender mais
           </p>
           <div data-hero-actions className="hero-actions">

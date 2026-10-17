@@ -3,7 +3,6 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 import { easing } from "maath";
-import Image from "next/image";
 import { Component, Suspense, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import * as THREE from "three";
 
@@ -190,15 +189,7 @@ class WebGLBoundary extends Component<{ children: ReactNode }, { failed: boolean
   }
 }
 
-export default function DisplacementImage({
-  src,
-  alt,
-  blurDataURL,
-}: {
-  src: string;
-  alt: string;
-  blurDataURL: string;
-}) {
+export default function DisplacementImage({ src }: { src: string }) {
   const reducedMotion = useReducedMotion();
   const root = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(true);
@@ -220,31 +211,20 @@ export default function DisplacementImage({
   }, [reducedMotion]);
 
   return (
-    <div ref={root} className="displacement-image">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        priority
-        placeholder="blur"
-        blurDataURL={blurDataURL}
-        sizes="(max-width: 900px) 100vw, 48vw"
-      />
-      <WebGLBoundary>
-        <div className="displacement-image__canvas" aria-hidden="true">
-          <Canvas
-            orthographic
-            camera={{ position: [0, 0, 2], zoom: 1 }}
-            dpr={[1, 1.35]}
-            frameloop={reducedMotion || !active ? "demand" : "always"}
-            gl={{ alpha: true, antialias: false, powerPreference: "low-power" }}
-          >
-            <Suspense fallback={null}>
-              <ImagePlane src={src} reducedMotion={reducedMotion} />
-            </Suspense>
-          </Canvas>
-        </div>
-      </WebGLBoundary>
-    </div>
+    <WebGLBoundary>
+      <div ref={root} className="displacement-image__canvas" aria-hidden="true">
+        <Canvas
+          orthographic
+          camera={{ position: [0, 0, 2], zoom: 1 }}
+          dpr={[1, 1.35]}
+          frameloop={reducedMotion || !active ? "demand" : "always"}
+          gl={{ alpha: true, antialias: false, powerPreference: "low-power" }}
+        >
+          <Suspense fallback={null}>
+            <ImagePlane src={src} reducedMotion={reducedMotion} />
+          </Suspense>
+        </Canvas>
+      </div>
+    </WebGLBoundary>
   );
 }

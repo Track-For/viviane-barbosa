@@ -17,7 +17,7 @@ export function Approach() {
           <SplitHeading className="section-title">Um cuidado que escuta antes de orientar</SplitHeading>
           <p>
             Sem fórmulas prontas ou a expectativa de que você precise ser forte o tempo inteiro. O encontro parte da
-            sua história, do seu contexto e do que hoje pede atenção.
+            sua história, do seu contexto e do que hoje pede atenção
           </p>
         </div>
 

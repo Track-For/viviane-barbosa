@@ -1,5 +1,7 @@
 import { Instagram, Mail, MessageCircle } from "lucide-react";
-import type { CSSProperties, ComponentType } from "react";
+import type { ComponentType } from "react";
+
+import { SocialHighlightCards as HighlightCards } from "@/components/microkit/social-highlight-cards";
 
 import { profileLinks } from "@/data/profile";
 import { getConfiguredValue, getInstagramUrl } from "@/lib/content";
@@ -22,13 +24,13 @@ export function SocialHighlightCards() {
     {
       label: "Conversar pelo WhatsApp",
       href: buildWhatsAppUrl(profileLinks.whatsapp, "Olá, gostaria de informações sobre o atendimento."),
-      highlight: "var(--accent)",
+      highlight: "#23845b",
       icon: MessageCircle,
     },
     {
       label: "Acompanhar no Instagram",
       href: getInstagramUrl(profileLinks.instagram),
-      highlight: "color-mix(in srgb, var(--accent), var(--surface-strong) 28%)",
+      highlight: "#c44068",
       icon: Instagram,
     },
     {
@@ -40,30 +42,11 @@ export function SocialHighlightCards() {
   ];
 
   return (
-    <nav className="social-highlight-cards" aria-label="Canais de contato">
-      {socials.map((social) => {
-        const Icon = social.icon;
-        const available = Boolean(social.href);
-
-        return (
-          <a
-            className="social-highlight-card"
-            href={social.href ?? "/#contato"}
-            key={social.label}
-            target={available && !social.href?.startsWith("mailto:") ? "_blank" : undefined}
-            rel={available && !social.href?.startsWith("mailto:") ? "noreferrer" : undefined}
-            title={available ? social.label : `${social.label} após configurar o contato`}
-            aria-label={available ? social.label : `${social.label}. Contato ainda não configurado.`}
-            style={{ "--social-highlight": social.highlight } as CSSProperties}
-          >
-            <span className="social-highlight-card__glow" aria-hidden="true" />
-            <span className="social-highlight-card__beam" aria-hidden="true" />
-            <span className="social-highlight-card__icon">
-              <Icon aria-hidden={true} size={19} strokeWidth={1.55} />
-            </span>
-          </a>
-        );
-      })}
-    </nav>
+    <HighlightCards
+      socials={socials.map(({ icon: Icon, ...social }) => ({
+        ...social,
+        icon: <Icon aria-hidden={true} size={24} strokeWidth={1.55} />,
+      }))}
+    />
   );
 }

@@ -1,3 +1,4 @@
+import { ParallaxMain } from "@/components/layout/ParallaxMain";
 import { About } from "@/components/sections/About";
 import { Approach } from "@/components/sections/Approach";
 import { AttendanceModes } from "@/components/sections/AttendanceModes";
@@ -19,7 +20,7 @@ export default function HomePage() {
 
   return (
     <>
-      <main className="overflow-x-clip">
+      <ParallaxMain>
         <Hero />
         <ClarityStrip />
         <CinematicMarquee />
@@ -33,7 +34,7 @@ export default function HomePage() {
         <Process />
         <Faq />
         <Contact />
-      </main>
+      </ParallaxMain>
       <JsonLd id="viviane-barbosa-structured-data" data={structuredData} />
     </>
   );
