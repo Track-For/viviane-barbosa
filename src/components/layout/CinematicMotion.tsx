@@ -24,7 +24,7 @@ export function CinematicMotion() {
 
     media.add("(min-width: 901px)", () => {
       const cleanups: Array<() => void> = [];
-      const galleryItems = gsap.utils.toArray<HTMLElement>(".editorial-gallery__item");
+      const galleryItems = gsap.utils.toArray<HTMLElement>(".editorial-gallery__item > .image-reveal");
       const setGalleryWillChange = () => gsap.set(galleryItems, { willChange: "transform" });
       const clearGalleryWillChange = () => gsap.set(galleryItems, { clearProps: "willChange" });
       const galleryTimeline = gsap.timeline({
@@ -43,21 +43,21 @@ export function CinematicMotion() {
 
       galleryTimeline
         .fromTo(
-          ".editorial-gallery__item--left",
-          { scale: 0.72, yPercent: 16 },
-          { scale: 0.96, yPercent: 0, force3D: true, ease: "none" },
+          ".editorial-gallery__item--left > .image-reveal",
+          { scale: 0.9 },
+          { scale: 1, force3D: true, ease: "none" },
           0,
         )
         .fromTo(
-          ".editorial-gallery__item--center",
-          { scale: 0.78, yPercent: 8 },
-          { scale: 1, yPercent: 0, force3D: true, ease: "none" },
+          ".editorial-gallery__item--center > .image-reveal",
+          { scale: 0.9 },
+          { scale: 1, force3D: true, ease: "none" },
           0,
         )
         .fromTo(
-          ".editorial-gallery__item--right",
-          { scale: 0.7, yPercent: 18 },
-          { scale: 0.94, yPercent: 0, force3D: true, ease: "none" },
+          ".editorial-gallery__item--right > .image-reveal",
+          { scale: 0.9 },
+          { scale: 1, force3D: true, ease: "none" },
           0,
         );
       cleanups.push(clearGalleryWillChange);

@@ -8,6 +8,7 @@ export type CardRiseMotion = {
 };
 
 const vertexSource = `
+  precision mediump float;
   attribute vec2 aPosition;
   uniform vec2 uViewport;
   uniform vec4 uRect;
@@ -30,6 +31,9 @@ const fragmentSource = `
   uniform vec4 uMotion;
   uniform float uProgress;
   uniform float uIndex;
+  uniform vec2 uPointer;
+  uniform float uHover;
+  uniform float uTime;
   varying vec2 vUv;
   void main() {
     vec2 size = uRect.zw;
@@ -49,13 +53,31 @@ const fragmentSource = `
     vec3 color = mix(cream, sage, (wave * 0.5 + 0.5) * (0.13 + energy * 0.22));
     color = mix(color, clay, glow * (0.06 + energy * 0.24));
     color += glow * energy * 0.12;
+    // A curved coated surface reflecting a broad studio light and a narrow strip light.
+    vec2 aspect = vec2(size.x / size.y, 1.0);
+    vec2 delta = (vUv - uPointer) * aspect;
+    vec3 normal = normalize(vec3((vUv - 0.5) * 0.55, 1.0));
+    vec3 light = normalize(vec3((uPointer - 0.5) * 1.8, 1.2));
+    vec3 halfVector = normalize(light + vec3(0.0, 0.0, 1.0));
+    float specular = pow(max(dot(normal, halfVector), 0.0), 48.0);
+    float strip = exp(-pow((delta.x + delta.y * 0.48) * 9.0, 2.0));
+    float bloom = exp(-dot(delta, delta) * 5.0);
+    float rim = smoothstep(-7.0, -1.0, edge);
+    float sweepPosition = 0.5 + sin(uTime * 0.65 + uIndex * 0.8) * 0.85;
+    float sweepDistance = vUv.x + vUv.y * 0.35 - sweepPosition;
+    float sweep = exp(-pow(sweepDistance * 8.0, 2.0));
+    float shoulder = exp(-pow((sweepDistance - 0.16) * 6.0, 2.0));
+    color *= 1.0 - shoulder * 0.14;
+    float reflection = clamp(sweep * 0.65 + (specular * 0.24 + strip * 0.45 + bloom * 0.15) * (0.4 + uHover * 0.6), 0.0, 0.9);
+    color = mix(color, vec3(1.0, 0.99, 0.96), reflection);
+    color += rim * (0.05 + bloom * 0.12);
     float grain = fract(sin(dot(vUv * size, vec2(12.9898, 78.233))) * 43758.5453);
     color += (grain - 0.5) * 0.012;
     gl_FragColor = vec4(color, mask * uMotion.w);
   }
 `;
 
-// One context for all three cards. Rendering is driven by scroll, never an idle RAF loop.
+// One context for all cards. The light sweep runs only while the stage is visible.
 export default function CardRiseShader({ stage, motion }: {
   stage: RefObject<HTMLDivElement | null>;
   motion: RefObject<CardRiseMotion>;
@@ -76,7 +98,9 @@ export default function CardRiseShader({ stage, motion }: {
       shaders.push(shader);
       gl.shaderSource(shader, source);
       gl.compileShader(shader);
-      return gl.getShaderParameter(shader, gl.COMPILE_STATUS) ? shader : null;
+      if (gl.getShaderParameter(shader, gl.COMPILE_STATUS)) return shader;
+      console.warn("Card shader compilation failed:", gl.getShaderInfoLog(shader));
+      return null;
     };
     const vertex = compile(gl.VERTEX_SHADER, vertexSource);
     const fragment = compile(gl.FRAGMENT_SHADER, fragmentSource);
@@ -90,6 +114,7 @@ export default function CardRiseShader({ stage, motion }: {
     gl.attachShader(program, fragment);
     gl.linkProgram(program);
     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      console.warn("Card shader linking failed:", gl.getProgramInfoLog(program));
       shaders.forEach((shader) => gl.deleteShader(shader));
       gl.deleteProgram(program);
       return;
@@ -104,7 +129,7 @@ export default function CardRiseShader({ stage, motion }: {
     gl.enableVertexAttribArray(position);
     gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
     const uniforms = Object.fromEntries(
-      ["uViewport", "uRect", "uMotion", "uProgress", "uIndex"].map((key) => [key, gl.getUniformLocation(program, key)]),
+      ["uViewport", "uRect", "uMotion", "uProgress", "uIndex", "uPointer", "uHover", "uTime"].map((key) => [key, gl.getUniformLocation(program, key)]),
     );
     const cards = Array.from(host.querySelectorAll<HTMLElement>(".story-card"));
     const deck = host.querySelector<HTMLElement>(".story-deck");
@@ -112,11 +137,13 @@ export default function CardRiseShader({ stage, motion }: {
     let width = 1;
     let height = 1;
     let lost = false;
+    let pointer: { x: number; y: number } | null = null;
     const draw = () => {
       if (lost || document.hidden) return;
       gl.clearColor(0, 0, 0, 0);
       gl.clear(gl.COLOR_BUFFER_BIT);
       gl.uniform2f(uniforms.uViewport, width, height);
+      gl.uniform1f(uniforms.uTime, performance.now() / 1000 % 1000);
       rects.forEach((rect, index) => {
         const card = motion.current.cards[index];
         if (!card || card.alpha <= 0) return;
@@ -124,6 +151,13 @@ export default function CardRiseShader({ stage, motion }: {
         gl.uniform4f(uniforms.uMotion, card.y, card.angle * Math.PI / 180, card.scale, card.alpha);
         gl.uniform1f(uniforms.uProgress, card.progress);
         gl.uniform1f(uniforms.uIndex, index);
+        const angle = card.angle * Math.PI / 180;
+        const dx = pointer ? pointer.x - rect[0] : 0;
+        const dy = pointer ? pointer.y - rect[1] - card.y * height : 0;
+        const px = (Math.cos(angle) * dx + Math.sin(angle) * dy) / (rect[2] * card.scale) + 0.5;
+        const py = (-Math.sin(angle) * dx + Math.cos(angle) * dy) / (rect[3] * card.scale) + 0.5;
+        gl.uniform2f(uniforms.uPointer, pointer ? px : 0.25 + card.progress * 0.5, pointer ? py : 0.25);
+        gl.uniform1f(uniforms.uHover, pointer && px >= 0 && px <= 1 && py >= 0 && py <= 1 ? 1 : 0);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
       });
       host.dataset.cardShader = "ready";
@@ -144,10 +178,37 @@ export default function CardRiseShader({ stage, motion }: {
     };
     const handleLoss = () => {
       lost = true;
+      cancelAnimationFrame(frame);
       delete host.dataset.cardShader;
     };
     surface.addEventListener("webglcontextlost", handleLoss);
-    document.addEventListener("visibilitychange", draw);
+    const handlePointer = (event: PointerEvent) => {
+      const bounds = host.getBoundingClientRect();
+      pointer = { x: event.clientX - bounds.left, y: event.clientY - bounds.top };
+      draw();
+    };
+    const leavePointer = () => { pointer = null; draw(); };
+    host.addEventListener("pointermove", handlePointer, { passive: true });
+    host.addEventListener("pointerleave", leavePointer);
+    let frame = 0;
+    let visible = false;
+    let lastFrame = 0;
+    const tick = (time: number) => {
+      if (!visible || lost || document.hidden) { frame = 0; return; }
+      if (time - lastFrame >= 1000 / 30) { draw(); lastFrame = time; }
+      frame = requestAnimationFrame(tick);
+    };
+    const syncVisibility = () => {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      if (visible && !lost && !document.hidden) frame = requestAnimationFrame(tick);
+    };
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      syncVisibility();
+    });
+    visibilityObserver.observe(host);
+    document.addEventListener("visibilitychange", syncVisibility);
     const observer = new ResizeObserver(resize);
     observer.observe(host);
     cards.forEach((card) => observer.observe(card));
@@ -156,8 +217,12 @@ export default function CardRiseShader({ stage, motion }: {
     const state = motion.current;
     return () => {
       observer.disconnect();
+      visibilityObserver.disconnect();
+      cancelAnimationFrame(frame);
+      host.removeEventListener("pointermove", handlePointer);
+      host.removeEventListener("pointerleave", leavePointer);
       surface.removeEventListener("webglcontextlost", handleLoss);
-      document.removeEventListener("visibilitychange", draw);
+      document.removeEventListener("visibilitychange", syncVisibility);
       if (state.draw === draw) delete state.draw;
       delete host.dataset.cardShader;
       gl.deleteBuffer(buffer);
