@@ -12,12 +12,12 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: siteConfig.themeColor,
     theme_color: siteConfig.themeColor,
     lang: siteConfig.language,
-    categories: ["health", "lifestyle"],
+    categories: ["business", "finance"],
     icons: [
       {
-        src: "/favicon.ico",
+        src: "/icon.svg",
         sizes: "any",
-        type: "image/x-icon",
+        type: "image/svg+xml",
       },
     ],
   };

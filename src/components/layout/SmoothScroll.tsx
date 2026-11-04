@@ -3,11 +3,13 @@
 import Lenis from "lenis";
 import { useEffect, type ReactNode } from "react";
 
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
+  const reduced = useReducedMotion();
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (reduced) {
       return;
     }
 
@@ -42,13 +44,13 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     const handleAnchorClick = (event: MouseEvent) => {
       const anchor = (event.target as HTMLElement).closest<HTMLAnchorElement>("a[href*='#']");
 
-      if (!anchor) {
+      if (!anchor || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
         return;
       }
 
       const destination = new URL(anchor.href, window.location.href);
 
-      if (destination.pathname !== window.location.pathname || !destination.hash) {
+      if (destination.origin !== window.location.origin || destination.pathname !== window.location.pathname || !destination.hash) {
         return;
       }
 
@@ -63,7 +65,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
       scrollToHash(destination.hash);
     };
 
-    document.addEventListener("click", handleAnchorClick);
+    document.addEventListener("click", handleAnchorClick, true);
     window.addEventListener("load", refresh, { once: true });
     document.fonts.ready.then(() => {
       if (!active) {
@@ -78,13 +80,13 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
 
     return () => {
       active = false;
-      document.removeEventListener("click", handleAnchorClick);
+      document.removeEventListener("click", handleAnchorClick, true);
       window.removeEventListener("load", refresh);
       lenis.off("scroll", ScrollTrigger.update);
       gsap.ticker.remove(update);
       lenis.destroy();
     };
-  }, []);
+  }, [reduced]);
 
   return <>{children}</>;
 }

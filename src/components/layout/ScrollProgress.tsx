@@ -30,7 +30,7 @@ export function ScrollProgress() {
         },
       );
     },
-    { scope: ref, dependencies: [reduced] },
+    { scope: ref, dependencies: [reduced], revertOnUpdate: true },
   );
 
   return <div ref={ref} className="scroll-progress" aria-hidden="true" />;

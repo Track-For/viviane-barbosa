@@ -100,13 +100,13 @@ canvas {
 
 .section {
   position: relative;
-  padding-block: clamp(3.75rem, 6vw, 5.75rem);
+  padding-block: clamp(2.5rem, 4vw, 3.75rem);
 }
 
 .section-title {
   max-width: 16ch;
   margin: 0;
-  font-size: clamp(2.25rem, 4.35vw, 4.5rem);
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
   font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 0.98;
@@ -495,10 +495,10 @@ canvas {
   position: relative;
   isolation: isolate;
   display: flex;
-  min-height: 100dvh;
+  min-height: 82svh;
   align-items: stretch;
   overflow: hidden;
-  padding-block: 7rem 3rem;
+  padding-block: 6.5rem 2rem;
   background:
     linear-gradient(115deg, rgb(245 241 235 / 0.76), transparent 48%),
     radial-gradient(ellipse at 84% 22%, rgb(166 109 86 / 0.1), transparent 32%);
@@ -864,7 +864,7 @@ canvas {
   position: relative;
   z-index: 1;
   display: flex;
-  min-height: 90svh;
+  min-height: 65svh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -973,7 +973,7 @@ canvas {
   pointer-events: none;
 }
 
-.story-sequence[data-animated] { height: 430svh; }
+.story-sequence[data-animated] { height: 300svh; }
 .story-sequence[data-animated] .story-stage {
   position: sticky;
   top: 0;
@@ -996,7 +996,7 @@ canvas {
   .story-card { min-height: 0; padding: 1.25rem; gap: 1rem; }
   .story-card h3 { font-size: clamp(1.3rem, 4.8vw, 2rem); margin-bottom: 0.5rem; }
   .story-card p { font-size: 0.8rem; line-height: 1.5; }
-  .story-sequence[data-animated] { height: 390svh; }
+  .story-sequence[data-animated] { height: 280svh; }
   .story-sequence[data-animated] .story-deck { inset: 14% 1.25rem 5%; gap: 0.75rem; }
   .story-sequence[data-animated] .story-card { display: grid; grid-template-columns: 1.25rem 1fr; align-content: center; }
 }
@@ -1029,7 +1029,7 @@ canvas {
 
 .about-portrait {
   grid-column: 2 / 7;
-  margin-top: clamp(2.25rem, 5vw, 4.25rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .about-portrait__figure,
@@ -1059,6 +1059,7 @@ canvas {
 }
 
 .about-portrait__image img {
+  max-height: 28rem;
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 5;
@@ -1097,7 +1098,7 @@ canvas {
 
 .about-copy {
   grid-column: 8 / 13;
-  padding-top: clamp(3.75rem, 8vw, 7.5rem);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
 }
 
 .about-copy p {
@@ -1216,7 +1217,7 @@ canvas {
   grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.88fr);
   gap: clamp(2.5rem, 6vw, 6rem);
   align-items: start;
-  margin-top: clamp(2.5rem, 4.5vw, 4rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .focus-list {
@@ -1320,7 +1321,7 @@ canvas {
 
 .attendance-shell {
   display: grid;
-  gap: clamp(2.5rem, 4vw, 3.75rem);
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
 }
 
 .attendance-intro > p {
@@ -1341,7 +1342,7 @@ canvas {
 
 .online-mode-summary {
   display: grid;
-  min-height: 24.5rem;
+  min-height: 20rem;
   grid-template-rows: auto 1fr auto;
   gap: 1.5rem;
   padding: clamp(1.75rem, 3vw, 2.75rem);
@@ -1377,10 +1378,10 @@ canvas {
 
 .mode-detail {
   display: grid;
-  min-height: 24.5rem;
+  min-height: 20rem;
   align-content: start;
   justify-items: start;
-  padding: clamp(2rem, 4vw, 3.75rem);
+  padding: clamp(1.5rem, 2.5vw, 2.5rem);
   animation: mode-detail-glide 480ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -1481,7 +1482,7 @@ canvas {
   grid-template-rows: auto;
   gap: 0 clamp(0.9rem, 2.1vw, 2rem);
   align-items: center;
-  margin-top: clamp(3.5rem, 6vw, 5.5rem);
+  margin-top: clamp(2rem, 3.5vw, 3rem);
 }
 
 .editorial-gallery__item {
@@ -1498,7 +1499,7 @@ canvas {
 
 .editorial-gallery__item--center {
   z-index: 2;
-  width: min(100%, 28rem);
+  width: min(100%, 23rem);
   grid-column: 2;
   grid-row: 1;
   justify-self: center;
@@ -1572,7 +1573,7 @@ canvas {
 }
 
 .divan-section { position: relative; background: #f5f1eb; color: #292c27; }
-.divan-stage { max-width: 70rem; padding-block: 4rem; }
+.divan-stage { max-width: 70rem; padding-block: 3rem; }
 .divan-heading h2 { font-family: var(--font-editorial), serif; font-size: clamp(2rem, 3.2vw, 3.25rem); line-height: 1.02; font-weight: 400; margin: 0.65rem 0; }
 .divan-eyebrow { font-family: var(--font-dm-mono), monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; }
 .divan-scroll-hint { display: none; color: var(--muted); font-size: 0.75rem; }
@@ -1584,7 +1585,7 @@ canvas {
 .divan-information > p:not(.divan-eyebrow) { font-size: 0.9rem; line-height: 1.65; color: var(--muted); }
 .divan-information ul { padding: 0; list-style: none; margin: 1rem 0 0; font-size: 0.82rem; }
 .divan-information li { padding: 0.5rem 0; border-top: 1px solid var(--line); }
-.divan-section[data-draw] { height: 240svh; }
+.divan-section[data-draw] { height: 200svh; }
 .divan-section[data-draw] .divan-stage { position: sticky; top: 0; height: 100svh; display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding-block: 6.5rem 1.5rem; }
 .divan-section[data-draw] .divan-stage > * { flex-shrink: 0; }
 .divan-section[data-draw] .divan-visual { width: min(100%, 30rem, 54svh); }
@@ -1682,7 +1683,7 @@ canvas {
 
 .process-section {
   position: relative;
-  min-height: 100dvh;
+  min-height: 82svh;
   overflow: hidden;
   border-block: 1px solid var(--line);
   background:
@@ -1695,7 +1696,7 @@ canvas {
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  min-height: 100dvh;
+  min-height: 82svh;
   align-items: stretch;
   padding-block: 5.5rem 2rem;
 }
@@ -1744,7 +1745,7 @@ canvas {
   position: relative;
   display: grid;
   flex: 0 0 min(56vw, 42rem);
-  min-height: clamp(18rem, 39vh, 24rem);
+  min-height: clamp(15rem, 30vh, 19rem);
   align-content: end;
   overflow: hidden;
   padding: clamp(1.5rem, 3.5vw, 3rem);
@@ -2054,7 +2055,7 @@ canvas {
 }
 
 .final-cta {
-  padding-block: clamp(2.5rem, 4vw, 3.75rem);
+  padding-block: clamp(1.5rem, 2.5vw, 2.5rem);
 }
 
 .final-cta__inner {
@@ -2328,7 +2329,7 @@ canvas {
   }
 
   .hero-section {
-    min-height: 100svh;
+    min-height: 85svh;
     align-items: center;
     padding-block: 6rem 2.5rem;
   }
@@ -2495,7 +2496,7 @@ canvas {
   .process-shell {
     grid-template-rows: auto;
     gap: 3rem;
-    padding-block: 4.5rem;
+    padding-block: 3rem;
   }
 
   .process-heading {
@@ -2519,7 +2520,7 @@ canvas {
 
   .process-panel {
     width: 100%;
-    min-height: 21rem;
+    min-height: 16rem;
   }
 
   .process-panel h3 {
@@ -2564,7 +2565,7 @@ canvas {
   }
 
   .section {
-    padding-block: 3.75rem;
+    padding-block: 2.5rem;
   }
 
   .section-title {
@@ -2576,7 +2577,7 @@ canvas {
   }
 
   .hero-section {
-    min-height: 100svh;
+    min-height: 85svh;
   }
 
   .hero-copy h1 {
