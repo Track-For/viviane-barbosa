@@ -82,7 +82,7 @@ export function ImageReveal({
         .to(band, { autoAlpha: 0, duration: 0.16 }, "-=0.12")
         .set([content, band], { clearProps: "willChange" });
     },
-    { scope: root, dependencies: [delay, mode, reduced, trigger], revertOnUpdate: true },
+    { scope: root, dependencies: [delay, mode, reduced, trigger] },
   );
 
   return (

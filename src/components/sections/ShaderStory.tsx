@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-
+import { media } from "@/data/media";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { CardRiseMotion } from "@/components/webgl/CardRiseShader";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
@@ -14,9 +14,18 @@ const CardRiseShader = dynamic(() => import("@/components/webgl/CardRiseShader")
 });
 
 const perspectives = [
-  { title: "Lealdade", text: "Estar ao seu lado nas fases desafiadoras. Dizer o que precisa ser dito, com responsabilidade e compromisso com seu crescimento." },
-  { title: "Respeito", text: "Sua clínica tem uma história e um ritmo único. Aqui, seus desafios encontram escuta verdadeira e cuidado em cada decisão." },
-  { title: "Excelência", text: "Tratar seu negócio com a seriedade que ele merece. Dos bastidores aos processos, atenção em cada etapa do trabalho." },
+  {
+    title: "Solidão longe de casa",
+    text: "Mesmo cercada de pessoas, viver fora pode trazer saudade, desenraizamento e a sensação de que ninguém compreende por inteiro o que você atravessa",
+  },
+  {
+    title: "Crise do guerreiro",
+    text: "A persona que ajuda você a dar conta de tudo também pode afastá-la de si, alimentar a exaustão e abrir caminho para o burnout",
+  },
+  {
+    title: "Liderar pessoas, não só processos",
+    text: "Processos pedem organização. Pessoas pedem presença, escuta e comunicação clara, inclusive na hora de posicionar sua marca e vender",
+  },
 ] as const;
 
 export function ShaderStory() {
@@ -52,7 +61,7 @@ export function ShaderStory() {
     const mediaQuery = gsap.matchMedia();
     mediaQuery.add({
       desktop: "(min-width: 901px) and (min-height: 480px)",
-      mobile: "(max-width: 900px) and (min-height: 760px)",
+      mobile: "(max-width: 900px) and (min-height: 601px)",
     }, (context) => {
       const desktop = Boolean(context.conditions?.desktop);
       // CSS sticky reserves the scroll distance without inserting pin spacers.
@@ -92,7 +101,7 @@ export function ShaderStory() {
         // Start below the stage: no CSS transform to compound with GSAP's yPercent.
         .fromTo(".story-wash", { y: 0, yPercent: 0 }, { yPercent: -100, duration: 1.65 }, 0.2)
         .addLabel("colorFilled", 1.85)
-        .fromTo(".story-highlight", { backgroundSize: "0% 100%", color: "#513727" },
+        .fromTo(".story-highlight", { backgroundSize: "0% 100%", color: "#292c27" },
           { backgroundSize: "100% 100%", color: "#fffaf3", duration: 0.45 }, "colorFilled+=0.25")
         .fromTo(".story-intro", { filter: "blur(0px)", scale: 1, opacity: 1 },
           { filter: `blur(${desktop ? 12 : 7}px)`, scale: 0.94, opacity: 0.22, duration: 0.8 }, 2.9);
@@ -118,27 +127,27 @@ export function ShaderStory() {
   }, { scope: root, dependencies: [reducedMotion], revertOnUpdate: true });
 
   return (
-    <section ref={root} id="essencia" className="shader-story story-sequence" aria-labelledby="shader-story-title">
+    <section ref={root} className="shader-story story-sequence" aria-labelledby="shader-story-title">
       <div ref={stage} className="story-stage">
         <div className="story-wash" aria-hidden="true" />
         <div className="story-intro">
-          <p className="story-eyebrow">A essência da Artesanal</p>
+          <p className="story-eyebrow">Quando sobreviver vira personagem</p>
           <h2 id="shader-story-title">
-            Cada negócio{" "}
+            Quando ser forte{" "}
             <span className="story-inline-media" aria-hidden="true">
-              <Image src="/images/artesanal/ambiente.webp" alt="" fill sizes="(max-width: 900px) 70px, 120px" />
+              <Image src={media.portrait.src} alt="" fill sizes="(max-width: 900px) 70px, 120px" />
             </span>{" "}
-            é uma peça única. Nossa essência é{" "}
-            <span className="story-highlight">cuidar{" "}
+            vira um papel, é hora de{" "}
+            <span className="story-highlight">voltar{" "}
               <span className="story-inline-media story-inline-media--wide" aria-hidden="true">
-                <Image src="/images/artesanal/ambiente.webp" alt="" fill sizes="(max-width: 900px) 90px, 150px" />
+                <Image src={media.optional.src} alt="" fill sizes="(max-width: 900px) 90px, 150px" />
               </span>{" "}
-              de cada uma.
+              para si
             </span>
           </h2>
         </div>
         {loadShader && !reducedMotion && <CardRiseShader stage={stage} motion={motion} />}
-        <div className="story-deck" aria-label="Nossos compromissos com sua clínica">
+        <div className="story-deck" aria-label="Situações acolhidas no trabalho">
           {perspectives.map((item, index) => (
             <article key={item.title} className="story-card">
               <span className="story-card__number">{String(index + 1).padStart(2, "0")}</span>
