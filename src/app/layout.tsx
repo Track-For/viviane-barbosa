@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Allura, Cormorant_Garamond, DM_Mono, Geist } from "next/font/google";
 import type { ReactNode } from "react";
+import Script from "next/script";
 import { ViewTransitions } from "next-view-transitions";
 
 import { Grain } from "@/components/layout/Grain";
@@ -14,6 +15,8 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { getSiteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
+
+const GTM_ID = "GTM-W7VZX735";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -111,6 +114,25 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         className={`${geist.variable} ${dmMono.variable} ${allura.variable} ${cormorant.variable}`}
       >
         <body>
+          <Script id="google-tag-manager" strategy="afterInteractive">
+            {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});`}
+          </Script>
+          <Script
+            id="google-tag-manager-src"
+            src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
+            strategy="afterInteractive"
+          />
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
           <SmoothScroll>
             <Preloader />
             <ScrollProgress />
