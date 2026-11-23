@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 
-const phrases = ["Pertencimento", "Segurança emocional", "Posicionamento", "Liderança", "Comunicação que vende"] as const;
+const phrases = ["Pertencimento", "Segurança emocional", "Posicionamento", "Liderança", "Comunicação autêntica"] as const;
 
 export function CinematicMarquee() {
   const track = useRef<HTMLDivElement>(null);

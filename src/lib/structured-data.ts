@@ -31,11 +31,11 @@ export function getHomeStructuredData() {
     description: profile.bio,
     knowsAbout: [
       "Psicoterapia online",
-      "Saúde emocional de brasileiras no exterior",
+      "Saúde emocional de brasileiros no exterior",
       "Solidão e adaptação cultural",
       "Crises de ansiedade",
       "Burnout",
-      "Comunicação e posicionamento para mulheres empreendedoras",
+      "Comunicação e posicionamento para empreendedores",
       "Liderança de pessoas",
     ],
     hasOccupation: {
@@ -72,15 +72,15 @@ export function getHomeStructuredData() {
   const psychotherapyService = {
     "@type": "Service",
     "@id": `${siteUrl}/#psicoterapia-online`,
-    name: "Psicoterapia online em português para brasileiras no exterior",
+    name: "Psicoterapia online em português para brasileiros no exterior",
     serviceType: "Psicoterapia online",
     description:
-      "Acompanhamento psicológico em português para brasileiras que vivem fora do país e enfrentam solidão, ansiedade, dificuldade de pertencimento, exaustão ou burnout.",
+      "Acompanhamento psicológico em português para brasileiros que vivem fora do país e enfrentam solidão, ansiedade, dificuldade de pertencimento, exaustão ou burnout.",
     provider: { "@id": `${siteUrl}/#organization` },
     areaServed: "Internacional",
     audience: {
       "@type": "Audience",
-      audienceType: "Brasileiras adultas que vivem no exterior",
+      audienceType: "Brasileiros adultos que vivem no exterior",
     },
     availableChannel: {
       "@type": "ServiceChannel",
@@ -96,15 +96,15 @@ export function getHomeStructuredData() {
   const mentoringService = {
     "@type": "Service",
     "@id": `${siteUrl}/#mentoria-comunicacao`,
-    name: "Mentoria de comunicação para mulheres empreendedoras",
+    name: "Mentoria de comunicação para empreendedores",
     serviceType: "Mentoria de comunicação e posicionamento",
     description:
-      "Mentoria para mulheres empreendedoras que querem comunicar o valor do próprio trabalho, liderar pessoas e vender mais sem sustentar uma persona que as desconecta de si.",
+      "Mentoria para quem empreende e quer comunicar o valor do próprio trabalho, liderar pessoas e vender sem sustentar uma persona que desconecta de si.",
     provider: { "@id": `${siteUrl}/#organization` },
     areaServed: "Internacional",
     audience: {
       "@type": "Audience",
-      audienceType: "Mulheres empreendedoras e líderes",
+      audienceType: "Empreendedores e líderes",
     },
     availableChannel: {
       "@type": "ServiceChannel",

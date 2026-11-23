@@ -7,7 +7,7 @@ export const faqItems = [
   {
     question: "Para quem é a psicoterapia?",
     answer:
-      "Para brasileiras que vivem fora do país e enfrentam solidão, crises de ansiedade, dificuldade de pertencimento ou o desgaste de sustentar uma persona para dar conta de tudo",
+      "Para brasileiros que vivem fora do país e enfrentam solidão, crises de ansiedade, dificuldade de pertencimento ou o desgaste de sustentar uma persona para dar conta de tudo",
   },
   {
     question: "O que é a crise do guerreiro?",
@@ -17,7 +17,7 @@ export const faqItems = [
   {
     question: "A mentoria é diferente da psicoterapia?",
     answer:
-      "Sim. A psicoterapia cuida do sofrimento emocional; a mentoria trabalha comunicação, posicionamento, liderança e vendas para mulheres empreendedoras",
+      "Sim. A psicoterapia cuida do sofrimento emocional; a mentoria trabalha comunicação, posicionamento, liderança e vendas para quem empreende",
   },
   {
     question: "Como saber valores, horários e agendar?",

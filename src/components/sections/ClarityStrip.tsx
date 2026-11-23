@@ -5,12 +5,12 @@ import { profile } from "@/data/profile";
 const items = [
   {
     icon: Globe2,
-    title: "Brasileiras no exterior",
+    title: "Brasileiros no exterior",
     detail: "Acolhimento para solidão, ansiedade e adaptação",
   },
   {
     icon: MessagesSquare,
-    title: "Mentoria para empreendedoras",
+    title: "Mentoria para quem empreende",
     detail: "Comunicação, posicionamento e vendas com autenticidade",
   },
   {

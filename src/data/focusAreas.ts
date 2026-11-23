@@ -3,13 +3,13 @@ export const focusAreas = [
     kind: "Psicoterapia no exterior",
     title: "Solidão e não pertencimento",
     description:
-      "Para elaborar a distância, a saudade e a sensação de estar entre dois lugares sem se sentir inteira em nenhum deles",
+      "Para elaborar a distância, a saudade e a sensação de estar entre dois lugares sem se sentir em casa em nenhum deles",
   },
   {
     kind: "Psicoterapia no exterior",
     title: "Crises de ansiedade",
     description:
-      "Um acompanhamento para reconhecer gatilhos, compreender o que o corpo comunica e construir recursos para atravessar momentos de crise",
+      "Um acompanhamento para reconhecer gatilhos, compreender o que o corpo comunica e buscar, em conjunto, recursos para atravessar momentos de crise",
   },
   {
     kind: "Psicoterapia",
@@ -19,8 +19,8 @@ export const focusAreas = [
   },
   {
     kind: "Mentoria de Comunicação",
-    title: "Posicionamento que vende",
+    title: "Posicionamento e comunicação",
     description:
-      "Para empreendedoras que querem comunicar valor, liderar pessoas e vender mais com clareza, estratégia e uma voz que continue sendo sua",
+      "Para quem empreende e quer comunicar valor, liderar pessoas e vender com clareza, estratégia e uma voz que continue sendo sua",
   },
 ] as const;

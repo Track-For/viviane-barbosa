@@ -82,12 +82,12 @@ export function Hero() {
       <div className="site-container hero-grid">
         <div className="hero-copy">
           <p data-hero-eyebrow className="hero-eyebrow">
-            Psicoterapia e mentoria para brasileiras no exterior
+            Psicoterapia e mentoria para quem vive fora do Brasil
           </p>
-          <h1 ref={heading}>Morar fora do Brasil não precisa significar viver sozinha</h1>
+          <h1 ref={heading}>Morar fora do Brasil não precisa ser uma travessia solitária</h1>
           <p data-hero-copy className="hero-intro">
-            Acolhimento para lidar com solidão e crises de ansiedade, e mentoria para empreendedoras que querem se
-            posicionar, liderar pessoas e comunicar para vender mais
+            Acolhimento para lidar com solidão e crises de ansiedade, e mentoria para quem empreende e quer se
+            posicionar, liderar pessoas e comunicar o valor do próprio trabalho
           </p>
           <div data-hero-actions className="hero-actions">
             <ButtonLink href="#contato" showArrow>

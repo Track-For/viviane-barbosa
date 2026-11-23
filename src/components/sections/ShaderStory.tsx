@@ -16,11 +16,11 @@ const CardRiseShader = dynamic(() => import("@/components/webgl/CardRiseShader")
 const perspectives = [
   {
     title: "Solidão longe de casa",
-    text: "Mesmo cercada de pessoas, viver fora pode trazer saudade, desenraizamento e a sensação de que ninguém compreende por inteiro o que você atravessa",
+    text: "Mesmo com pessoas por perto, viver fora pode trazer saudade, desenraizamento e a sensação de que ninguém compreende por inteiro o que você atravessa",
   },
   {
     title: "Crise do guerreiro",
-    text: "A persona que ajuda você a dar conta de tudo também pode afastá-la de si, alimentar a exaustão e abrir caminho para o burnout",
+    text: "A persona que ajuda você a dar conta de tudo também pode afastar você de si, alimentar a exaustão e abrir caminho para o burnout",
   },
   {
     title: "Liderar pessoas, não só processos",

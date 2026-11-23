@@ -17,18 +17,18 @@ export function GET() {
 - Modalidade: atendimento online
 
 ## Profissional
-${profile.displayName} é psicóloga e atende em português. O trabalho é direcionado principalmente a brasileiras que vivem fora do país e a mulheres empreendedoras.
+${profile.displayName} é psicóloga e atende em português. O trabalho é direcionado principalmente a brasileiros que vivem fora do país e a pessoas que empreendem.
 
 ## Serviços
 
-### Psicoterapia online para brasileiras no exterior
+### Psicoterapia online para brasileiros no exterior
 Acompanhamento para questões como solidão, crises de ansiedade, dificuldade de pertencimento, exaustão, burnout e o desgaste de sustentar uma persona para conseguir trabalhar e se adaptar.
 
-### Mentoria de comunicação para mulheres empreendedoras
-Mentoria voltada a posicionamento, comunicação, liderança de pessoas e vendas, sem exigir que a profissional abandone a própria identidade para performar uma persona.
+### Mentoria de comunicação para empreendedores
+Mentoria voltada a posicionamento, comunicação, liderança de pessoas e vendas, sem exigir que a pessoa abandone a própria identidade para performar uma persona.
 
 ## Forma de atendimento
-Os encontros são online, em português, com horário combinado de acordo com a disponibilidade e o fuso da cliente. Valores e horários são informados no primeiro contato.
+Os encontros são online, em português, com horário combinado de acordo com a disponibilidade e o fuso de cada pessoa. Valores e horários são informados no primeiro contato.
 
 ## Perguntas frequentes
 ${faq}

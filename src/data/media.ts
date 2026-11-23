@@ -30,7 +30,7 @@ export const media = {
       "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAADQBQCdASoYABIAPt1mp1AopaMiqAqpEBuJZACdMw8GAZ6eS8n0ehKqAw8Ru3TFZK1ZBvybEuQAAP61nBPCi3YvEFuhLyJa0AJsUHf8z1SyIoFJ1Lx5aiOlHaDm4IwU1YyVNGegnUtprlY8Sx2jZ/wPlWkMIQgK3btKhgF4d+qFdKiR/nsK4B2turrkAK5mnq6c9/ZyYdnsfYpN8uzGpcvEZAaPhXmy4l6gTEsK8IKPCsPpTdY+fSnFYCeZLda40cbyBzfUbXK4AtSC0FD78MOVmRWwmAMOHn4ADmNoR0AAAA==",
     width: 1448,
     height: 1086,
-    alt: "Caderno aberto, caneta e xícara amadeirada sobre pires verde-sálvia",
+    alt: "Caderno aberto, caneta e xícara amadeirada sobre pires verde sálvia",
     replacement: "[IMAGEM 03]",
   },
 } as const;
