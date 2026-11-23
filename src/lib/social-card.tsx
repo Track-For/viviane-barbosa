@@ -66,7 +66,7 @@ export function createSocialCard() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
             <div style={{ display: "flex", fontSize: 72, lineHeight: 1.02, letterSpacing: "-0.035em" }}>
-              Viver longe não precisa significar viver sozinha
+              Morar fora do Brasil não precisa significar viver sozinha
             </div>
             <div style={{ display: "flex", fontFamily: "Arial, sans-serif", fontSize: 23, color: "#50564f" }}>
               Acolhimento para brasileiras no exterior

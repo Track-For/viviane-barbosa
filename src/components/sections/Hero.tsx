@@ -84,7 +84,7 @@ export function Hero() {
           <p data-hero-eyebrow className="hero-eyebrow">
             Psicoterapia e mentoria para brasileiras no exterior
           </p>
-          <h1 ref={heading}>Viver longe não precisa significar viver sozinha</h1>
+          <h1 ref={heading}>Morar fora do Brasil não precisa significar viver sozinha</h1>
           <p data-hero-copy className="hero-intro">
             Acolhimento para lidar com solidão e crises de ansiedade, e mentoria para empreendedoras que querem se
             posicionar, liderar pessoas e comunicar para vender mais
