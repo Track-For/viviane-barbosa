@@ -2,7 +2,7 @@ export const processSteps = [
   {
     title: "Primeiro contato",
     description:
-      "Você conta se busca psicoterapia ou mentoria e informa sua cidade, país e fuso horário",
+      "Você informa sua cidade, país e fuso horário para combinarmos uma primeira conversa.",
   },
   {
     title: "Combinados do atendimento",

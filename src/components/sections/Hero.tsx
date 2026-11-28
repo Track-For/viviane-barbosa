@@ -82,12 +82,12 @@ export function Hero() {
       <div className="site-container hero-grid">
         <div className="hero-copy">
           <p data-hero-eyebrow className="hero-eyebrow">
-            Psicoterapia e mentoria para quem vive fora do Brasil
+            Viviane Barbosa · Psicóloga
           </p>
-          <h1 ref={heading}>Morar fora do Brasil não precisa ser uma travessia solitária</h1>
+          <h1 ref={heading}>Psicoterapia para quem mora fora do Brasil</h1>
           <p data-hero-copy className="hero-intro">
-            Acolhimento para lidar com solidão e crises de ansiedade, e mentoria para quem empreende e quer se
-            posicionar, liderar pessoas e comunicar o valor do próprio trabalho
+            Atendo online, em português, brasileiros que vivem no exterior e buscam apoio para lidar com
+            a saudade, a solidão, a ansiedade ou a adaptação a um novo país.
           </p>
           <div data-hero-actions className="hero-actions">
             <ButtonLink href="#contato" showArrow>

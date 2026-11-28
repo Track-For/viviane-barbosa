@@ -95,7 +95,7 @@ export function FocusAreas() {
     <section id="focos" className="section focus-section">
       <div className="site-container">
         <SectionLabel>O que pode estar pesando</SectionLabel>
-        <SplitHeading className="section-title">Para quem vive, lidera e empreende longe de casa</SplitHeading>
+        <SplitHeading className="section-title">O que podemos trabalhar na psicoterapia</SplitHeading>
 
         <div className="focus-layout">
           <div

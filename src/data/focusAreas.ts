@@ -17,10 +17,4 @@ export const focusAreas = [
     description:
       "Quando a persona criada para dar conta do trabalho e da vida se torna pesada, distante de quem você é e abre caminho para o burnout",
   },
-  {
-    kind: "Mentoria de Comunicação",
-    title: "Posicionamento e comunicação",
-    description:
-      "Para quem empreende e quer comunicar valor, liderar pessoas e vender com clareza, estratégia e uma voz que continue sendo sua",
-  },
 ] as const;

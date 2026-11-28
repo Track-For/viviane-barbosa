@@ -19,7 +19,7 @@ export function About() {
       <div className="site-container about-grid">
         <div className="about-heading">
           <SplitHeading className="section-title">
-            Longe do país, você não precisa se afastar de si
+            Sobre Viviane Barbosa
           </SplitHeading>
         </div>
 
@@ -47,10 +47,9 @@ export function About() {
 
         <Reveal className="about-copy" delay={0.08}>
           <p className="about-copy__lead">
-            Mudar de país transforma rotina, vínculos e a forma como você se reconhece
+            Sou psicóloga e meu trabalho é voltado a brasileiros que vivem no exterior.
           </p>
           <p>{profile.bio}</p>
-          <p>{profile.mentoringBio}</p>
           <dl className="profile-facts">
             {facts.map((fact) => (
               <div key={fact.label}>

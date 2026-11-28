@@ -44,7 +44,7 @@ export function Contact() {
   const submit = async (data: ContactFormData) => {
     const message = [
       `Olá, meu nome é ${data.name}.`,
-      "Tenho interesse em psicoterapia ou mentoria de comunicação.",
+      "Tenho interesse em psicoterapia online.",
       `Meu contato: ${data.contact}.`,
       data.message ? `Mensagem: ${data.message}` : "",
     ]
@@ -68,7 +68,8 @@ export function Contact() {
           <SectionLabel>Primeiro contato</SectionLabel>
           <h2>Conte onde você está e o que procura</h2>
           <p>
-            Informe seu país, fuso horário e se busca psicoterapia ou mentoria. Nenhuma informação clínica precisa ser compartilhada aqui
+            Para saber mais sobre as sessões ou agendar uma conversa, informe seu país e fuso horário.
+            Você pode usar este formulário sem compartilhar informações clínicas.
           </p>
 
           <ul className="contact-details">

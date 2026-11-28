@@ -35,13 +35,11 @@ export function getHomeStructuredData() {
       "Solidão e adaptação cultural",
       "Crises de ansiedade",
       "Burnout",
-      "Comunicação e posicionamento para empreendedores",
-      "Liderança de pessoas",
     ],
     hasOccupation: {
       "@type": "Occupation",
       name: "Psicóloga",
-      skills: ["Psicoterapia", "Escuta qualificada", "Comunicação", "Liderança"],
+      skills: ["Psicoterapia", "Escuta qualificada"],
     },
     ...(crp
       ? {
@@ -93,34 +91,10 @@ export function getHomeStructuredData() {
     },
   };
 
-  const mentoringService = {
-    "@type": "Service",
-    "@id": `${siteUrl}/#mentoria-comunicacao`,
-    name: "Mentoria de comunicação para empreendedores",
-    serviceType: "Mentoria de comunicação e posicionamento",
-    description:
-      "Mentoria para quem empreende e quer comunicar o valor do próprio trabalho, liderar pessoas e vender sem sustentar uma persona que desconecta de si.",
-    provider: { "@id": `${siteUrl}/#organization` },
-    areaServed: "Internacional",
-    audience: {
-      "@type": "Audience",
-      audienceType: "Empreendedores e líderes",
-    },
-    availableChannel: {
-      "@type": "ServiceChannel",
-      serviceUrl: `${homeUrl}#contato`,
-      availableLanguage: {
-        "@type": "Language",
-        name: "Português do Brasil",
-        alternateName: "pt-BR",
-      },
-    },
-  };
-
   const faqPage = {
     "@type": "FAQPage",
     "@id": `${siteUrl}/#perguntas-frequentes`,
-    name: "Dúvidas sobre psicoterapia online e mentoria de comunicação",
+    name: "Dúvidas sobre psicoterapia online",
     url: `${homeUrl}#duvidas`,
     inLanguage: siteConfig.language,
     mainEntity: faqItems.map((item) => ({
@@ -157,11 +131,9 @@ export function getHomeStructuredData() {
         about: [
           { "@id": `${siteUrl}/#viviane-barbosa` },
           { "@id": `${siteUrl}/#psicoterapia-online` },
-          { "@id": `${siteUrl}/#mentoria-comunicacao` },
         ],
         mainEntity: [
           { "@id": `${siteUrl}/#psicoterapia-online` },
-          { "@id": `${siteUrl}/#mentoria-comunicacao` },
           { "@id": `${siteUrl}/#perguntas-frequentes` },
         ],
         primaryImageOfPage: {
@@ -173,7 +145,6 @@ export function getHomeStructuredData() {
       person,
       organization,
       psychotherapyService,
-      mentoringService,
       faqPage,
     ],
   };

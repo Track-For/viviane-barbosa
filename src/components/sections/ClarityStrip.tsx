@@ -1,6 +1,4 @@
-import { Globe2, MessagesSquare, ShieldCheck } from "lucide-react";
-
-import { profile } from "@/data/profile";
+import { Globe2, Laptop, MessagesSquare } from "lucide-react";
 
 const items = [
   {
@@ -9,14 +7,14 @@ const items = [
     detail: "Acolhimento para solidão, ansiedade e adaptação",
   },
   {
-    icon: MessagesSquare,
-    title: "Mentoria para quem empreende",
-    detail: "Comunicação, posicionamento e vendas com autenticidade",
+    icon: Laptop,
+    title: "Sessões online",
+    detail: "Encontros por videochamada, com horário combinado conforme seu fuso",
   },
   {
-    icon: ShieldCheck,
-    title: "Um espaço que fala sua língua",
-    detail: `Escuta qualificada para ${profile.audience}`,
+    icon: MessagesSquare,
+    title: "Atendimento em português",
+    detail: "Fale sobre o que você está vivendo no seu idioma",
   },
 ] as const;
 

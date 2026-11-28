@@ -15,11 +15,6 @@ export const faqItems = [
       "É quando a identidade criada para suportar pressão, trabalho e adaptação começa a cobrar um preço alto: exaustão, desconexão de si e risco de burnout",
   },
   {
-    question: "A mentoria é diferente da psicoterapia?",
-    answer:
-      "Sim. A psicoterapia cuida do sofrimento emocional; a mentoria trabalha comunicação, posicionamento, liderança e vendas para quem empreende",
-  },
-  {
     question: "Como saber valores, horários e agendar?",
     answer:
       "Envie uma mensagem pelo formulário ou WhatsApp. Valores, disponibilidade e o melhor horário para seu fuso são informados no primeiro contato",
