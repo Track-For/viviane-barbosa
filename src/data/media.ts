@@ -1,9 +1,9 @@
 export const media = {
   hero: {
-    src: "/images/consultorio-diva-mar-paleta.webp",
+    src: "/images/sessao-acolhimento-mar-paleta.webp",
     blurDataURL:
-      "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAwBQCdASoYAB4APt1gq08opSQiKAqpEBuJYwC06CtheTkregot5WmV8ZLwfUbEaj3pYAD+6pg8xkj2zQBQ8oXJzVOMQqxwutV+0o4hyc6074L2N55nERE5Mfa/Gohnx+q+LxYrk7ksAIPHPcUAuVtMYwceV6w3CrQO1/hMysSaUP61WgCrVH7Bhx8aCjHRqlcSih+n7rjyqwrJVSvu/oCc3A8MyZSAPwpuQkxVl70sNr3m5jci+5Ut64/vwmirS+JO/JaYBMwlTRHYx8AAAA=",
-    alt: "Divã de psicoterapia em um ambiente sereno com vista para o mar",
+      "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBACdASoYABIAPt1iqk+opSOiKAqpEBuJQBadAeyGr1IRy97hQdFyWucuAAD+65iubPPzu1edR0CsuAmkUoix2via4lPbp0unzdqvNE88/aX6Au3rO9hp2vOCqBa4Rr2CIJKq+a64qHbTGZhMJVGwBuJq6nDEZg/0sUN84caHN17Ygd7/4Wl+Q3KjyjDp0DO8CR4/rlDz616KmeaPEnfIDmmSgAAA=",
+    alt: "Sala com poltronas, móveis de madeira e tapete em tom terracota",
     replacement: "[VÍDEO 01] ou imagem principal aprovada",
   },
   portrait: {
@@ -15,12 +15,12 @@ export const media = {
     alt: "Retrato de Viviane Barbosa",
   },
   support: {
-    src: "/images/sessao-acolhimento-mar-paleta.webp",
+    src: "/images/consultorio-diva-mar-paleta.webp",
     blurDataURL:
-      "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBACdASoYABIAPt1iqk+opSOiKAqpEBuJQBadAeyGr1IRy97hQdFyWucuAAD+65iubPPzu1edR0CsuAmkUoix2via4lPbp0unzdqvNE88/aX6Au3rO9hp2vOCqBa4Rr2CIJKq+a64qHbTGZhMJVGwBuJq6nDEZg/0sUN84caHN17Ygd7/4Wl+Q3KjyjDp0DO8CR4/rlDz616KmeaPEnfIDmmSgAAA=",
-    width: 1536,
-    height: 1024,
-    alt: "Ambiente acolhedor com duas poltronas e vista suave para o mar",
+      "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAwBQCdASoYAB4APt1gq08opSQiKAqpEBuJYwC06CtheTkregot5WmV8ZLwfUbEaj3pYAD+6pg8xkj2zQBQ8oXJzVOMQqxwutV+0o4hyc6074L2N55nERE5Mfa/Gohnx+q+LxYrk7ksAIPHPcUAuVtMYwceV6w3CrQO1/hMysSaUP61WgCrVH7Bhx8aCjHRqlcSih+n7rjyqwrJVSvu/oCc3A8MyZSAPwpuQkxVl70sNr3m5jci+5Ut64/vwmirS+JO/JaYBMwlTRHYx8AAAA=",
+    alt: "Divã de psicoterapia em um ambiente sereno com vista para o mar",
+    width: 1122,
+    height: 1402,
     replacement: "[IMAGEM 02]",
   },
   optional: {

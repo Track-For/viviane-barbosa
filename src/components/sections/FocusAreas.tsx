@@ -1,7 +1,6 @@
 "use client";
 
 import { flushSync } from "react-dom";
-import { ArrowRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -94,8 +93,8 @@ export function FocusAreas() {
   return (
     <section id="focos" className="section focus-section">
       <div className="site-container">
-        <SectionLabel>O que pode estar pesando</SectionLabel>
-        <SplitHeading className="section-title">O que podemos trabalhar na psicoterapia</SplitHeading>
+        <SectionLabel>Eu sei como se sente.</SectionLabel>
+        <SplitHeading className="section-title">O que vamos trabalhar.</SplitHeading>
 
         <div className="focus-layout">
           <div
@@ -119,7 +118,7 @@ export function FocusAreas() {
                 onClick={() => selectArea(index)}
               >
                 <span>{area.title}</span>
-                <ArrowRight aria-hidden="true" size={22} strokeWidth={1.4} />
+                <span className="focus-list__symbol" aria-hidden="true">Ψ</span>
               </button>
             ))}
           </div>

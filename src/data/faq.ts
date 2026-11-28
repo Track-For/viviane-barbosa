@@ -7,15 +7,15 @@ export const faqItems = [
   {
     question: "Para quem é a psicoterapia?",
     answer:
-      "Para brasileiros que vivem fora do país e enfrentam solidão, crises de ansiedade, dificuldade de pertencimento ou o desgaste de sustentar uma persona para dar conta de tudo",
+      "Para brasileiros que vivem fora do país e enfrentam solidão, crises de ansiedade, dificuldade de pertencimento ou o cansaço de se adaptar a um novo país.",
   },
   {
-    question: "O que é a crise do guerreiro?",
+    question: "Posso buscar terapia mesmo depois de anos morando fora?",
     answer:
-      "É quando a identidade criada para suportar pressão, trabalho e adaptação começa a cobrar um preço alto: exaustão, desconexão de si e risco de burnout",
+      "Sim. Saudade, solidão e dúvidas sobre onde você se sente em casa podem aparecer em diferentes momentos da vida no exterior.",
   },
   {
-    question: "Como saber valores, horários e agendar?",
+    question: "Como consultar valores e agendar minha consulta?",
     answer:
       "Envie uma mensagem pelo formulário ou WhatsApp. Valores, disponibilidade e o melhor horário para seu fuso são informados no primeiro contato",
   },

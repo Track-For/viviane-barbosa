@@ -22,7 +22,7 @@ function emailUrl(value: string) {
 export function SocialHighlightCards() {
   const socials: SocialLink[] = [
     {
-      label: "Conversar pelo WhatsApp",
+      label: "Solicitar atendimento pelo WhatsApp",
       href: buildWhatsAppUrl(profileLinks.whatsapp, "Olá, gostaria de informações sobre o atendimento."),
       highlight: "#23845b",
       icon: MessageCircle,

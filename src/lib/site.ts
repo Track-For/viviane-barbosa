@@ -13,7 +13,7 @@ export const siteConfig = {
     "terapia para brasileiros no exterior",
     "solidão morando fora do país",
     "crise de ansiedade no exterior",
-    "burnout e crise do guerreiro",
+    "adaptação cultural e saudade",
   ],
 } as const;
 

@@ -12,8 +12,8 @@ export function WhatsAppFloat() {
       href={url ?? "/#contato"}
       target={url ? "_blank" : undefined}
       rel={url ? "noreferrer" : undefined}
-      aria-label="Agendar conversa"
-      title="Agendar conversa"
+      aria-label="Agende sua consulta"
+      title="Agende sua consulta"
     >
       <MessageCircle aria-hidden="true" size={21} strokeWidth={1.6} />
     </a>

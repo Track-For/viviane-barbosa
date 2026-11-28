@@ -13,8 +13,8 @@ export const focusAreas = [
   },
   {
     kind: "Psicoterapia",
-    title: "Crise do guerreiro",
+    title: "Cansaço de recomeçar em outro país",
     description:
-      "Quando a persona criada para dar conta do trabalho e da vida se torna pesada, distante de quem você é e abre caminho para o burnout",
+      "Para conversar sobre o desgaste de dar conta do trabalho, da burocracia e de uma nova rotina longe das pessoas com quem você costumava contar.",
   },
 ] as const;

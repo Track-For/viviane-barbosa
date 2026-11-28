@@ -19,7 +19,7 @@ export function About() {
       <div className="site-container about-grid">
         <div className="about-heading">
           <SplitHeading className="section-title">
-            Sobre Viviane Barbosa
+            {profile.displayName}
           </SplitHeading>
         </div>
 
@@ -46,10 +46,20 @@ export function About() {
         </div>
 
         <Reveal className="about-copy" delay={0.08}>
-          <p className="about-copy__lead">
-            Sou psicóloga e meu trabalho é voltado a brasileiros que vivem no exterior.
-          </p>
+          <h3 className="about-copy__lead">Quem sou</h3>
           <p>{profile.bio}</p>
+          <h3>A dor que resolvo</h3>
+          <p>
+            Morar fora pode trazer conquistas e oportunidades, mas também solidão, ansiedade, conflitos internos,
+            dificuldade de pertencimento e a sensação de precisar ser forte o tempo todo, mesmo quando
+            emocionalmente você não está bem.
+          </p>
+          <h3>Como eu te ajudo</h3>
+          <p>
+            Ajudo você a compreender e acolher suas emoções, fortalecer sua identidade e construir uma relação
+            mais saudável consigo mesmo, para que possa viver sua experiência em outro país com mais segurança
+            emocional, autonomia e pertencimento.
+          </p>
           <dl className="profile-facts">
             {facts.map((fact) => (
               <div key={fact.label}>

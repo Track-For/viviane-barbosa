@@ -10,7 +10,6 @@ const navigation = [
   { label: "Sobre", href: "/#sobre" },
   { label: "Atendimento", href: "/#atendimento" },
   { label: "Como funciona", href: "/#como-funciona" },
-  { label: "Dúvidas", href: "/#duvidas" },
 ] as const;
 
 export function Header() {
@@ -48,7 +47,7 @@ export function Header() {
         </nav>
 
         <ButtonLink href="/#contato" className="header-cta" showArrow>
-          Agendar conversa
+          Agende sua consulta
         </ButtonLink>
 
         <button
@@ -74,7 +73,7 @@ export function Header() {
             </Link>
           ))}
           <Link href="/#contato" onClick={() => setOpen(false)}>
-            Agendar conversa
+            Agende sua consulta
           </Link>
         </nav>
       ) : null}

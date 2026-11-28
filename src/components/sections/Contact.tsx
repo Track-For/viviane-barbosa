@@ -44,7 +44,7 @@ export function Contact() {
   const submit = async (data: ContactFormData) => {
     const message = [
       `Olá, meu nome é ${data.name}.`,
-      "Tenho interesse em psicoterapia online.",
+      "Gostaria de agendar uma consulta de psicoterapia online.",
       `Meu contato: ${data.contact}.`,
       data.message ? `Mensagem: ${data.message}` : "",
     ]
@@ -68,7 +68,7 @@ export function Contact() {
           <SectionLabel>Primeiro contato</SectionLabel>
           <h2>Conte onde você está e o que procura</h2>
           <p>
-            Para saber mais sobre as sessões ou agendar uma conversa, informe seu país e fuso horário.
+            Para saber mais sobre as sessões ou agendar sua consulta, informe seu país e fuso horário.
             Você pode usar este formulário sem compartilhar informações clínicas.
           </p>
 
@@ -126,14 +126,14 @@ export function Contact() {
           </div>
 
           <Button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Preparando mensagem" : "Agendar conversa"}
+            {isSubmitting ? "Preparando mensagem" : "Agende sua consulta"}
           </Button>
 
           <div className="form-status" aria-live="polite">
             {status === "placeholder" ? (
-              <p>Este canal está em configuração. Use outro contato disponível para iniciar a conversa.</p>
+              <p>Este canal está em configuração. Use outro contato disponível para solicitar atendimento.</p>
             ) : null}
-            {status === "ready" ? <p>A conversa foi aberta em uma nova janela.</p> : null}
+            {status === "ready" ? <p>O WhatsApp foi aberto em uma nova janela.</p> : null}
           </div>
         </form>
       </div>

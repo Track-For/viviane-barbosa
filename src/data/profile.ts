@@ -4,7 +4,7 @@ export const profile = {
   profession: "Psicóloga",
   crp: "[CRP]",
   hours: "[HORÁRIOS]",
-  bio: "Mudar de país pode trazer saudade, mexer com seus vínculos e mudar sua rotina. Na psicoterapia, podemos conversar sobre como essas mudanças afetam você e buscar formas de lidar com a ansiedade, a solidão e a sensação de não pertencer.",
+  bio: "Sou Viviane Barbosa, psicóloga, e meu trabalho é voltado a brasileiros que vivem no exterior.",
   education: "[FORMAÇÃO]",
 } as const;
 

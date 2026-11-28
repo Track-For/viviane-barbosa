@@ -15,7 +15,7 @@ export function EditorialGallery() {
           </SplitHeading>
           <Reveal className="editorial-gallery__intro">
             <p>
-              Mesmo do outro lado do mundo, a conversa pode acontecer em um lugar familiar, com calma, privacidade e
+              Fora do país, o atendimento pode acontecer em um lugar familiar, com calma, privacidade e
               presença
             </p>
           </Reveal>
@@ -75,7 +75,7 @@ export function EditorialGallery() {
             </ImageReveal>
             <figcaption className="media-caption editorial-gallery__caption">
               <span>Seu espaço, no seu ritmo</span>
-              <small>De onde você estiver, a conversa encontra lugar</small>
+              <small>Atendimento online de onde você estiver</small>
             </figcaption>
           </figure>
         </div>

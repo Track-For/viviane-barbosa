@@ -30,7 +30,7 @@ export function AttendanceModes() {
             <p className="mode-detail__summary">{onlineAttendance.summary}</p>
             <p>{onlineAttendance.detail}</p>
             <ButtonLink href="#contato" variant="secondary" showArrow>
-              Agendar conversa
+              Agende sua consulta
             </ButtonLink>
           </div>
         </div>

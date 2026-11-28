@@ -1,4 +1,3 @@
-import { faqItems } from "@/data/faq";
 import { media } from "@/data/media";
 import { profile, profileLinks } from "@/data/profile";
 import { getConfiguredValue, getInstagramUrl } from "@/lib/content";
@@ -91,22 +90,6 @@ export function getHomeStructuredData() {
     },
   };
 
-  const faqPage = {
-    "@type": "FAQPage",
-    "@id": `${siteUrl}/#perguntas-frequentes`,
-    name: "Dúvidas sobre psicoterapia online",
-    url: `${homeUrl}#duvidas`,
-    inLanguage: siteConfig.language,
-    mainEntity: faqItems.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
-
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -132,10 +115,7 @@ export function getHomeStructuredData() {
           { "@id": `${siteUrl}/#viviane-barbosa` },
           { "@id": `${siteUrl}/#psicoterapia-online` },
         ],
-        mainEntity: [
-          { "@id": `${siteUrl}/#psicoterapia-online` },
-          { "@id": `${siteUrl}/#perguntas-frequentes` },
-        ],
+        mainEntity: { "@id": `${siteUrl}/#psicoterapia-online` },
         primaryImageOfPage: {
           "@type": "ImageObject",
           url: getAbsoluteUrl(media.hero.src),
@@ -145,7 +125,6 @@ export function getHomeStructuredData() {
       person,
       organization,
       psychotherapyService,
-      faqPage,
     ],
   };
 }

@@ -91,10 +91,10 @@ export function Hero() {
           </p>
           <div data-hero-actions className="hero-actions">
             <ButtonLink href="#contato" showArrow>
-              Agendar conversa
+              Agende sua consulta
             </ButtonLink>
             <ButtonLink href="#atendimento" variant="secondary">
-              Ver como posso ajudar
+              Veja como posso te ajudar
             </ButtonLink>
           </div>
         </div>

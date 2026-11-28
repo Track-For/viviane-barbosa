@@ -1,11 +1,9 @@
-import { faqItems } from "@/data/faq";
 import { profile } from "@/data/profile";
 import { getAbsoluteUrl, siteConfig } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export function GET() {
-  const faq = faqItems.map((item) => `### ${item.question}\n${item.answer}`).join("\n\n");
   const content = `# ${siteConfig.alternateName}
 
 > ${siteConfig.description}
@@ -20,16 +18,13 @@ export function GET() {
 ${profile.displayName} é psicóloga e oferece psicoterapia online em português para brasileiros que vivem fora do país.
 
 ## Psicoterapia online para brasileiros no exterior
-Acompanhamento para questões como solidão, crises de ansiedade, dificuldade de pertencimento, exaustão, burnout e o desgaste de sustentar uma persona para conseguir trabalhar e se adaptar.
+Acompanhamento para questões como solidão, crises de ansiedade, dificuldade de pertencimento, exaustão e adaptação a um novo país.
 
 ## Forma de atendimento
 Os encontros são online, em português, com horário combinado de acordo com a disponibilidade e o fuso de cada pessoa. Valores e horários são informados no primeiro contato.
 
-## Perguntas frequentes
-${faq}
-
 ## Escopo e contato
-O conteúdo do site é informativo e não substitui avaliação profissional ou atendimento de urgência. Para saber mais sobre o atendimento ou agendar uma conversa, use o canal oficial de contato: ${getAbsoluteUrl("/#contato")}.
+O conteúdo do site é informativo e não substitui avaliação profissional ou atendimento de urgência. Para saber mais sobre o atendimento ou agendar uma consulta, use o canal oficial de contato: ${getAbsoluteUrl("/#contato")}.
 `;
 
   return new Response(content, {

@@ -9,9 +9,9 @@ export function Faq() {
       <div className="site-container faq-layout">
         <div className="faq-heading">
           <SplitHeading id="faq-title" className="section-title">
-            Antes de começar, é natural ter dúvidas
+            Principais dúvidas.
           </SplitHeading>
-          <p>As principais informações para você decidir com mais clareza</p>
+          <p>Informações que podem te ajudar.</p>
         </div>
         <Reveal className="faq-content">
           <Accordion items={faqItems} />

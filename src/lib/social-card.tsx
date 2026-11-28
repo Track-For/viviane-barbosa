@@ -38,7 +38,7 @@ export function createSocialCard() {
             borderRadius: 999,
             right: 150,
             bottom: -125,
-            background: "#a66d56",
+            background: "#52776f",
             opacity: 0.9,
           }}
         />
@@ -61,7 +61,7 @@ export function createSocialCard() {
               textTransform: "uppercase",
             }}
           >
-            <span style={{ width: 54, height: 1, background: "#a66d56" }} />
+            <span style={{ width: 54, height: 1, background: "#52776f" }} />
             Psicoterapia online em português
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>

@@ -70,9 +70,9 @@ const fragmentShader = /* glsl */ `
 
     vec3 cream = vec3(0.961, 0.945, 0.922);
     vec3 sage = vec3(0.659, 0.698, 0.631);
-    vec3 terracotta = vec3(0.651, 0.427, 0.337);
+    vec3 teal = vec3(0.322, 0.467, 0.435);
     vec3 color = mix(sage, cream, clarity * 0.82);
-    color = mix(color, terracotta, caustic * 0.28 + (1.0 - clarity) * 0.06);
+    color = mix(color, teal, caustic * 0.28 + (1.0 - clarity) * 0.06);
     color += cream * caustic * 0.22;
 
     float vignette = 1.0 - smoothstep(0.2, 1.35, length(centered * vec2(0.72, 1.0)));

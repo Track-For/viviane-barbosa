@@ -7,7 +7,7 @@ export function FinalCta() {
         <span className="final-cta__depth" aria-hidden="true" />
         <h2>Você não precisa esperar ficar insustentável para pedir apoio</h2>
         <ButtonLink href="#contato" showArrow>
-          Conversar com Viviane
+          Agende sua consulta
         </ButtonLink>
       </div>
     </section>

@@ -6,7 +6,6 @@ import { ClarityStrip } from "@/components/sections/ClarityStrip";
 import { CinematicMarquee } from "@/components/sections/CinematicMarquee";
 import { Contact } from "@/components/sections/Contact";
 import { EditorialGallery } from "@/components/sections/EditorialGallery";
-import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { FocusAreas } from "@/components/sections/FocusAreas";
 import { Hero } from "@/components/sections/Hero";
@@ -32,7 +31,6 @@ export default function HomePage() {
         <EditorialGallery />
         <Approach />
         <Process />
-        <Faq />
         <Contact />
       </ParallaxMain>
       <JsonLd id="viviane-barbosa-structured-data" data={structuredData} />
