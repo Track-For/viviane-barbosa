@@ -69,7 +69,7 @@ export function Contact() {
           <h2>Conte onde você está e o que procura</h2>
           <p>
             Para saber mais sobre as sessões ou agendar sua consulta, informe seu país e fuso horário.
-            Você pode usar este formulário sem compartilhar informações clínicas.
+            Você pode usar este formulário sem compartilhar informações clínicas
           </p>
 
           <ul className="contact-details">

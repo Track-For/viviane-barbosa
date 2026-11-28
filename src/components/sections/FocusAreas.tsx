@@ -94,7 +94,7 @@ export function FocusAreas() {
     <section id="focos" className="section focus-section">
       <div className="site-container">
         <SectionLabel>Eu sei como se sente.</SectionLabel>
-        <SplitHeading className="section-title">O que vamos trabalhar.</SplitHeading>
+        <SplitHeading className="section-title">O que vamos trabalhar</SplitHeading>
 
         <div className="focus-layout">
           <div

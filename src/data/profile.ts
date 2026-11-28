@@ -4,7 +4,7 @@ export const profile = {
   profession: "Psicóloga",
   crp: "[CRP]",
   hours: "[HORÁRIOS]",
-  bio: "Sou Viviane Barbosa, psicóloga, e meu trabalho é voltado a brasileiros que vivem no exterior.",
+  bio: "Sou Viviane Barbosa, psicóloga, e meu trabalho é voltado a brasileiros que vivem no exterior",
   education: "[FORMAÇÃO]",
 } as const;
 

@@ -58,6 +58,7 @@ export function Header() {
           aria-controls="mobile-navigation"
           onClick={() => setOpen((current) => !current)}
         >
+          <span>{open ? "Fechar" : "Menu"}</span>
           <span className={`menu-glyph${open ? " is-open" : ""}`} aria-hidden="true">
             <span />
             <span />

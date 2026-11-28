@@ -55,7 +55,7 @@ export function DivanExperience() {
       <div className="divan-stage site-container">
         <header className="divan-heading">
           <p className="divan-eyebrow">Um espaço para você</p>
-          <h2 id="divan-title">O cuidado começa<br />com espaço para ser.</h2>
+          <h2 id="divan-title">O cuidado começa<br />com espaço para ser</h2>
           <span className="divan-scroll-hint">Role para dar forma a esse encontro</span>
         </header>
         <div className="divan-composition">
@@ -67,7 +67,7 @@ export function DivanExperience() {
           </figure>
           <div className="divan-information">
             <p className="divan-eyebrow">A terapia, no seu ritmo</p>
-            <h3>O cuidado que você precisa e merece.</h3>
+            <h3>O cuidado que você precisa e merece</h3>
             <p>Sem fórmulas prontas ou a expectativa de que você precise ser forte o tempo inteiro. O encontro parte da sua história, do seu contexto e do que hoje pede atenção</p>
             <ul><li>Escuta atenta à sua história</li><li>Espaço para acolher o que sente</li><li>Tempo para construir novos sentidos</li></ul>
           </div>

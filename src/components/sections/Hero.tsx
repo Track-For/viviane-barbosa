@@ -84,17 +84,17 @@ export function Hero() {
           <p data-hero-eyebrow className="hero-eyebrow">
             Viviane Barbosa · Psicóloga
           </p>
-          <h1 ref={heading}>Psicoterapia para quem mora fora do Brasil</h1>
+          <h1 ref={heading}>Psicoterapia para você que mora fora do Brasil</h1>
           <p data-hero-copy className="hero-intro">
             Atendo online, em português, brasileiros que vivem no exterior e buscam apoio para lidar com
-            a saudade, a solidão, a ansiedade ou a adaptação a um novo país.
+            a saudade, a solidão, a ansiedade ou a adaptação a um novo país
           </p>
           <div data-hero-actions className="hero-actions">
+            <ButtonLink href="#sobre" variant="secondary">
+              Veja como posso te ajudar
+            </ButtonLink>
             <ButtonLink href="#contato" showArrow>
               Agende sua consulta
-            </ButtonLink>
-            <ButtonLink href="#atendimento" variant="secondary">
-              Veja como posso te ajudar
             </ButtonLink>
           </div>
         </div>

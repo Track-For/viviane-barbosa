@@ -52,13 +52,13 @@ export function About() {
           <p>
             Morar fora pode trazer conquistas e oportunidades, mas também solidão, ansiedade, conflitos internos,
             dificuldade de pertencimento e a sensação de precisar ser forte o tempo todo, mesmo quando
-            emocionalmente você não está bem.
+            emocionalmente você não está bem
           </p>
           <h3>Como eu te ajudo</h3>
           <p>
             Ajudo você a compreender e acolher suas emoções, fortalecer sua identidade e construir uma relação
             mais saudável consigo mesmo, para que possa viver sua experiência em outro país com mais segurança
-            emocional, autonomia e pertencimento.
+            emocional, autonomia e pertencimento
           </p>
           <dl className="profile-facts">
             {facts.map((fact) => (
