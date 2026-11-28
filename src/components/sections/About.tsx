@@ -39,8 +39,8 @@ export function About() {
               </div>
             </ImageReveal>
             <figcaption className="media-caption">
-              <span>Retrato conceitual</span>
-              <small>Imagem de referência para a identidade visual</small>
+              <span>Viviane Barbosa</span>
+              <small>Psicóloga</small>
             </figcaption>
           </figure>
         </div>

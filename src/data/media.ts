@@ -7,13 +7,12 @@ export const media = {
     replacement: "[VÍDEO 01] ou imagem principal aprovada",
   },
   portrait: {
-    src: "/images/retrato-profissional-paleta.webp",
+    src: "/images/Warm%20Professional%20Portrait.png",
     blurDataURL:
-      "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAACwBQCdASoYAB4APwFwrlCrJqQisBgIAWAgCWQAsOwNpRJluZ7/xL94AP6yQyZfMNAcymK9DNAA3/ZGcHYv1/irEBfS6EyszscMNJd+WgU1J/pXpejxVl+6C1cNfGkE58eXI7HkpGLUjjme7H583fqlDjY+nFPmXU82H01ar06Ho2V9GWG52uiAxNOIQ+HH22leL/OhT7skmvnl1m3wuBdbRVfvl2kbQP+6KLvoQ1TA5IowyrOfwWbi3kAnqkJMlyIG8SX9idowm2MCqeUumTUq9U9wUfjVKMSPfDudgAA=",
+      "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoIAAoAAUAmJQBOgCB/tAVHMtAgAP7rxAuUnPkKEw/bFUgtjPG6awTZcbQxYm0+s/B2ubJwXKcHxl6YYGw5JRW50t+/Eb5ub2JkPi+hyRM2eRpYAAA=",
     width: 1122,
     height: 1402,
-    alt: "Retrato conceitual de uma psicóloga em ambiente claro e acolhedor",
-    replacement: "[FOTO DA PROFISSIONAL]",
+    alt: "Retrato de Viviane Barbosa",
   },
   support: {
     src: "/images/sessao-acolhimento-mar-paleta.webp",
